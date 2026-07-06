@@ -18,17 +18,11 @@ import {
   setLastNonce,
 } from "@/lib/storage";
 import { SimVerifier } from "@/components/SimVerifier";
-
-const RARITY_COLORS: Record<string, string> = {
-  Consumer: "#b0c3d9",
-  Industrial: "#5e98d9",
-  "Mil-Spec": "#4b69ff",
-  Restricted: "#8847ff",
-  Classified: "#d32ce6",
-  Covert: "#eb4b4b",
-  Knife: "#e4ae39",
-  Gloves: "#e4ae39",
-};
+import {
+  RARITY_COLORS,
+  WEAR_COLORS,
+  WEAR_ORDER,
+} from "@/lib/ui/colors";
 
 const RARE_RARITIES = new Set(["Covert", "Knife", "Gloves"]);
 
@@ -209,14 +203,28 @@ export function SimClient({
                 }`}
               >
                 <div className="flex items-start gap-2">
-                  <input
-                    type="checkbox"
-                    checked={isSel}
-                    onChange={() => toggle(c.slug)}
-                    className="mt-1 accent-amber-400"
-                  />
-                  <div className="flex-1">
-                    <div className="font-medium">{c.name}</div>
+                  <div className="flex shrink-0 items-center gap-2">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center overflow-hidden rounded bg-white/5">
+                      {c.imageUrl ? (
+                        <img
+                          src={c.imageUrl}
+                          alt={c.name}
+                          loading="lazy"
+                          className="h-full w-full object-contain"
+                        />
+                      ) : (
+                        <span className="text-xs font-bold text-white/30">{c.name[0]}</span>
+                      )}
+                    </div>
+                    <input
+                      type="checkbox"
+                      checked={isSel}
+                      onChange={() => toggle(c.slug)}
+                      className="accent-amber-400"
+                    />
+                  </div>
+                  <div className="min-w-0 flex-1">
+                    <div className="truncate font-medium">{c.name}</div>
                     <div className="text-xs text-white/50">
                       {c.price.toLocaleString()} coins · {c.items.length} items
                     </div>
@@ -269,22 +277,54 @@ export function SimClient({
               {balanceBusy ? "…" : fmt(Math.max(0, balance - totalCost))}
             </dd>
           </dl>
-          <button
-            onClick={run}
-            disabled={runStarted || totalOpens <= 0 || balance < totalCost}
-            className="w-full rounded bg-amber-500 px-4 py-2 text-sm font-semibold text-black disabled:opacity-40"
-          >
-            Run batch
-          </button>
-          {error && (
-            <div className="rounded border border-red-400/40 bg-red-400/10 p-2 text-xs text-red-300">
-              {error}
-            </div>
-          )}
         </div>
       </section>
 
-      {result && <SimResults result={result} />}
+      <div className="sticky bottom-0 z-10 -mx-4 border-t border-white/10 bg-[#0b0e14]/95 px-4 py-3 backdrop-blur">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3 text-sm">
+            <span>
+              {totalOpens} open{totalOpens !== 1 ? "s" : ""}
+            </span>
+            <span className="text-white/40">·</span>
+            <span>
+              Cost: <span className="text-amber-400">{fmt(totalCost)}</span>
+            </span>
+            <span className="text-white/40">·</span>
+            <span>
+              Balance:{" "}
+              <span className={balance < totalCost ? "font-semibold text-red-400" : "font-semibold text-emerald-400"}>
+                {balanceBusy ? "…" : fmt(balance)}
+              </span>
+              {balance >= totalCost ? " ✅" : " ❌"}
+            </span>
+          </div>
+          <button
+            onClick={run}
+            disabled={runStarted || totalOpens <= 0 || balance < totalCost}
+            className="rounded bg-amber-500 px-6 py-2 text-sm font-semibold text-black disabled:opacity-40"
+          >
+            Run batch
+          </button>
+        </div>
+        {error && (
+          <div className="mt-2 rounded border border-red-400/40 bg-red-400/10 p-2 text-xs text-red-300">
+            {error}
+          </div>
+        )}
+      </div>
+
+      {result && (
+        <div className="space-y-3">
+          <button
+            onClick={run}
+            className="w-full rounded border border-amber-400/40 px-4 py-2 text-sm font-semibold text-amber-400 hover:bg-amber-400/10 transition"
+          >
+            Run again with same selection
+          </button>
+          <SimResults result={result} />
+        </div>
+      )}
     </div>
   );
 }
@@ -399,30 +439,81 @@ function SimResults({ result }: { result: MultiBatchResult }) {
     for (const [k, v] of Object.entries(r.freqByWear)) byWear[k] = (byWear[k] ?? 0) + v;
     for (const [k, v] of Object.entries(r.freqByRarity)) byRarity[k] = (byRarity[k] ?? 0) + v;
   }
+  const rareRate = rareDropRate(result);
+  const roiPct = result.roi * 100;
+  const rareCount = Math.round(rareRate * total);
+  const overallBest = perCase.reduce((best, r) => (r.best.value > best.value ? r.best : best), perCase[0].best);
+  const overallWorst = perCase.reduce((worst, r) => (r.worst.value < worst.value ? r.worst : worst), perCase[0].worst);
 
   return (
     <section className="space-y-4">
+      <SectionHeader n={1} title="Headline stats" subtitle={`${total} opens · ran ${new Date(result.ranAt).toLocaleString()}`} />
+
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <Stat label="Total cost" value={fmt(result.totalCost)} />
-        <Stat label="Total value" value={fmt(result.totalValue)} />
+        <Stat label="Total cost" value={fmt(result.totalCost)} accent="amber" />
+        <Stat label="Total value" value={fmt(result.totalValue)} accent="emerald" />
         <Stat
           label="Net P/L"
           value={fmt(result.net)}
-          cls={result.net >= 0 ? "text-emerald-400" : "text-red-400"}
+          accent={result.net >= 0 ? "emerald" : "red"}
         />
         <Stat
           label="ROI"
           value={pct(result.roi)}
-          cls={result.roi >= 0 ? "text-emerald-400" : "text-red-400"}
+          accent={result.roi >= 0 ? "emerald" : "red"}
         />
       </div>
 
-      <div className="rounded-lg border border-white/10 bg-white/5 p-3 text-sm">
-        Rare drop rate (Covert + Knife + Gloves):{" "}
-        <span className="text-amber-400">{pct(rareDropRate(result))}</span>{" "}
-        across {total} opens
+      <RoiGauge roi={roiPct} />
+
+      <div
+        className="flex items-center gap-3 rounded-xl border p-3"
+        style={{
+          borderColor: "rgba(228,174,57,0.4)",
+          background: "linear-gradient(90deg, rgba(228,174,57,0.12), rgba(211,44,230,0.12), rgba(235,75,75,0.12))",
+        }}
+      >
+        <div className="text-2xl">🏆</div>
+        <div className="flex-1">
+          <div className="text-xs uppercase tracking-wider text-white/60">
+            Rare drop rate · Covert + Knife + Gloves
+          </div>
+          <div className="text-lg font-semibold text-amber-400">
+            {pct(rareRate)}{" "}
+            <span className="text-white/50 text-sm font-normal">
+              · {rareCount} / {total} opens
+            </span>
+          </div>
+        </div>
+        <div className="flex gap-1 text-xs">
+          <span className="rounded-full px-2 py-0.5" style={{ background: "rgba(235,75,75,0.18)", color: "#eb4b4b" }}>Covert {fmtFreq(byRarity["Covert"] ?? 0)}</span>
+          <span className="rounded-full px-2 py-0.5" style={{ background: "rgba(228,174,57,0.18)", color: "#e4ae39" }}>Knife {fmtFreq(byRarity["Knife"] ?? 0)}</span>
+          <span className="rounded-full px-2 py-0.5" style={{ background: "rgba(228,174,57,0.18)", color: "#e4ae39" }}>Gloves {fmtFreq(byRarity["Gloves"] ?? 0)}</span>
+        </div>
       </div>
 
+      <SectionHeader n={2} title="Overall best &amp; worst" />
+      <div className="grid grid-cols-2 gap-3">
+        <DropDrop label="Best drop" drop={overallBest} />
+        <DropDrop label="Worst drop" drop={overallWorst} />
+      </div>
+
+      <SectionHeader n={3} title="Wear distribution" />
+      <div className="flex flex-wrap items-center gap-3 rounded-xl border border-white/10 bg-white/5 p-3 text-xs">
+        {WEAR_ORDER.map((w) => {
+          const n = byWear[w] ?? 0;
+          return (
+            <div key={w} className="flex items-center gap-2">
+              <span className="inline-block h-3 w-3 rounded-full" style={{ background: WEAR_COLORS[w] }} />
+              <span style={{ color: WEAR_COLORS[w] }} className="font-semibold">{w}</span>
+              <span className="text-white/60 tabular-nums">{n}</span>
+              <span className="text-white/30 tabular-nums">({pct(total > 0 ? n / total : 0)})</span>
+            </div>
+          );
+        })}
+      </div>
+
+      <SectionHeader n={4} title="Per-case breakdown" />
       <div className="overflow-hidden rounded-xl border border-white/10">
         <table className="w-full text-sm">
           <thead className="bg-white/5 text-left text-xs uppercase tracking-wider text-white/50">
@@ -432,6 +523,7 @@ function SimResults({ result }: { result: MultiBatchResult }) {
               <th className="px-3 py-2 text-right">Cost</th>
               <th className="px-3 py-2 text-right">Value</th>
               <th className="px-3 py-2 text-right">ROI</th>
+              <th className="px-3 py-2">value distribution (10 buckets)</th>
             </tr>
           </thead>
           <tbody>
@@ -439,14 +531,13 @@ function SimResults({ result }: { result: MultiBatchResult }) {
               <tr key={r.caseSlug} className="border-t border-white/5">
                 <td className="px-3 py-2">{r.caseName}</td>
                 <td className="px-3 py-2 text-right tabular-nums">{r.count}</td>
-                <td className="px-3 py-2 text-right tabular-nums">{fmt(r.totalCost)}</td>
-                <td className="px-3 py-2 text-right tabular-nums">{fmt(r.totalValue)}</td>
-                <td
-                  className={`px-3 py-2 text-right tabular-nums ${
-                    r.roi >= 0 ? "text-emerald-400" : "text-red-400"
-                  }`}
-                >
+                <td className="px-3 py-2 text-right tabular-nums text-amber-300">{fmt(r.totalCost)}</td>
+                <td className="px-3 py-2 text-right tabular-nums text-emerald-300">{fmt(r.totalValue)}</td>
+                <td className={`px-3 py-2 text-right tabular-nums ${r.roi >= 0 ? "text-emerald-400" : "text-red-400"}`}>
                   {pct(r.roi)}
+                </td>
+                <td className="px-3 py-2 w-64">
+                  <ValueHistogram drops={r.drops} />
                 </td>
               </tr>
             ))}
@@ -454,14 +545,101 @@ function SimResults({ result }: { result: MultiBatchResult }) {
         </table>
       </div>
 
+      <SectionHeader n={5} title="Drop frequency tables" />
       <div className="grid gap-3 md:grid-cols-3">
-        <FreqTable title="Drop frequency by rarity" data={byRarity} total={total} colorByKey={RARITY_COLORS} />
-        <FreqTable title="Drop frequency by wear" data={byWear} total={total} />
-        <FreqTable title="Drop frequency by skin" data={bySkin} total={total} dense />
+        <FreqTable title="By rarity" data={byRarity} total={total} colorByKey={RARITY_COLORS} />
+        <FreqTable title="By wear" data={byWear} total={total} colorByKey={WEAR_COLORS} />
+        <FreqTable title="By skin" data={bySkin} total={total} dense />
       </div>
 
+      <SectionHeader n={6} title="Per-case best & worst drops" />
       <PerCaseDrops results={perCase} serverSeed={result.serverSeed} />
     </section>
+  );
+}
+
+function fmtFreq(n: number): string {
+  return n.toLocaleString("en-US");
+}
+function accentHex(a?: "amber" | "emerald" | "red"): string {
+  if (a === "amber") return "#e4ae39";
+  if (a === "emerald") return "#5fd6a8";
+  if (a === "red") return "#c4504a";
+  return "#888888";
+}
+
+function SectionHeader({ n, title, subtitle }: { n: number; title: string; subtitle?: string }) {
+  return (
+    <div className="flex items-baseline gap-2 border-b border-white/10 pb-1">
+      <span className="flex h-6 w-6 items-center justify-center rounded-full bg-amber-400/20 text-xs font-bold text-amber-400">
+        {n}
+      </span>
+      <h2 className="text-sm font-semibold uppercase tracking-wider text-white/80">{title}</h2>
+      {subtitle && <span className="text-xs text-white/40">· {subtitle}</span>}
+    </div>
+  );
+}
+
+function RoiGauge({ roi }: { roi: number }) {
+  const clamped = Math.max(-100, Math.min(100, roi));
+  const width = Math.abs(clamped);
+  const isNeg = clamped < 0;
+  const barColor = isNeg ? "#c4504a" : "#5fd6a8";
+  return (
+    <div className="rounded-xl border border-white/10 bg-white/5 p-3">
+      <div className="flex items-center justify-between text-xs text-white/50">
+        <span>-100%</span>
+        <span className="font-semibold" style={{ color: barColor }}>
+          ROI {roi >= 0 ? "+" : ""}{roi.toFixed(2)}%
+        </span>
+        <span>+100%</span>
+      </div>
+      <div className="relative mt-2 h-2 w-full overflow-hidden rounded-full bg-white/5">
+        <div className="absolute left-0 right-0 top-1/2 h-px -translate-y-1/2 bg-white/20" />
+        {isNeg ? (
+          <div
+            className="absolute right-1/2 top-0 h-full"
+            style={{ width: `${width / 2}%`, background: barColor }}
+          />
+        ) : (
+          <div
+            className="absolute left-1/2 top-0 h-full"
+            style={{ width: `${width / 2}%`, background: barColor }}
+          />
+        )}
+      </div>
+    </div>
+  );
+}
+
+function ValueHistogram({ drops }: { drops: BatchResult["drops"] }) {
+  if (!drops.length) return <span className="text-xs text-white/30">—</span>;
+  const values = drops.map((d) => d.value);
+  const max = Math.max(...values);
+  const min = Math.min(...values);
+  const BUCKETS = 10;
+  const buckets = new Array(BUCKETS).fill(0);
+  const range = max - min || 1;
+  for (const v of values) {
+    const idx = Math.min(BUCKETS - 1, Math.floor(((v - min) / range) * BUCKETS));
+    buckets[idx]++;
+  }
+  const maxBucket = Math.max(...buckets, 1);
+  return (
+    <div className="flex h-10 items-end gap-0.5">
+      {buckets.map((b, i) => {
+        const h = (b / maxBucket) * 100;
+        const color = i < BUCKETS / 2 ? "#4b69ff" : i < (BUCKETS * 4) / 5 ? "#d32ce6" : "#e4ae39";
+        return (
+          <div
+            key={i}
+            title={`${min + (i * range) / BUCKETS} → ${min + ((i + 1) * range) / BUCKETS}: ${b} drops`}
+            className="flex-1 rounded-sm transition-all"
+            style={{ height: `${Math.max(2, h)}%`, background: color, opacity: 0.3 + 0.7 * (h / 100) }}
+          />
+        );
+      })}
+    </div>
   );
 }
 
@@ -469,15 +647,31 @@ function Stat({
   label,
   value,
   cls,
+  accent,
 }: {
   label: string;
   value: string;
   cls?: string;
+  accent?: "amber" | "emerald" | "red";
 }) {
+  const accentClass =
+    accent === "amber"
+      ? "text-amber-400"
+      : accent === "emerald"
+      ? "text-emerald-400"
+      : accent === "red"
+      ? "text-red-400"
+      : "";
   return (
-    <div className="rounded-lg border border-white/10 bg-white/5 p-3">
+    <div
+      className="rounded-lg border p-3"
+      style={{
+        borderColor: accent ? `${accentHex(accent)}55` : "rgba(255,255,255,0.1)",
+        background: accent ? `${accentHex(accent)}11` : "rgba(255,255,255,0.05)",
+      }}
+    >
       <div className="text-xs text-white/50">{label}</div>
-      <div className={`mt-1 text-lg font-semibold tabular-nums ${cls ?? ""}`}>
+      <div className={`mt-1 text-lg font-semibold tabular-nums ${accentClass} ${cls ?? ""}`}>
         {value}
       </div>
     </div>
@@ -561,6 +755,7 @@ function PerCaseDrops({ results, serverSeed }: { results: BatchResult[]; serverS
                     <thead className="text-left text-white/40">
                       <tr>
                         <th className="px-2 py-1">Nonce</th>
+                        <th className="px-1 py-1"></th>
                         <th className="px-2 py-1">Skin</th>
                         <th className="px-2 py-1">Wear</th>
                         <th className="px-2 py-1 text-right">Value</th>
@@ -586,15 +781,23 @@ function PerCaseDrops({ results, serverSeed }: { results: BatchResult[]; serverS
 function DropDrop({ label, drop }: { label: string; drop: import("@/lib/types").Drop }) {
   return (
     <div className="flex items-center justify-between gap-3 text-sm">
-      <div>
-        <span className="text-xs uppercase text-white/40 mr-2">{label}</span>
-        <span
-          className="inline-block h-2 w-2 rounded-full align-middle mr-1"
-          style={{ background: RARITY_COLORS[drop.skin.rarity] ?? "#888" }}
-        />
-        <span className="align-middle">{drop.skin.name}</span>{" "}
-        <span className="text-white/40">· {drop.wear.wear} ·</span>{" "}
-        <span className="text-amber-400">{fmt(drop.value)}</span>
+      <div className="flex items-center gap-2">
+        <span className="text-xs uppercase text-white/40 shrink-0">{label}</span>
+        <div
+          className="flex h-8 w-8 shrink-0 items-center justify-center overflow-hidden rounded bg-white/5"
+          style={{ boxShadow: `0 0 0 1px ${RARITY_COLORS[drop.skin.rarity] ?? "#888"}` }}
+        >
+          {drop.skin.imageUrl ? (
+            <img src={drop.skin.imageUrl} alt={drop.skin.name} loading="lazy" className="h-full w-full object-contain" />
+          ) : (
+            <span className="text-xs font-bold text-white/20">{drop.skin.name[0]}</span>
+          )}
+        </div>
+        <div>
+          <span>{drop.skin.name}</span>{" "}
+          <span className="text-white/40">· {drop.wear.wear} ·</span>{" "}
+          <span className="text-amber-400">{fmt(drop.value)}</span>
+        </div>
       </div>
       <span className="text-xs text-white/40">nonce {drop.nonce}</span>
     </div>
@@ -605,6 +808,15 @@ function DropRow({ drop, serverSeed }: { drop: import("@/lib/types").Drop; serve
   return (
     <tr className="border-t border-white/5">
       <td className="px-2 py-1 tabular-nums text-white/50">{drop.nonce}</td>
+      <td className="px-1 py-1">
+        <div className="flex h-7 w-7 items-center justify-center overflow-hidden rounded bg-white/5">
+          {drop.skin.imageUrl ? (
+            <img src={drop.skin.imageUrl} alt={drop.skin.name} loading="lazy" className="h-full w-full object-contain" />
+          ) : (
+            <span className="text-[10px] font-bold text-white/20">{drop.skin.name[0]}</span>
+          )}
+        </div>
+      </td>
       <td className="px-2 py-1">{drop.skin.name}</td>
       <td className="px-2 py-1">{drop.wear.wear}</td>
       <td className="px-2 py-1 text-right tabular-nums">{fmt(drop.value)}</td>

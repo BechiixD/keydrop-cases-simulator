@@ -278,11 +278,30 @@ Out of scope (post-MVP):
 
 ## Build order additions (post-MVP polish)
 
-- [ ] 9. Cache management. Extend `/api/scrape` with `mode:"remove"` accepting `{slugs:[]}` to delete cases from cache (and a "clear all" variant). Add `ManageCasesClient.tsx` under the paste panel on `/` listing loaded slugs/cases with EV, item count, and per-row "remove" + "clear all" button. Update paste placeholder to mention bulk-array support. _(plan: drop route branch + client list UI.)_
-- [ ] 10. Visual polish for clarity + color. Add `lib/ui/colors.ts` exporting CS2 rarity color, wear color, and `maxRarityOfCase(case)` helper. Use it across:
-  - Case grid: per-card left border colored by case's highest rarity; cover thumbnail if present.
-  - Case detail: row left border colored by skin rarity; colored wear dots + a small FN/MW/FT/WW/BS legend.
-  - Sim UI: ROI gauge (horizontal bar, red→amber→emerald), accent-colored stat cards (cost amber, value emerald, net by sign), prominent rare-drop-rate badge (Covert+Knife+Gloves), wear legend, mini per-case value-distribution histogram (10 buckets), clearer numbered section headers.
+- [x] 9. Cache management. `app/api/scrape/route.ts` extended with `mode:"remove" | "clear"` + `{slugs:[]}`; added `GET /api/scrape` for listing. `components/ManageCasesClient.tsx` mounted on `/` below the paste panel — lists sorted cases (top rarity first, then price) with left color stripe, EV, edge %, rarest skin, and per-row remove + global clear-all. Paste placeholder now documents bulk-array support and keydrop envelope format.
+- [x] 10. Visual polish for clarity + color. `lib/ui/colors.ts` exports `RARITY_COLORS`, `RARITY_BG`, `WEAR_COLORS`, `WEAR_ORDER`, `maxRarityOfCase`, `caseRarestSkin`. Applied:
+  - Case grid cards: left color stripe + gradient bg by top rarity + top-rarity pill badge + edge % colored + rarest skin named.
+  - Case detail: wear legend up top, row left color stripe, colored wear dots in headers.
+  - Sim UI: numbered section headers (1–5), accent-colored stat cards (cost amber / value emerald / net by sign), centered two-sided ROI gauge(-100 .. +100), rare-drop badge with per-rarity breakdown chips, wear distribution row, per-case 10-bucket value histogram.
+
+## Post-MVP — Case battles
+
+> Confirmed by user. Building a battle mode where the user + bots open the
+> same case(s) N times; the winner takes a configurable % of the loser's loot
+> ("borrow"). Determinism + provably-fair chain still enforced. Single-user
+> local — every player including the user uses the same serverSeed but a
+> distinct clientSeed, so every result remains verifiable.
+
+- [x] 11. Battle engine. `lib/battleEngine.ts` exports `runBattle(cfg, serverSeed, startNonce)`, `teamColor(idx)`, `TEAM_COLORS`. Supports format `1v1|1v1v1|1v1v1v1|2v2|3v3`, mode `classic|underdog`, borrow 0..90. Config validation. Nonce chain global across all players for provable fairness. Engine test probed: classic determines correct winner, underdog inverts, borrow splits correctly, ranAt is only non-deterministic field.
+  - Mode: `classic` (highest total value wins) | `underdog` (lowest total value wins).
+  - Format: `1v1`, `1v1v1`, `1v1v1v1` (FFA), `2v2`, `3v3` (team value = sum of members).
+  - Borrow: integer 0..90 (% of loser loot the winner takes). 0 = full winner-take-all (winner keeps own + 100% of loser's). Higher borrow value = house covers more of the loser's share; using `pctOfLoserToWinner = 100 - borrow`. Final pot split stored on `BattleResult`.
+  - Each player entry: `{ name, caseSlugs[], counts[], clientSeed }`. Bot clientSeeds generated once and kept stable for the session.
+  - Reuses `runBatch` per (player, case) pair, nonces advance globally per round so the whole battle is one continuous chain.
+  - Output: per-player `drops[]` + `totalValue`, ranked teams (1 winner + losers), final split per player after borrow, push to `localStorage` battle history (separate key from batch history).
+  - Engine tests: identical config + seeds → identical winner + drops; underdog inverts winner.
+- [x] 12. `/battles` UI. `app/battles/page.tsx` + `components/BattleClient.tsx`. Format picker (5 presets), mode toggle (classic/underdog), borrow slider (0..90), case selector, rounds count. PF panel shows `serverSeedHash` before, `serverSeed` after reveal; bot seeds re-shuffle independently. Run deduces user cost from balance, adjusts balance after. Result panel: winner banner with team color, full team table, per-player drops list with inline `SimVerifier` verify button. History saved via `pushBattleHistory`. Nav link in layout as "Battles".
+- [x] 13. Battle history on `/balance`. Lifetime card extended with 3 battle rows (played, W/L record, net). Batch/Battle section now tabbed (Batches / Battles) with toggle buttons, per-tab clear-all, and `BattleHistoryCard` component (expandible: team-colored winner row, full team table with payout/delta, serverSeed reveal). Shared `teamColor` from battle engine.
 
 ---
 

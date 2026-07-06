@@ -1,10 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { MultiBatchResult } from "@/lib/types";
+import type { BattleResult, MultiBatchResult } from "@/lib/types";
+import { teamColor } from "@/lib/battleEngine";
 import {
+  clearBattleHistory,
   clearHistory,
   getBalance,
+  getBattleHistory,
   getHistory,
   resetBalance,
   setBalance as setBalanceStore,
@@ -23,12 +26,15 @@ function when(ts: number): string {
 export function BalanceClient() {
   const [balance, setBalance] = useState<number>(10000);
   const [history, setHistory] = useState<MultiBatchResult[]>([]);
+  const [battleHistory, setBattleHistory] = useState<BattleResult[]>([]);
   const [depositAmt, setDepositAmt] = useState<number>(1000);
   const [ready, setReady] = useState(false);
+  const [tab, setTab] = useState<"batches" | "battles">("batches");
 
   useEffect(() => {
     setBalance(getBalance());
     setHistory(getHistory());
+    setBattleHistory(getBattleHistory());
     setReady(true);
   }, []);
 
@@ -51,6 +57,16 @@ export function BalanceClient() {
     clearHistory();
     setHistory([]);
   }
+  function doClearBattles(): void {
+    if (
+      typeof window === "object" &&
+      !window.confirm("Clear all battle history? This cannot be undone.")
+    ) {
+      return;
+    }
+    clearBattleHistory();
+    setBattleHistory([]);
+  }
 
   let totalCost = 0;
   let totalValue = 0;
@@ -61,6 +77,15 @@ export function BalanceClient() {
     for (const r of h.results) totalOpens += r.count;
   }
   const roi = totalCost > 0 ? (totalValue - totalCost) / totalCost : 0;
+
+  let battleWins = 0;
+  let battleLosses = 0;
+  let battleNet = 0;
+  for (const b of battleHistory) {
+    if (b.userDelta > 0) battleWins++;
+    else if (b.userDelta < 0) battleLosses++;
+    battleNet += b.userDelta;
+  }
 
   return (
     <div className="space-y-6">
@@ -104,7 +129,7 @@ export function BalanceClient() {
 
         <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-2">
           <div className="text-xs uppercase tracking-wider text-white/50">
-            Lifetime
+            Batch lifetime
           </div>
           <dl className="grid grid-cols-2 gap-y-1 text-sm">
             <dt className="text-white/50">Batches run</dt>
@@ -135,12 +160,57 @@ export function BalanceClient() {
         </div>
       </section>
 
+      <section className="grid gap-3 md:grid-cols-1">
+        <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-2">
+          <div className="text-xs uppercase tracking-wider text-white/50">
+            Battle lifetime
+          </div>
+          <dl className="grid grid-cols-2 gap-y-1 text-sm">
+            <dt className="text-white/50">Battles played</dt>
+            <dd className="text-right tabular-nums">{battleHistory.length}</dd>
+            <dt className="text-white/50">Record</dt>
+            <dd className="text-right tabular-nums">
+              <span className="text-emerald-400">{battleWins}W</span>{" "}
+              <span className="text-white/30">–</span>{" "}
+              <span className="text-red-400">{battleLosses}L</span>
+            </dd>
+            <dt className="text-white/50">Battle net</dt>
+            <dd
+              className={`text-right tabular-nums ${
+                battleNet >= 0 ? "text-emerald-400" : "text-red-400"
+              }`}
+            >
+              {battleNet >= 0 ? "+" : ""}{fmt(battleNet)}
+            </dd>
+          </dl>
+        </div>
+      </section>
+
       <section className="space-y-3">
-        <div className="flex items-baseline justify-between">
-          <h2 className="text-sm font-semibold uppercase tracking-wider text-white/60">
-            Batch history
-          </h2>
-          {history.length > 0 && (
+        <div className="flex items-center justify-between">
+          <div className="flex gap-1 rounded-lg border border-white/10 p-0.5">
+            <button
+              onClick={() => setTab("batches")}
+              className={`rounded px-3 py-1 text-xs font-medium transition ${
+                tab === "batches"
+                  ? "bg-amber-400/20 text-amber-400"
+                  : "text-white/60 hover:text-white/80"
+              }`}
+            >
+              Batches ({history.length})
+            </button>
+            <button
+              onClick={() => setTab("battles")}
+              className={`rounded px-3 py-1 text-xs font-medium transition ${
+                tab === "battles"
+                  ? "bg-amber-400/20 text-amber-400"
+                  : "text-white/60 hover:text-white/80"
+              }`}
+            >
+              Battles ({battleHistory.length})
+            </button>
+          </div>
+          {tab === "batches" && history.length > 0 && (
             <button
               onClick={doClearHistory}
               className="text-xs text-red-400/80 hover:text-red-300"
@@ -148,10 +218,18 @@ export function BalanceClient() {
               clear all
             </button>
           )}
+          {tab === "battles" && battleHistory.length > 0 && (
+            <button
+              onClick={doClearBattles}
+              className="text-xs text-red-400/80 hover:text-red-300"
+            >
+              clear all battles
+            </button>
+          )}
         </div>
         {!ready ? (
           <div className="text-sm text-white/40">…</div>
-        ) : history.length === 0 ? (
+        ) : tab === "batches" && history.length === 0 ? (
           <div className="rounded-lg border border-white/10 bg-white/5 p-6 text-sm text-white/60">
             No batches yet. Visit the{" "}
             <a href="/sim" className="text-amber-400 hover:underline">
@@ -159,10 +237,24 @@ export function BalanceClient() {
             </a>{" "}
             and run a batch.
           </div>
-        ) : (
+        ) : tab === "batches" ? (
           <div className="space-y-3">
             {history.map((h, i) => (
               <BatchHistoryCard key={`${h.ranAt}-${i}`} result={h} />
+            ))}
+          </div>
+        ) : tab === "battles" && battleHistory.length === 0 ? (
+          <div className="rounded-lg border border-white/10 bg-white/5 p-6 text-sm text-white/60">
+            No battles yet. Visit the{" "}
+            <a href="/battles" className="text-amber-400 hover:underline">
+              battles page
+            </a>{" "}
+            and run a battle.
+          </div>
+        ) : (
+          <div className="space-y-3">
+            {battleHistory.map((b, i) => (
+              <BattleHistoryCard key={`${b.ranAt}-${i}`} result={b} />
             ))}
           </div>
         )}
@@ -234,6 +326,95 @@ function BatchHistoryCard({ result }: { result: MultiBatchResult }) {
               ))}
             </tbody>
           </table>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function BattleHistoryCard({ result }: { result: BattleResult }) {
+  const [expanded, setExpanded] = useState(false);
+  const wTeam = result.winnerTeamIndex;
+  const firstWinner = result.teams[wTeam]?.playerNames[0] ?? "";
+  const deltaStr = result.userDelta >= 0 ? "+" : "";
+  return (
+    <div className="rounded-xl border border-white/10 bg-white/5">
+      <button
+        onClick={() => setExpanded((v) => !v)}
+        className="flex w-full items-center justify-between gap-3 px-3 py-2 text-left hover:bg-white/5"
+      >
+        <div>
+          <div className="text-sm font-medium">{when(result.ranAt)}</div>
+          <div className="text-xs text-white/50">
+            {result.format} · {result.mode} · borrow {result.borrowPercent}%
+          </div>
+        </div>
+        <div className="flex items-center gap-2 text-sm tabular-nums">
+          <span
+            className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
+              result.userDelta >= 0
+                ? "bg-emerald-400/15 text-emerald-300"
+                : "bg-red-400/15 text-red-300"
+            }`}
+          >
+            {result.userDelta >= 0 ? "WIN" : "LOSS"}
+          </span>
+          <span
+            className={
+              result.userDelta >= 0 ? "text-emerald-400" : "text-red-400"
+            }
+          >
+            {deltaStr}{fmt(result.userDelta)}
+          </span>
+        </div>
+      </button>
+      {expanded && (
+        <div className="border-t border-white/5 p-3 space-y-2 text-xs">
+          <div className="flex items-center gap-2">
+            <span className="inline-block h-3 w-3 rounded-full" style={{ background: teamColor(wTeam) }} />
+            <span className="font-medium" style={{ color: teamColor(wTeam) }}>
+              Winner team {wTeam + 1}: {firstWinner}
+            </span>
+            <span className="text-white/50">
+              · {result.teams[wTeam].totalValue.toFixed(2)} total value
+            </span>
+          </div>
+          <table className="w-full text-xs">
+            <thead className="text-left text-white/40">
+              <tr>
+                <th className="px-2 py-1">Team</th>
+                <th className="px-2 py-1">Players</th>
+                <th className="px-2 py-1 text-right">Value</th>
+                <th className="px-2 py-1 text-right">Rank</th>
+                <th className="px-2 py-1 text-right">Payout</th>
+                <th className="px-2 py-1 text-right">Δ</th>
+              </tr>
+            </thead>
+            <tbody>
+              {result.teams.map((t) => (
+                <tr key={t.index} className="border-t border-white/5">
+                  <td className="px-2 py-1">
+                    <span className="inline-block h-2 w-2 rounded-full mr-1" style={{ background: teamColor(t.index) }} />
+                    {t.index + 1}
+                    {t.index === wTeam ? " 👑" : ""}
+                  </td>
+                  <td className="px-2 py-1 text-white/70">{t.playerNames.join(", ")}</td>
+                  <td className="px-2 py-1 text-right tabular-nums">{fmt(t.totalValue)}</td>
+                  <td className="px-2 py-1 text-right tabular-nums">#{t.rank}</td>
+                  <td className="px-2 py-1 text-right tabular-nums">{fmt(t.payout)}</td>
+                  <td className={`px-2 py-1 text-right tabular-nums ${t.delta >= 0 ? "text-emerald-400" : "text-red-400"}`}>
+                    {t.delta >= 0 ? "+" : ""}{fmt(t.delta)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="text-white/50">
+            serverSeed{" "}
+            <code className="text-amber-400 break-all">{result.serverSeed}</code>
+            <br />
+            startNonce <code>{result.startNonce}</code>
+          </div>
         </div>
       )}
     </div>

@@ -1,14 +1,16 @@
-import type { MultiBatchResult } from "@/lib/types";
+import type { BattleResult, MultiBatchResult } from "@/lib/types";
 
 const KEYS = {
   balance: "keydrop-sim:balance",
   history: "keydrop-sim:history",
+  battleHistory: "keydrop-sim:battleHistory",
   clientSeed: "keydrop-sim:clientSeed",
   lastNonce: "keydrop-sim:lastNonce",
 } as const;
 
 const DEFAULT_BALANCE = 10000;
 const MAX_HISTORY = 50;
+const MAX_BATTLE_HISTORY = 50;
 
 function safeGet(key: string): string | null {
   if (typeof window === "undefined") return null;
@@ -79,6 +81,27 @@ export function pushHistory(result: MultiBatchResult): MultiBatchResult[] {
 
 export function clearHistory(): void {
   safeRemove(KEYS.history);
+}
+
+export function getBattleHistory(): BattleResult[] {
+  const raw = safeGet(KEYS.battleHistory);
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw) as BattleResult[];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+export function pushBattleHistory(result: BattleResult): BattleResult[] {
+  const next = [result, ...getBattleHistory()].slice(0, MAX_BATTLE_HISTORY);
+  safeSet(KEYS.battleHistory, JSON.stringify(next));
+  return next;
+}
+
+export function clearBattleHistory(): void {
+  safeRemove(KEYS.battleHistory);
 }
 
 export function getClientSeed(fallback: string): string {

@@ -84,3 +84,64 @@ export interface CasesCache {
   cases: CaseDefinition[];
   scrapedAt: number;
 }
+
+export type BattleMode = "classic" | "underdog";
+
+export type BattleFormat =
+  | "1v1"
+  | "1v1v1"
+  | "1v1v1v1"
+  | "2v2"
+  | "3v3";
+
+export interface BattlePlayerConfig {
+  name: string;
+  isUser: boolean;
+  clientSeed: string;
+  counts: number[];
+}
+
+export interface BattleConfig {
+  format: BattleFormat;
+  mode: BattleMode;
+  borrowPercent: number;
+  cases: CaseDefinition[];
+  players: BattlePlayerConfig[];
+  roundsPerCase: number;
+}
+
+export interface BattlePlayerResult {
+  name: string;
+  isUser: boolean;
+  clientSeed: string;
+  teamIndex: number;
+  drops: Drop[];
+  totalValue: number;
+  startNonce: number;
+  nonceCount: number;
+}
+
+export interface BattleTeamResult {
+  index: number;
+  playerNames: string[];
+  totalValue: number;
+  rank: number;
+  payout: number;
+  delta: number;
+}
+
+export interface BattleResult {
+  ranAt: number;
+  format: BattleFormat;
+  mode: BattleMode;
+  borrowPercent: number;
+  serverSeed: string;
+  serverSeedHash: string;
+  startNonce: number;
+  teamSize: number;
+  numTeams: number;
+  players: BattlePlayerResult[];
+  teams: BattleTeamResult[];
+  winnerTeamIndex: number;
+  userDelta: number;
+}
