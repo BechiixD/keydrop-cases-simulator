@@ -281,6 +281,12 @@ export function HomeCasesClient({
                         isSel ? "border-amber-400/60" : "border-white/10"
                       }`}
                     />
+                    <Link
+                      href={`/sim?mode=realistic&slug=${c.slug}`}
+                      className="rounded border border-white/10 px-2 py-1 text-xs text-white/40 hover:text-amber-400 hover:border-amber-400/30 transition"
+                    >
+                      Open
+                    </Link>
                   </div>
                 </div>
               </div>

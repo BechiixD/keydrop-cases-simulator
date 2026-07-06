@@ -71,7 +71,7 @@ export function SimVerifier({
     );
   }
   if (state.status === "loading") {
-    return <span className="text-xs text-white/40">…</span>;
+    return <span className="inline-block h-3 w-3 animate-pulse rounded-full bg-white/20" />;
   }
   if (state.status === "error") {
     return <span className="text-xs text-red-400">err</span>;

@@ -143,6 +143,7 @@ function normalizeKeydropCase(
       id,
       name: statTrak ? `StatTrak\u2122 ${cleanTitle}` : cleanTitle,
       imageUrl: String(it.icon ?? it.imageUrl ?? it.image ?? ""),
+      imageUrlRemote: String(it.icon ?? it.imageUrl ?? it.image ?? ""),
       rarity,
       statTrak,
       wears,
@@ -166,6 +167,7 @@ function normalizeKeydropCase(
     name,
     price,
     imageUrl,
+    imageUrlRemote: imageUrl,
     scrapedAt: typeof rawCase.scrapedAt === "number" ? rawCase.scrapedAt : Date.now(),
     items,
   };
@@ -225,6 +227,7 @@ function normalizeSkinGeneric(raw: Loose): SkinItem {
     id,
     name: (statTrak ? "StatTrak\u2122 " : "") + name,
     imageUrl: String(raw.imageUrl ?? raw.image ?? ""),
+    imageUrlRemote: String(raw.imageUrl ?? raw.image ?? ""),
     rarity: mapRarity(raw.rarity ?? raw.tier),
     statTrak,
     wears,
@@ -259,6 +262,7 @@ function normalizeCaseGeneric(
     name: String(raw.name ?? raw.title ?? slug),
     price: asNumber(raw.price ?? raw.cost),
     imageUrl: String(raw.imageUrl ?? raw.image ?? ""),
+    imageUrlRemote: String(raw.imageUrl ?? raw.image ?? ""),
     scrapedAt: typeof raw.scrapedAt === "number" ? raw.scrapedAt : Date.now(),
     items,
   };

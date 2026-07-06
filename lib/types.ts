@@ -20,6 +20,7 @@ export interface SkinItem {
   id: string;
   name: string;
   imageUrl: string;
+  imageUrlRemote?: string;
   rarity: Rarity;
   statTrak: boolean;
   wears: WearTier[];
@@ -31,6 +32,7 @@ export interface CaseDefinition {
   name: string;
   price: number;
   imageUrl: string;
+  imageUrlRemote?: string;
   items: SkinItem[];
   scrapedAt: number;
 }

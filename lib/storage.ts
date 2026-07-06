@@ -5,10 +5,12 @@ const KEYS = {
   history: "keydrop-sim:history",
   battleHistory: "keydrop-sim:battleHistory",
   clientSeed: "keydrop-sim:clientSeed",
+  serverSeed: "keydrop-sim:serverSeed",
   lastNonce: "keydrop-sim:lastNonce",
+  simMode: "keydrop-sim:simMode",
 } as const;
 
-const DEFAULT_BALANCE = 10000;
+export const DEFAULT_BALANCE = 10000;
 const MAX_HISTORY = 50;
 const MAX_BATTLE_HISTORY = 50;
 
@@ -122,4 +124,21 @@ export function getLastNonce(): number {
 export function setLastNonce(n: number): void {
   if (!Number.isFinite(n) || n < 0) return;
   safeSet(KEYS.lastNonce, String(n));
+}
+
+export function getServerSeed(fallback: string): string {
+  return safeGet(KEYS.serverSeed) ?? fallback;
+}
+
+export function setServerSeed(seed: string): void {
+  safeSet(KEYS.serverSeed, seed);
+}
+
+export function getSimMode(): "stats" | "realistic" {
+  const raw = safeGet(KEYS.simMode);
+  return raw === "realistic" ? "realistic" : "stats";
+}
+
+export function setSimMode(mode: "stats" | "realistic"): void {
+  safeSet(KEYS.simMode, mode);
 }

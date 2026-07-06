@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit",
-    "test:engine": "tsx lib/caseEngine.test.ts"
+    "test:engine": "tsx lib/caseEngine.test.ts",
+    "mirror:images": "tsx scripts/mirror-images.ts"
   },
   "dependencies": {
     "next": "14.2.5",

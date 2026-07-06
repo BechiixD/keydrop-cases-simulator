@@ -5,16 +5,17 @@ import {
   type NormalizeWarning,
 } from "@/lib/scraper/normalize";
 import { readCache, writeCache } from "@/lib/scraper/cache";
+import { runMirror } from "@/lib/mirror";
 import type { CasesCache, CaseDefinition } from "@/lib/types";
 
 interface ScrapeRequest {
   json?: string;
   cases?: unknown;
-  mode?: "replace" | "merge" | "remove" | "clear";
+  mode?: "replace" | "merge" | "remove" | "clear" | "mirror-images";
   slugs?: string[];
 }
 
-type Mode = "replace" | "merge" | "remove" | "clear";
+type Mode = "replace" | "merge" | "remove" | "clear" | "mirror-images";
 
 function parseCases(raw: unknown): CaseDefinition[] {
   if (Array.isArray(raw)) return normalizeScrape(raw);
@@ -45,10 +46,21 @@ export async function POST(req: Request): Promise<NextResponse> {
   }
 
   const mode: Mode =
-    body.mode === "merge" || body.mode === "remove" || body.mode === "clear"
+    body.mode === "merge" || body.mode === "remove" || body.mode === "clear" || body.mode === "mirror-images"
       ? body.mode
       : "replace";
 
+  if (mode === "mirror-images") {
+    try {
+      const result = await runMirror();
+      return NextResponse.json({ ok: true, ...result });
+    } catch (err) {
+      return NextResponse.json(
+        { ok: false, reason: "mirror_failed", message: err instanceof Error ? err.message : String(err) },
+        { status: 500 },
+      );
+    }
+  }
   if (mode === "remove" || mode === "clear") {
     const current = await readCache();
     let nextCases: CaseDefinition[];

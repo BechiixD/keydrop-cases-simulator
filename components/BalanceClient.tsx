@@ -1,17 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import type { BattleResult, MultiBatchResult } from "@/lib/types";
 import { teamColor } from "@/lib/battleEngine";
 import {
+  adjustBalance,
   clearBattleHistory,
   clearHistory,
+  DEFAULT_BALANCE,
   getBalance,
   getBattleHistory,
   getHistory,
   resetBalance,
   setBalance as setBalanceStore,
 } from "@/lib/storage";
+
+const PRESETS = [1000, 10000, 50000, 100000, 1000000, 10000000] as const;
 
 function fmt(n: number): string {
   return n.toLocaleString("en-US", { maximumFractionDigits: 2 });
@@ -22,14 +26,23 @@ function pct(n: number): string {
 function when(ts: number): string {
   return new Date(ts).toLocaleString();
 }
+function fmtShort(n: number): string {
+  if (n >= 1_000_000) return `${(n / 1_000_000).toFixed(n % 1_000_000 === 0 ? 0 : 1)}M`;
+  if (n >= 1_000) return `${(n / 1_000).toFixed(n % 1_000 === 0 ? 0 : 1)}k`;
+  return String(n);
+}
 
 export function BalanceClient() {
   const [balance, setBalance] = useState<number>(10000);
   const [history, setHistory] = useState<MultiBatchResult[]>([]);
   const [battleHistory, setBattleHistory] = useState<BattleResult[]>([]);
   const [depositAmt, setDepositAmt] = useState<number>(1000);
+  const [withdrawAmt, setWithdrawAmt] = useState<number>(1000);
+  const [setToAmt, setSetToAmt] = useState<number>(10000);
   const [ready, setReady] = useState(false);
   const [tab, setTab] = useState<"batches" | "battles">("batches");
+  const [toast, setToast] = useState<string | null>(null);
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setBalance(getBalance());
@@ -38,14 +51,60 @@ export function BalanceClient() {
     setReady(true);
   }, []);
 
+  const showToast = useCallback((msg: string) => {
+    if (toastTimer.current) clearTimeout(toastTimer.current);
+    setToast(msg);
+    toastTimer.current = setTimeout(() => setToast(null), 2500);
+  }, []);
+
   function doDeposit(): void {
     const next = getBalance() + Math.max(0, Math.floor(depositAmt));
     setBalanceStore(next);
     setBalance(next);
+    showToast(`Deposited ${fmt(depositAmt)} — new balance ${fmt(next)}`);
+  }
+  function doWithdraw(): void {
+    const amt = Math.max(0, Math.floor(withdrawAmt));
+    if (amt <= 0 || amt > balance) return;
+    const next = adjustBalance(-amt);
+    setBalance(next);
+    showToast(`Withdrew ${fmt(amt)} — new balance ${fmt(next)}`);
+  }
+  function doSetTo(): void {
+    const v = Math.max(0, Math.floor(setToAmt));
+    if (balance > 1_000_000 && v < balance / 10) {
+      if (
+        typeof window === "object" &&
+        !window.confirm(
+          `Set balance from ${fmt(balance)} to ${fmt(v)}? This is a large drop.`,
+        )
+      ) {
+        return;
+      }
+    }
+    setBalanceStore(v);
+    setBalance(v);
+    showToast(`Balance set to ${fmt(v)}`);
+  }
+  function doPreset(n: number): void {
+    if (balance > 1_000_000 && n < balance / 10) {
+      if (
+        typeof window === "object" &&
+        !window.confirm(
+          `Set balance from ${fmt(balance)} to ${fmt(n)}? This is a large drop.`,
+        )
+      ) {
+        return;
+      }
+    }
+    setBalanceStore(n);
+    setBalance(n);
+    showToast(`Balance set to ${fmt(n)}`);
   }
   function doReset(): void {
     resetBalance();
     setBalance(getBalance());
+    showToast(`Reset to default ${fmt(DEFAULT_BALANCE)}`);
   }
   function doClearHistory(): void {
     if (
@@ -97,33 +156,98 @@ export function BalanceClient() {
 
       <section className="grid gap-3 md:grid-cols-2">
         <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
-          <div className="text-xs uppercase tracking-wider text-white/50">
-            Current balance
+          <div className="flex items-center justify-between">
+            <div className="text-xs uppercase tracking-wider text-white/50">
+              Current balance
+            </div>
+            {toast && (
+              <div className="animate-pulse rounded bg-amber-400/15 px-2 py-0.5 text-[11px] text-amber-300">
+                {toast}
+              </div>
+            )}
           </div>
           <div className="text-3xl font-semibold text-amber-400">
-            {ready ? fmt(balance) : "…"}
+            {ready ? fmt(balance) : <span className="inline-block h-8 w-32 animate-pulse rounded bg-white/10" />}
           </div>
+
           <div className="flex items-center gap-2">
             <input
               type="number"
               min={0}
-              value={depositAmt}
+              value={setToAmt}
               onChange={(e) =>
-                setDepositAmt(Math.max(0, Math.floor(Number(e.target.value))))
+                setSetToAmt(Math.max(0, Math.floor(Number(e.target.value) || 0)))
               }
               className="w-32 rounded bg-[#0b0e14] border border-white/10 px-2 py-1 text-sm tabular-nums"
             />
             <button
-              onClick={doDeposit}
-              className="rounded border border-amber-400/40 px-3 py-1 text-sm text-amber-400 hover:bg-amber-400/10"
+              onClick={doSetTo}
+              className="rounded border border-white/10 px-3 py-1 text-sm text-white/70 hover:bg-white/5"
             >
-              deposit
+              set to
             </button>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-1.5">
+            <span className="text-[10px] uppercase tracking-wider text-white/30 mr-1">
+              presets
+            </span>
+            {PRESETS.map((n) => (
+              <button
+                key={n}
+                onClick={() => doPreset(n)}
+                className="rounded border border-white/10 px-1.5 py-0.5 text-[11px] text-white/50 hover:bg-amber-400/10 hover:text-amber-400 hover:border-amber-400/30 transition"
+              >
+                {fmtShort(n)}
+              </button>
+            ))}
+          </div>
+
+          <div className="border-t border-white/5 pt-2 space-y-2">
+            <div className="flex items-center gap-2">
+              <input
+                type="number"
+                min={0}
+                value={depositAmt}
+                onChange={(e) =>
+                  setDepositAmt(Math.max(0, Math.floor(Number(e.target.value) || 0)))
+                }
+                className="w-32 rounded bg-[#0b0e14] border border-white/10 px-2 py-1 text-sm tabular-nums"
+              />
+              <button
+                onClick={doDeposit}
+                className="rounded border border-emerald-400/30 px-3 py-1 text-sm text-emerald-400 hover:bg-emerald-400/10"
+              >
+                deposit (+)
+              </button>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="number"
+                min={0}
+                max={balance}
+                value={withdrawAmt}
+                onChange={(e) =>
+                  setWithdrawAmt(Math.max(0, Math.floor(Number(e.target.value) || 0)))
+                }
+                className="w-32 rounded bg-[#0b0e14] border border-white/10 px-2 py-1 text-sm tabular-nums"
+              />
+              <button
+                onClick={doWithdraw}
+                disabled={withdrawAmt <= 0 || withdrawAmt > balance}
+                className="rounded border border-red-400/30 px-3 py-1 text-sm text-red-400 hover:bg-red-400/10 disabled:opacity-30"
+              >
+                withdraw (−)
+              </button>
+            </div>
+          </div>
+
+          <div className="border-t border-white/5 pt-2">
             <button
               onClick={doReset}
-              className="rounded border border-white/10 px-3 py-1 text-sm hover:bg-white/5"
+              className="rounded border border-white/10 px-3 py-1 text-xs text-white/40 hover:bg-white/5"
             >
-              reset to 10,000
+              reset (default {fmtShort(DEFAULT_BALANCE)})
             </button>
           </div>
         </div>
@@ -229,7 +353,10 @@ export function BalanceClient() {
           )}
         </div>
         {!ready ? (
-          <div className="text-sm text-white/40">…</div>
+          <div className="space-y-2">
+            <div className="h-16 animate-pulse rounded-xl bg-white/5" />
+            <div className="h-16 animate-pulse rounded-xl bg-white/5" />
+          </div>
         ) : tab === "batches" && history.length === 0 ? (
           <div className="rounded-lg border border-white/10 bg-white/5 p-6 text-sm text-white/60">
             No batches yet. Visit the{" "}

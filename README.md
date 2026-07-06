@@ -37,8 +37,13 @@ time?"*
 - ❌ Not a real gambling site — no real money, no deposits, no withdrawals.
 - ❌ Not affiliated with keydrop — it's an independent strategy-testing tool.
 - ❌ No keydrop account integration, no Steam login, no trade offers.
-- ❌ No case-open animation in the MVP (pure stats only, chosen for speed
-  when running hundreds of opens).
+- ❌ No case-open animation in the stats batch (pure stats only, chosen for
+  speed when running hundreds of opens). A realistic single-case open mode
+  with animation exists in Phase 2.
+- The `/sim` page is organized in two modes: **Stats batch** (multi-case
+  batch runs with pure stats) and **Realistic** (single-case open with a reel
+  animation). The provably-fair chain (server seed, client seed, nonce) is
+  shared across both modes.
 - ❌ Not for public deployment or monetization.
 
 ---
@@ -73,7 +78,26 @@ Other scripts:
 ```bash
 pnpm typecheck     # tsc --noEmit
 pnpm test:engine   # tsx lib/caseEngine.test.ts  (10k opens + mass-preservation gate)
+pnpm mirror:images # downloads remote images → public/img/ for local/offline use
 ```
+
+### Image assets
+
+The cache stores **remote** image URLs (`https://cdnkd.com/...`). Running
+`pnpm mirror:images` downloads them to `public/img/` and rewrites the cache so
+`imageUrl` points to the local copy (`/img/cases/<slug>.png`,
+`/img/skins/<id>.png`). The original remote URL is preserved in
+`imageUrlRemote`.
+
+- The mirror is **idempotent** — re-running only downloads missing assets,
+  leaving already-local files untouched.
+- After adding new cases via paste, run `pnpm mirror:images` and commit the
+  updated `public/img/` files so other contributors get images offline.
+- To replace an image, swap the file under `public/img/` and re-commit.
+  The mirror won't overwrite it.
+- `/img-status` shows a table of all mirrored assets, their local paths,
+  remote origins, and image previews. It also has a "Run mirror now" button
+  that mirrors server-side via `/api/scrape`.
 
 Then visit:
 
@@ -138,16 +162,22 @@ keydrop-sim/
 │   ├── cases/[slug]/page.tsx      # case detail
 │   ├── sim/page.tsx               # batch simulator
 │   ├── balance/page.tsx           # balance + history
+│   ├── img-status/page.tsx        # image mirror status
 │   └── api/
-│       ├── scrape/route.ts        # refresh cache
+│       ├── scrape/route.ts        # refresh cache, manage cases, mirror images
 │       └── provably-fair/route.ts # verify a drop
 ├── lib/
 │   ├── scraper/           # keydrop fetch + normalize + cache
 │   ├── provablyFair.ts    # HMAC_SHA256 + SHA256
 │   ├── caseEngine.ts      # openOnce / runBatch / runMultiBatch
+│   ├── mirror.ts          # image download + local-mirror logic
 │   ├── storage.ts         # typed localStorage wrappers
 │   └── types.ts           # shared TypeScript types
 ├── components/            # React UI components
+├── scripts/
+│   └── mirror-images.ts   # CLI wrapper for `lib/mirror.ts`
+├── public/
+│   └── img/               # mirrored case + skin images (committed)
 └── data/
     └── cases-cache.json   # last successful scrape (committed)
 ```
@@ -159,7 +189,7 @@ keydrop-sim/
 The MVP scope and step-by-step build checklist live in [`TODO.md`](./TODO.md).
 Track progress there — checkboxes are updated as each step is verified.
 
-**MVP included:**
+**MVP included (all done):**
 - Case grid (browse, search, multi-select)
 - Single case detail page (skins, per-wear odds + values)
 - Batch simulator with pure-stats output
@@ -169,8 +199,12 @@ Track progress there — checkboxes are updated as each step is verified.
 - Per-wear odds and per-wear values
 - StatTrak as separate skin entries
 
-**Post-MVP (not in scope now):**
-- Case-open animation
+**Post-MVP / Phase 2 (in progress, see TODO.md):**
+- Realistic case-open animation (single-case + auto-open N in a row)
+- Balance set-to-value + presets + withdraw
+- Image assets mirrored locally into `public/img/` for offline/editable use
+- `/sim` reorganized into Stats batch & Realistic modes
+- Frontend polish pass (shared components, a11y, responsive audit)
 - Case battles, upgrader, skin changer, swipe mode
 - Steam login, real money, withdrawals
 - Continuous float (0–1) simulation

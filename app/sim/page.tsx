@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { Suspense } from "react";
 import { listCases } from "@/lib/scraper/cache";
-import { randomClientSeed, randomServerSeed } from "@/lib/provablyFair";
-import { SimClient } from "@/components/SimClient";
+import { SimPageClient } from "@/components/SimPageClient";
 import type { CaseDefinition } from "@/lib/types";
+
+export const dynamic = "force-dynamic";
 
 export default async function SimPage() {
   const cases: CaseDefinition[] = await listCases();
@@ -16,13 +18,9 @@ export default async function SimPage() {
       </div>
     );
   }
-  const initialServerSeed = randomServerSeed();
-  const initialClientSeed = randomClientSeed();
   return (
-    <SimClient
-      cases={cases}
-      initialServerSeed={initialServerSeed}
-      initialClientSeed={initialClientSeed}
-    />
+    <Suspense fallback={<div className="text-sm text-white/40">Loading...</div>}>
+      <SimPageClient cases={cases} />
+    </Suspense>
   );
 }

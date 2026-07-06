@@ -4,20 +4,18 @@ import { useEffect, useMemo, useState } from "react";
 import type { BatchResult, CaseDefinition, MultiBatchResult } from "@/lib/types";
 import { runMultiBatch } from "@/lib/caseEngine";
 import {
-  hashServerSeed,
-  randomClientSeed,
-  randomServerSeed,
-} from "@/lib/provablyFair";
-import {
   adjustBalance,
   getBalance,
   getClientSeed,
   getLastNonce,
+  getServerSeed,
   pushHistory,
   setClientSeed,
   setLastNonce,
+  setServerSeed,
 } from "@/lib/storage";
 import { SimVerifier } from "@/components/SimVerifier";
+import { ProvablyFairPanel, type ProvablyFairState } from "@/components/ProvablyFairPanel";
 import {
   RARITY_COLORS,
   WEAR_COLORS,
@@ -44,7 +42,9 @@ export function SimClient({
   initialServerSeed: string;
   initialClientSeed: string;
 }) {
-  const [serverSeed, setServerSeed] = useState(initialServerSeed);
+  const [serverSeed, setServerSeedState] = useState(() =>
+    getServerSeed(initialServerSeed),
+  );
   const [serverSeedRevealed, setServerSeedRevealed] = useState(false);
   const [clientSeed, setClientSeedState] = useState(() =>
     getClientSeed(initialClientSeed),
@@ -87,11 +87,6 @@ export function SimClient({
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const serverSeedHash = useMemo(
-    () => hashServerSeed(serverSeed),
-    [serverSeed],
-  );
-
   const totalCost = useMemo(() => {
     let cost = 0;
     for (const c of cases) {
@@ -123,20 +118,22 @@ export function SimClient({
   }
 
   function reshuffle(): void {
-    setServerSeed(randomServerSeed());
+    const arr = new Uint8Array(32);
+    crypto.getRandomValues(arr);
+    const hex = Array.from(arr, (b) => b.toString(16).padStart(2, "0")).join("");
+    setServerSeedState(hex);
+    setServerSeed(hex);
     setServerSeedRevealed(false);
     setResult(null);
   }
 
-  function newClient(): void {
-    const cs = randomClientSeed();
-    setClientSeedState(cs);
-    setClientSeed(cs);
-  }
-
-  function editClient(v: string): void {
-    setClientSeedState(v);
-    setClientSeed(v);
+  const pfState: ProvablyFairState = { serverSeed, clientSeed, startNonce };
+  function handlePfChange(next: ProvablyFairState): void {
+    setServerSeedState(next.serverSeed);
+    setServerSeed(next.serverSeed);
+    setClientSeedState(next.clientSeed);
+    setClientSeed(next.clientSeed);
+    setStartNonce(next.startNonce);
   }
 
   function run(): void {
@@ -183,7 +180,11 @@ export function SimClient({
         <div className="text-sm text-white/50">
           Balance{" "}
           <span className={balance < totalCost && totalCost > 0 ? "text-red-400" : "text-amber-400"}>
-            {balanceBusy ? "…" : fmt(balance)}
+            {balanceBusy ? (
+              <span className="inline-block h-4 w-16 animate-pulse rounded bg-white/10 align-middle" />
+            ) : (
+              fmt(balance)
+            )}
           </span>{" "}
           coins
         </div>
@@ -251,15 +252,9 @@ export function SimClient({
 
       <section className="grid gap-4 md:grid-cols-2">
         <ProvablyFairPanel
-          serverSeedHash={serverSeedHash}
-          serverSeed={serverSeed}
+          state={pfState}
+          onChange={handlePfChange}
           revealed={serverSeedRevealed}
-          clientSeed={clientSeed}
-          onClientSeedChange={editClient}
-          onNewClient={newClient}
-          startNonce={startNonce}
-          onStartNonceChange={setStartNonce}
-          onReshuffle={reshuffle}
         />
         <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
           <div className="text-xs uppercase tracking-wider text-white/50">
@@ -274,7 +269,11 @@ export function SimClient({
             </dd>
             <dt className="text-white/50">Balance after</dt>
             <dd className="text-right tabular-nums">
-              {balanceBusy ? "…" : fmt(Math.max(0, balance - totalCost))}
+              {balanceBusy ? (
+                <span className="inline-block h-4 w-16 animate-pulse rounded bg-white/10" />
+              ) : (
+                fmt(Math.max(0, balance - totalCost))
+              )}
             </dd>
           </dl>
         </div>
@@ -294,7 +293,11 @@ export function SimClient({
             <span>
               Balance:{" "}
               <span className={balance < totalCost ? "font-semibold text-red-400" : "font-semibold text-emerald-400"}>
-                {balanceBusy ? "…" : fmt(balance)}
+            {balanceBusy ? (
+              <span className="inline-block h-5 w-20 animate-pulse rounded bg-white/10" />
+            ) : (
+              fmt(balance)
+            )}
               </span>
               {balance >= totalCost ? " ✅" : " ❌"}
             </span>
@@ -325,92 +328,6 @@ export function SimClient({
           <SimResults result={result} />
         </div>
       )}
-    </div>
-  );
-}
-
-function ProvablyFairPanel({
-  serverSeedHash,
-  serverSeed,
-  revealed,
-  clientSeed,
-  onClientSeedChange,
-  onNewClient,
-  startNonce,
-  onStartNonceChange,
-  onReshuffle,
-}: {
-  serverSeedHash: string;
-  serverSeed: string;
-  revealed: boolean;
-  clientSeed: string;
-  onClientSeedChange: (v: string) => void;
-  onNewClient: () => void;
-  startNonce: number;
-  onStartNonceChange: (n: number) => void;
-  onReshuffle: () => void;
-}) {
-  return (
-    <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
-      <div className="flex items-center justify-between">
-        <div className="text-xs uppercase tracking-wider text-white/50">
-          Provably-fair
-        </div>
-        <button
-          onClick={onReshuffle}
-          className="rounded border border-white/10 px-2 py-1 text-xs hover:bg-white/5"
-        >
-          reshuffle server seed
-        </button>
-      </div>
-      <div>
-        <label className="block text-xs uppercase tracking-wider text-white/50">
-          Server seed hash (shown before run)
-        </label>
-        <div className="mt-1 break-all rounded bg-[#0b0e14] border border-white/10 px-2 py-1 font-mono text-xs text-amber-400">
-          {serverSeedHash}
-        </div>
-      </div>
-      <div>
-        <label className="block text-xs uppercase tracking-wider text-white/50">
-          Server seed (revealed after run)
-        </label>
-        <div className="mt-1 break-all rounded bg-[#0b0e14] border border-white/10 px-2 py-1 font-mono text-xs">
-          {revealed ? serverSeed : "[hidden — run to reveal]"}
-        </div>
-      </div>
-      <div>
-        <label className="block text-xs uppercase tracking-wider text-white/50">
-          Client seed
-        </label>
-        <div className="mt-1 flex gap-2">
-          <input
-            value={clientSeed}
-            onChange={(e) => onClientSeedChange(e.target.value)}
-            className="flex-1 rounded bg-[#0b0e14] border border-white/10 px-2 py-1 font-mono text-xs"
-          />
-          <button
-            onClick={onNewClient}
-            className="rounded border border-white/10 px-2 py-1 text-xs hover:bg-white/5"
-          >
-            random
-          </button>
-        </div>
-      </div>
-      <div>
-        <label className="block text-xs uppercase tracking-wider text-white/50">
-          Start nonce (resumes from last run)
-        </label>
-        <input
-          type="number"
-          min={0}
-          value={startNonce}
-          onChange={(e) =>
-            onStartNonceChange(Math.max(0, Number(e.target.value)))
-          }
-          className="mt-1 w-40 rounded bg-[#0b0e14] border border-white/10 px-2 py-1 font-mono text-xs"
-        />
-      </div>
     </div>
   );
 }
@@ -514,7 +431,7 @@ function SimResults({ result }: { result: MultiBatchResult }) {
       </div>
 
       <SectionHeader n={4} title="Per-case breakdown" />
-      <div className="overflow-hidden rounded-xl border border-white/10">
+      <div className="overflow-x-auto rounded-xl border border-white/10">
         <table className="w-full text-sm">
           <thead className="bg-white/5 text-left text-xs uppercase tracking-wider text-white/50">
             <tr>
@@ -693,7 +610,7 @@ function FreqTable({
 }) {
   const entries = Object.entries(data).sort((a, b) => b[1] - a[1]);
   return (
-    <div className="overflow-hidden rounded-xl border border-white/10">
+    <div className="overflow-x-auto rounded-xl border border-white/10">
       <div className="bg-white/5 px-3 py-2 text-xs uppercase tracking-wider text-white/50">
         {title}
       </div>

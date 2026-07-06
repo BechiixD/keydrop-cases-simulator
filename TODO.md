@@ -305,6 +305,184 @@ Out of scope (post-MVP):
 
 ---
 
+## Phase 2 — Realistic opening, balance control, image cache, frontend polish
+
+> **Scope change.** The original MVP explicitly excluded the case-open
+> animation (rule #1 in `README.md`). The MVP is now functionally complete and
+> verified, so this restriction is lifted for Phase 2. The sim page is
+> reorganized into **two modes**: a rústico/mathematical stats batch (the
+> current `/sim`) and a **realistic** single-case open with images + animation.
+
+Constraints kept from the MVP rules: values stay in keydrop coins, the
+provably-fair chain stays verifiable, no `Math.random` in the engine, no real
+money, no database. New work must not regress any of the existing verification
+gates (`pnpm test:engine`, `pnpm typecheck`, the verify endpoint).
+
+### 14. Balance management improvements
+
+Today `/balance` only exposes **deposit** (add) and **reset to 10,000**
+(`components/BalanceClient.tsx`). The storage layer (`lib/storage.ts`) already
+exports a typed `setBalance(n)`, so the work is mostly UI.
+
+- [x] 14.1 Add a **"Set to"** field on the balance card: a numeric input plus a
+      button that calls `setBalance` directly (overwrites instead of adding).
+      Validate `>= 0`, integers only, with a confirm if the value would wipe a
+      balance > 1M (guardrail against fat-finger zeros).
+- [x] 14.2 Add **quick-set presets** as a row of small buttons under the input:
+      `1k · 10k · 50k · 100k · 1M · 10M`. Reuses `setBalance`.
+- [x] 14.3 Add a **withdraw** action (subtract instead of add), mirroring
+      deposit but calling `adjustBalance(-n)`. Disables when `n > balance`.
+- [x] 14.4 Rename the existing "reset to 10,000" button to "reset (default
+      10k)" and keep it, but make the default configurable via a
+      `DEFAULT_BALANCE` constant exported from `lib/storage.ts` (already there)
+      so presets/editing share one source of truth.
+- [x] 14.5 Show a small "balance changed to X" toast/inline confirmation after
+      any explicit set/withdraw so the user sees the new value without scanning.
+
+### 15. Image asset cache (local mirror committed to the repo)
+
+`data/cases-cache.json` currently stores **remote** image URLs
+(`https://cdnkd.com/...`, `https://key-drop.com/...`). Those will break if
+keydrop changes CDN paths or hotlink-blocks. We want a committed local mirror
+so the repo is self-contained and a contributor can swap any image by editing
+a file under `public/img/`.
+
+- [x] 15.1 Add `public/img/cases/<slug>.png` and `public/img/skins/<id>.png`
+      directory layout. `.gitignore` must NOT exclude them.
+- [x] 15.2 New script `scripts/mirror-images.ts` (run via `pnpm mirror:images`):
+      - Reads `data/cases-cache.json`.
+      - For every `CaseDefinition.imageUrl` and every `SkinItem.imageUrl`, if
+        the URL is remote, `fetch` it with retries + a realistic UA, save the
+        bytes to the corresponding local path (hash the URL to dedupe), and
+        rewrite the cache entry's `imageUrl` to `/img/...`.
+      - Before rewriting, stores the original remote URL in a sibling field
+        `imageUrlRemote` so the mirror is reversible / auditable.
+      - Idempotent: if `imageUrl` already starts with `/img/`, skip; if the
+        local file is missing, re-download; if the remote fetch 403s, leave the
+        entry pointing at the remote URL and log a warning (do not break).
+      - Writes a small `public/img/manifest.json` mapping `localPath -> remoteUrl`
+        + `downloadedAt` + `bytes` for traceability.
+- [x] 15.3 Update `lib/scraper/normalize.ts` so freshly pasted/normalized cases
+      keep **remote** URLs in `imageUrl` and also fill `imageUrlRemote`. The
+      mirror script (15.2) is the one that flips a case from remote-mode to
+      local-mode. This keeps the scrape path unchanged and the mirror opt-in.
+- [x] 15.4 Update `lib/types.ts` `CaseDefinition` and `SkinItem` to add an
+      optional `imageUrlRemote?: string`. Keep `imageUrl` as the field the UI
+      renders (local if mirrored, remote otherwise) so no UI changes needed.
+- [x] 15.5 Add a one-page **/img-status** admin view (or a panel on `/`) that
+      reads `public/img/manifest.json` and shows: total assets, mirrored count,
+      still-remote count, last mirror run, and a "Run mirror now" button that
+      POSTs to `/api/scrape` with `{action:"mirror-images"}` (new route mode).
+      Goal: a contributor with no local Node can still see what's mirrored.
+- [x] 15.6 Document the mirror flow in `README.md`: "Images are local by
+      default; run `pnpm mirror:images` after pasting new cases to fetch and
+      commit them. Swap any file under `public/img/` to change an image."
+
+### 16. Realistic single-case open mode (keydrop-style)
+
+A new user-facing flow that opens **one case at a time** with a visual reel,
+like keydrop's open page. The math stays the same (`openOnce` from
+`caseEngine.ts`) — only the presentation changes.
+
+- [x] 16.1 New component `components/OpenRealistic.tsx`:
+      - Inputs: a single `CaseDefinition`, the provably-fair panel state (server
+        seed / client seed / nonce), and the user's balance.
+      - "Open" button: validates balance >= case.price, calls `openOnce`,
+        deducts `case.price` via `adjustBalance`, advances the global nonce
+        (`setLastNonce(n+1)`), pushes the single drop into a small per-session
+        open history (separate localStorage key `keydrop-sim:opens`).
+      - Animation: horizontal reel of the case's items scrolling, decelerating,
+        landing on the winning item centered. Uses item images. Reel order is
+        deterministic from the case's item list (NOT from the seed — the seed
+        only decides the winner; the reel is just visual and the winning slot
+        is revealed by slowing the scroll and snapping the winner to center,
+        then showing the rarity color flash + value).
+      - Result card under the reel: big item image, name, wear, rarity color
+        bar, StatTrak tag, value in coins, nonce + "Verify" button
+        (reuses `SimVerifier`).
+      - Provably-fair panel identical to the stats batch (same server seed /
+        client seed / nonce, shared across modes), so a user can interleave
+        realistic opens with batch runs on the same chain.
+- [x] 16.2 Sound is optional and OFF by default (a toggle in the panel). Ship
+      without audio assets for v1; the toggle just reserves the slot.
+- [x] 16.3 Keep the math verifiable: the open must store `{nonce, clientSeed,
+      ticket, serverSeedHash}` on each drop exactly like `Drop` already does.
+      The verify endpoint already handles single-drop verification.
+- [x] 16.4 Auto-open / "open N realistically in a row" mode: a slider 1..50
+      that queues sequential opens with a short delay between each, showing a
+      mini-reel for each (or an abbreviated flash for runs > 10 to keep it
+      responsive). The full per-drop table is still saved to history as a
+      `BatchResult` with `count = N` so it shows up on `/balance` like any
+      other batch.
+- [x] 16.5 Add the realistic open as a CTA on the case detail page
+      (`/cases/[slug]`): a "Open realistically" button that routes to
+      `/sim?mode=realistic&slug=<slug>`. Also add it on the case grid card
+      hover ("Open" quick action) for power users.
+
+### 17. Reorganize `/sim` into two modes
+
+- [x] 17.1 `/sim` gets a **mode switcher** at the top: two tabs:
+      - **`Stats batch`** — the current rústico/mathematical flow (multi-select
+        cases + counts + run + pure stats). Unchanged behavior, just renamed
+        and re-skinned to match.
+      - **`Realistic`** — mounts `OpenRealistic` (step 16) with a single-case
+        picker (default = first case in cache).
+- [x] 17.2 Mode is stored in the URL (`?mode=stats|realistic`) and in
+      localStorage so reloads and CTAs from other pages land on the right tab.
+      The existing "Open selected in sim" preset from the home page keeps
+      targeting the Stats batch tab (preset key `keydrop-sim:simPreset`).
+- [x] 17.3 The provably-fair panel (server seed hash / client seed / nonce /
+      reshuffle) is shared between both modes — factor it into a single
+      `<ProvablyFairPanel>` used by both `SimClient` (stats) and
+      `OpenRealistic`, advancing the same nonce so the chain stays continuous
+      across modes.
+- [x] 17.4 Update the `README.md` "What it is not" bullet that says "No
+      case-open animation in the MVP" — replace with "Stats batch mode has no
+      animation (chosen for batch speed); a Realistic single-case open mode
+      with animation exists in Phase 2."
+
+### 18. Frontend polish pass
+
+A thin design-system + UX pass across all pages, no behavior changes.
+
+- [x] 18.1 Extract shared UI primitives into `components/ui/` (or
+      `lib/ui/components.tsx`): `Stat`, `SectionHeader`, `FreqTable`,
+      `RoiGauge`, `Tab`, `Pill`, `Card`. Currently these live inline in
+      `SimClient`; promote them so the realistic mode, balance page, and case
+      pages reuse them.
+- [x] 18.2 Add **active-route highlighting** in the nav (`app/layout.tsx`),
+      hover transitions on case cards, and consistent section spacing
+      (space-y-6 everywhere, not mixed space-y-3/4).
+- [x] 18.3 Loading & empty states: every page that reads from cache or
+      localStorage shows a skeleton/placeholder instead of `…` raw text when
+      `ready === false`. Empty states link to the page that would fill them
+      (`/balance` -> "no history, visit /sim").
+- [x] 18.4 Accessibility: focus rings on all interactive elements, `aria-label`
+      on icon-only buttons (verify, close), `aria-current="page"` on active nav
+      link, `lang="es"` is wrong — keep `lang="en"` since UI is English, but
+      make sure `<html lang>` is set correctly.
+- [x] 18.5 Responsive audit: confirm the sim case grid, batch result tables,
+      and battle result table scroll horizontally rather than overflow on
+      mobile widths (< 640px). Wrap long server seeds with `break-all`
+      (already done in some places; finish the rest).
+- [x] 18.6 Verify nothing regresses: `pnpm typecheck`, `pnpm test:engine`,
+      `pnpm build` all green after each sub-step above; tick a box only when
+      those three pass.
+
+---
+
+## Phase 2 build order (verify each before moving on)
+
+1. **14** (balance) — pure isolated UI/storage change, no engine risk. Ship
+   first; lowest blast radius.
+2. **15** (image mirror) — needed before the realistic open looks good.
+   Includes the `imageUrlRemote` type addition.
+3. **16** (realistic open) — depends on 15 for crisp images.
+4. **17** (sim reorg) — depends on 16 shipping the component.
+5. **18** (polish) — last, runs across everything done above.
+
+---
+
 ## Open risks
 
 1. **Keydrop API discovery** — their XHR may be gated by Cloudflare. Mitigation: manual JSON paste fallback (confirmed).

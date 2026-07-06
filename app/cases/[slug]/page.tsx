@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import type { CaseDefinition } from "@/lib/types";
 import { getCase } from "@/lib/scraper/cache";
 import { CaseSimCta } from "@/components/CaseSimCta";
@@ -72,8 +73,14 @@ export default async function CaseDetailPage({
               <span className="text-amber-400">{c.price.toLocaleString()}</span>{" "}
               coins · {c.items.length} items
             </p>
-            <div className="mt-3">
+            <div className="mt-3 flex items-center gap-4">
               <CaseSimCta c={c} />
+              <Link
+                href={`/sim?mode=realistic&slug=${c.slug}`}
+                className="rounded border border-amber-400/40 px-3 py-1 text-sm text-amber-400 hover:bg-amber-400/10 transition"
+              >
+                Open realistically
+              </Link>
             </div>
           </div>
           <div className="shrink-0 rounded-lg border border-white/10 bg-white/5 p-3 text-right text-sm">
@@ -110,7 +117,7 @@ export default async function CaseDetailPage({
         </div>
       </header>
 
-      <div className="overflow-hidden rounded-xl border border-white/10">
+      <div className="overflow-x-auto rounded-xl border border-white/10">
         <table className="w-full text-sm">
           <thead className="bg-white/5 text-left text-xs uppercase tracking-wider text-white/50">
             <tr>

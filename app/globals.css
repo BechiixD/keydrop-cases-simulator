@@ -11,3 +11,22 @@ body {
   background: #0b0e14;
   color: #e6e8ee;
 }
+
+*:focus-visible {
+  outline: 2px solid rgba(228, 174, 57, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.responsive-table {
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 640px) {
+  .responsive-table {
+    overflow-x: auto;
+  }
+  .responsive-table table {
+    min-width: 600px;
+  }
+}
