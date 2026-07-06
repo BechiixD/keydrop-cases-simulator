@@ -1,0 +1,102 @@
+import type { MultiBatchResult } from "@/lib/types";
+
+const KEYS = {
+  balance: "keydrop-sim:balance",
+  history: "keydrop-sim:history",
+  clientSeed: "keydrop-sim:clientSeed",
+  lastNonce: "keydrop-sim:lastNonce",
+} as const;
+
+const DEFAULT_BALANCE = 10000;
+const MAX_HISTORY = 50;
+
+function safeGet(key: string): string | null {
+  if (typeof window === "undefined") return null;
+  try {
+    return window.localStorage.getItem(key);
+  } catch {
+    return null;
+  }
+}
+
+function safeSet(key: string, value: string): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(key, value);
+  } catch {
+    /* ignore quota / disabled storage */
+  }
+}
+
+function safeRemove(key: string): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(key);
+  } catch {
+    /* noop */
+  }
+}
+
+export function getBalance(): number {
+  const raw = safeGet(KEYS.balance);
+  if (raw == null) return DEFAULT_BALANCE;
+  const n = parseFloat(raw);
+  return Number.isFinite(n) ? n : DEFAULT_BALANCE;
+}
+
+export function setBalance(n: number): void {
+  if (!Number.isFinite(n)) return;
+  safeSet(KEYS.balance, String(n));
+}
+
+export function adjustBalance(delta: number): number {
+  const next = Math.max(0, getBalance() + delta);
+  setBalance(next);
+  return next;
+}
+
+export function resetBalance(): number {
+  setBalance(DEFAULT_BALANCE);
+  return DEFAULT_BALANCE;
+}
+
+export function getHistory(): MultiBatchResult[] {
+  const raw = safeGet(KEYS.history);
+  if (!raw) return [];
+  try {
+    const parsed = JSON.parse(raw) as MultiBatchResult[];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+export function pushHistory(result: MultiBatchResult): MultiBatchResult[] {
+  const next = [result, ...getHistory()].slice(0, MAX_HISTORY);
+  safeSet(KEYS.history, JSON.stringify(next));
+  return next;
+}
+
+export function clearHistory(): void {
+  safeRemove(KEYS.history);
+}
+
+export function getClientSeed(fallback: string): string {
+  return safeGet(KEYS.clientSeed) ?? fallback;
+}
+
+export function setClientSeed(seed: string): void {
+  safeSet(KEYS.clientSeed, seed);
+}
+
+export function getLastNonce(): number {
+  const raw = safeGet(KEYS.lastNonce);
+  if (raw == null) return 0;
+  const n = parseInt(raw, 10);
+  return Number.isFinite(n) && n >= 0 ? n : 0;
+}
+
+export function setLastNonce(n: number): void {
+  if (!Number.isFinite(n) || n < 0) return;
+  safeSet(KEYS.lastNonce, String(n));
+}
