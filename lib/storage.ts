@@ -14,6 +14,11 @@ export const DEFAULT_BALANCE = 10000;
 const MAX_HISTORY = 50;
 const MAX_BATTLE_HISTORY = 50;
 
+function emitBalanceChange(): void {
+  if (typeof window === "undefined") return;
+  window.dispatchEvent(new CustomEvent("keydrop-balance-change"));
+}
+
 function safeGet(key: string): string | null {
   if (typeof window === "undefined") return null;
   try {
@@ -51,6 +56,7 @@ export function getBalance(): number {
 export function setBalance(n: number): void {
   if (!Number.isFinite(n)) return;
   safeSet(KEYS.balance, String(n));
+  emitBalanceChange();
 }
 
 export function adjustBalance(delta: number): number {

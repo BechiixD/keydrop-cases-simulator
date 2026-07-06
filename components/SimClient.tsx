@@ -16,6 +16,7 @@ import {
 } from "@/lib/storage";
 import { SimVerifier } from "@/components/SimVerifier";
 import { ProvablyFairPanel, type ProvablyFairState } from "@/components/ProvablyFairPanel";
+import { addDrops } from "@/lib/inventory";
 import {
   RARITY_COLORS,
   WEAR_COLORS,
@@ -57,6 +58,7 @@ export function SimClient({
   const [balanceBusy, setBalanceBusy] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [runStarted, setRunStarted] = useState(false);
+  const [sendToInventory, setSendToInventory] = useState(true);
 
   useEffect(() => {
     setBalance(getBalance());
@@ -166,6 +168,12 @@ export function SimClient({
     setBalance(newBalance);
     setLastNonce(startNonce + res.results.reduce((a, r) => a + r.count, 0));
     pushHistory(res);
+    if (sendToInventory) {
+      const allDrops = res.results.flatMap((r) => r.drops);
+      if (allDrops.length > 0) {
+        addDrops(allDrops, "batch", selections.map((s) => s.case.slug).join(","));
+      }
+    }
     setServerSeedRevealed(true);
     setResult(res);
     setRunStarted(false);
@@ -276,6 +284,15 @@ export function SimClient({
               )}
             </dd>
           </dl>
+          <label className="flex items-center gap-2 text-xs text-white/50 cursor-pointer pt-1 border-t border-white/5">
+            <input
+              type="checkbox"
+              checked={sendToInventory}
+              onChange={(e) => setSendToInventory(e.target.checked)}
+              className="accent-amber-400"
+            />
+            Send drops to inventory
+          </label>
         </div>
       </section>
 

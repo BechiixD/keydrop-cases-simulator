@@ -151,3 +151,11 @@ export interface BattleResult {
   winnerTeamIndex: number;
   userNet: number;
 }
+
+export interface InventoryItem {
+  uid: string;
+  drop: Drop;
+  acquiredAt: number;
+  source: "batch" | "realistic" | "battle";
+  sourceId: string;
+}

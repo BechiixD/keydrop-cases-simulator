@@ -8,6 +8,7 @@ const LINKS = [
   { href: "/", label: "Cases", icon: "grid" },
   { href: "/sim", label: "Simulator", icon: "play" },
   { href: "/battles", label: "Battles", icon: "battle" },
+  { href: "/inventory", label: "Inventory", icon: "inv" },
   { href: "/balance", label: "Balance", icon: "coin" },
   { href: "/pf-test", label: "PF Test", icon: "shield" },
 ];
@@ -55,9 +56,20 @@ function iconFor(id: string) {
   if (id === "grid") return <GridIcon />;
   if (id === "play") return <PlayIcon />;
   if (id === "battle") return <BattleIcon />;
+  if (id === "inv") return <InvIcon />;
   if (id === "coin") return <CoinIcon />;
   if (id === "shield") return <ShieldIcon />;
   return null;
+}
+
+function InvIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true" className="sm:w-[14px] sm:h-[14px]">
+      <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+      <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+      <line x1="12" y1="22.08" x2="12" y2="12" />
+    </svg>
+  );
 }
 
 export function NavLinks() {

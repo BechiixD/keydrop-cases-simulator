@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { BattleResult, MultiBatchResult } from "@/lib/types";
 import { teamColor } from "@/lib/battleEngine";
+import { getInventory, inventoryValue } from "@/lib/inventory";
 import {
   adjustBalance,
   clearBattleHistory,
@@ -42,12 +43,17 @@ export function BalanceClient() {
   const [ready, setReady] = useState(false);
   const [tab, setTab] = useState<"batches" | "battles">("batches");
   const [toast, setToast] = useState<string | null>(null);
+  const [invVal, setInvVal] = useState(0);
+  const [invCount, setInvCount] = useState(0);
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     setBalance(getBalance());
     setHistory(getHistory());
     setBattleHistory(getBattleHistory());
+    const inv = getInventory();
+    setInvVal(inventoryValue());
+    setInvCount(inv.length);
     setReady(true);
   }, []);
 
@@ -154,7 +160,7 @@ export function BalanceClient() {
         <span className="text-sm text-white/50">fake money · localStorage only</span>
       </header>
 
-      <section className="grid gap-3 md:grid-cols-2">
+      <section className="grid gap-3 md:grid-cols-3">
         <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
           <div className="flex items-center justify-between">
             <div className="text-xs uppercase tracking-wider text-white/50">
@@ -282,6 +288,29 @@ export function BalanceClient() {
               {pct(roi)}
             </dd>
           </dl>
+        </div>
+
+        <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-2">
+          <div className="text-xs uppercase tracking-wider text-white/50">
+            Inventory value
+          </div>
+          <div className="text-lg font-semibold text-emerald-400">
+            {ready ? fmt(invVal) : "…"} coins
+          </div>
+          <dl className="grid grid-cols-2 gap-y-1 text-sm">
+            <dt className="text-white/50">Items</dt>
+            <dd className="text-right tabular-nums">{invCount}</dd>
+            <dt className="text-white/50">Net worth</dt>
+            <dd className="text-right tabular-nums text-amber-400">
+              {fmt(balance + invVal)}
+            </dd>
+          </dl>
+          <a
+            href="/inventory"
+            className="inline-block rounded border border-amber-400/40 px-3 py-1 text-xs text-amber-400 hover:bg-amber-400/10"
+          >
+            Open inventory
+          </a>
         </div>
       </section>
 

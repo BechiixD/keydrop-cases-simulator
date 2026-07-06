@@ -503,6 +503,32 @@ the rest: layout, touch targets, text overflow, nav on narrow screens.
       smoke test at 360px and 768px viewports on `/`, `/sim` (both modes),
       `/balance`, `/battles`, `/cases/<slug>`.
 
+### 20. Inventory system — drops stored, sellable, tracked
+
+Case openings and battles now send won drops to an inventory instead of only
+subtracting entry cost. The inventory tracks every skin with its value, rarity,
+wear, and source. Items can be sold individually or in bulk to recover balance.
+
+- [x] 20.1 Add `InventoryItem` type (`lib/types.ts`) and `lib/inventory.ts`
+      storage layer (`addDrops`, `sellItem`, `sellAll`, `getInventory`,
+      `inventoryValue`, `clearInventory`). Max 500 items, FIFO eviction.
+- [x] 20.2 Wire inventory to `OpenRealistic` (single open + auto-open): drops
+      go to inventory with source `"realistic"`. Entry cost still subtracted.
+- [x] 20.3 Wire inventory to `SimClient` (batch stats): checkbox "Send drops
+      to inventory" (default ON). Drops go with source `"batch"`.
+- [x] 20.4 Wire inventory to `BattleClient`: user's drops from battle go to
+      inventory with source `"battle"`. `adjustBalance(userNet)` still runs
+      for net profit/loss on top of inventory.
+- [x] 20.5 Create `/inventory` page: grid of owned skins with image, rarity
+      color bar, wear badge, ST tag, value, source, sell button per item.
+      Filters: rarity, wear, source, sort (value/newest/rarity). Sell all
+      bulk button. Clear button (without payment, with confirm).
+- [x] 20.6 Update `/balance` page: add "Inventory value" card showing total
+      inventory value, item count, net worth (balance + inventory),
+      link to `/inventory`.
+- [x] 20.7 Nav link to `/inventory` with box icon.
+- [x] 20.8 Verify: `pnpm typecheck`, `pnpm test:engine`, `pnpm build`.
+
 ---
 
 ## Phase 2 build order (verify each before moving on)

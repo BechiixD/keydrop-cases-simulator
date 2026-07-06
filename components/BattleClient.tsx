@@ -15,6 +15,7 @@ import {
   randomClientSeed,
   randomServerSeed,
 } from "@/lib/provablyFair";
+import { addDrops } from "@/lib/inventory";
 import {
   adjustBalance,
   getBalance,
@@ -61,6 +62,43 @@ const PRESETS: FormatPreset[] = [
   { format: "2v2", label: "2v2", numTeams: 2, teamSize: 2 },
   { format: "3v3", label: "3v3", numTeams: 2, teamSize: 3 },
 ];
+
+function bestFit(drops: Drop[], target: number): Drop[] {
+  if (drops.length === 0 || target <= 0) return [];
+  const n = drops.length;
+  if (n > 20) {
+    const sorted = [...drops].sort((a, b) => b.value - a.value);
+    const sel: Drop[] = [];
+    let sum = 0;
+    for (const d of sorted) {
+      if (sum >= target) break;
+      sel.push(d);
+      sum += d.value;
+    }
+    return sel;
+  }
+  const total = 1 << n;
+  let bestMask = 0;
+  let bestError = Infinity;
+  let bestSum = 0;
+  for (let mask = 1; mask < total; mask++) {
+    let sum = 0;
+    for (let i = 0; i < n; i++) {
+      if (mask & (1 << i)) sum += drops[i].value;
+    }
+    const err = Math.abs(sum - target);
+    if (err < bestError || (err === bestError && sum < bestSum)) {
+      bestError = err;
+      bestMask = mask;
+      bestSum = sum;
+    }
+  }
+  const out: Drop[] = [];
+  for (let i = 0; i < n; i++) {
+    if (bestMask & (1 << i)) out.push(drops[i]);
+  }
+  return out;
+}
 
 export function BattleClient({
   cases,
@@ -156,6 +194,8 @@ export function BattleClient({
       setError(`Insufficient balance: need ${fmt(userCost)}, have ${fmt(balance)}.`);
       return;
     }
+    const newBal = adjustBalance(-userCost);
+    setBalance(newBal);
     const totalBots = preset.numTeams * preset.teamSize - 1;
     if (botSeeds.length < totalBots) {
       setError("Bot seeds not initialized.");
@@ -187,8 +227,15 @@ export function BattleClient({
     const totalOpens = preset.numTeams * preset.teamSize * selectedCases.reduce((s, c) => s + (rounds[c.slug] ?? 0), 0);
     const res = runBattle(cfg, serverSeed, startNonce);
     setLastNonce(startNonce + totalOpens);
-    adjustBalance(res.userNet);
-    setBalance(getBalance());
+    const userPlayer = res.players.find((p) => p.isUser);
+    if (userPlayer && userPlayer.teamIndex === res.winnerTeamIndex) {
+      const payoutValue = userPlayer.net + userPlayer.entryCost;
+      const candidates = userPlayer.drops;
+      const selected = bestFit(candidates, payoutValue);
+      if (selected.length > 0) {
+        addDrops(selected, "battle", `${res.format}:${res.mode}`);
+      }
+    }
     pushBattleHistory(res);
     setRevealed(true);
     setResult(res);

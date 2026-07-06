@@ -20,6 +20,7 @@ import {
 } from "@/lib/storage";
 import { SimVerifier } from "@/components/SimVerifier";
 import { ProvablyFairPanel, type ProvablyFairState } from "@/components/ProvablyFairPanel";
+import { addDrops } from "@/lib/inventory";
 import {
   RARITY_COLORS,
   WEAR_COLORS,
@@ -162,6 +163,7 @@ export function OpenRealistic({
     setBalance(newBalance);
     setLastNonce(nonce + 1);
     saveOpens([drop]);
+    addDrops([drop], "realistic", caseDef.slug);
 
     const winnerIdx = caseDef.items.findIndex((s) => s.id === drop.skin.id);
     const idx = winnerIdx >= 0 ? winnerIdx : 0;
@@ -225,6 +227,7 @@ export function OpenRealistic({
       startNonce: startN,
     });
     saveOpens(batch.drops);
+    addDrops(batch.drops, "realistic", caseDef.slug);
 
     const stripLen = caseDef.items.length;
     const itemStep = itemW + ITEM_GAP;
