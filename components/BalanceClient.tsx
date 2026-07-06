@@ -82,9 +82,10 @@ export function BalanceClient() {
   let battleLosses = 0;
   let battleNet = 0;
   for (const b of battleHistory) {
-    if (b.userDelta > 0) battleWins++;
-    else if (b.userDelta < 0) battleLosses++;
-    battleNet += b.userDelta;
+    const bNet = b.userNet ?? 0;
+    if (bNet > 0) battleWins++;
+    else if (bNet < 0) battleLosses++;
+    battleNet += bNet;
   }
 
   return (
@@ -336,7 +337,8 @@ function BattleHistoryCard({ result }: { result: BattleResult }) {
   const [expanded, setExpanded] = useState(false);
   const wTeam = result.winnerTeamIndex;
   const firstWinner = result.teams[wTeam]?.playerNames[0] ?? "";
-  const deltaStr = result.userDelta >= 0 ? "+" : "";
+  const userNet = result.userNet ?? 0;
+  const netStr = userNet >= 0 ? "+" : "";
   return (
     <div className="rounded-xl border border-white/10 bg-white/5">
       <button
@@ -352,19 +354,19 @@ function BattleHistoryCard({ result }: { result: BattleResult }) {
         <div className="flex items-center gap-2 text-sm tabular-nums">
           <span
             className={`rounded px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider ${
-              result.userDelta >= 0
+              userNet >= 0
                 ? "bg-emerald-400/15 text-emerald-300"
                 : "bg-red-400/15 text-red-300"
             }`}
           >
-            {result.userDelta >= 0 ? "WIN" : "LOSS"}
+            {userNet >= 0 ? "WIN" : "LOSS"}
           </span>
           <span
             className={
-              result.userDelta >= 0 ? "text-emerald-400" : "text-red-400"
+              userNet >= 0 ? "text-emerald-400" : "text-red-400"
             }
           >
-            {deltaStr}{fmt(result.userDelta)}
+            {netStr}{fmt(userNet)}
           </span>
         </div>
       </button>
@@ -387,7 +389,7 @@ function BattleHistoryCard({ result }: { result: BattleResult }) {
                 <th className="px-2 py-1 text-right">Value</th>
                 <th className="px-2 py-1 text-right">Rank</th>
                 <th className="px-2 py-1 text-right">Payout</th>
-                <th className="px-2 py-1 text-right">Δ</th>
+                <th className="px-2 py-1 text-right">Net</th>
               </tr>
             </thead>
             <tbody>
@@ -402,8 +404,8 @@ function BattleHistoryCard({ result }: { result: BattleResult }) {
                   <td className="px-2 py-1 text-right tabular-nums">{fmt(t.totalValue)}</td>
                   <td className="px-2 py-1 text-right tabular-nums">#{t.rank}</td>
                   <td className="px-2 py-1 text-right tabular-nums">{fmt(t.payout)}</td>
-                  <td className={`px-2 py-1 text-right tabular-nums ${t.delta >= 0 ? "text-emerald-400" : "text-red-400"}`}>
-                    {t.delta >= 0 ? "+" : ""}{fmt(t.delta)}
+                  <td className={`px-2 py-1 text-right tabular-nums ${t.net >= 0 ? "text-emerald-400" : "text-red-400"}`}>
+                    {t.net >= 0 ? "+" : ""}{fmt(t.net)}
                   </td>
                 </tr>
               ))}

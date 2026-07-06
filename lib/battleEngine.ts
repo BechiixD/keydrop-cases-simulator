@@ -67,11 +67,13 @@ export function runBattle(
 
   const teamSize = teamSizeForFormat(cfg.format);
   const numTeams = numTeamsForFormat(cfg.format);
+  const userFraction = (100 - cfg.borrowPercent) / 100;
   let nonce = startNonce;
 
   const playerResults: BattlePlayerResult[] = cfg.players.map((p, idx) => {
     const drops: Drop[] = [];
     let totalValue = 0;
+    let entryCostRaw = 0;
     const playerStart = nonce;
     for (let ci = 0; ci < cfg.cases.length; ci++) {
       const c: CaseDefinition = cfg.cases[ci];
@@ -81,7 +83,10 @@ export function runBattle(
       nonce += count;
       drops.push(...res.drops);
       totalValue += res.totalValue;
+      entryCostRaw += c.price * count;
     }
+    const entryMultiplier = p.isUser ? userFraction : 1;
+    const entryCost = entryCostRaw * entryMultiplier;
     return {
       name: p.name,
       isUser: p.isUser,
@@ -91,6 +96,8 @@ export function runBattle(
       totalValue,
       startNonce: playerStart,
       nonceCount: nonce - playerStart,
+      entryCost,
+      net: 0,
     };
   });
 
@@ -98,6 +105,7 @@ export function runBattle(
   for (let t = 0; t < numTeams; t++) {
     const members = playerResults.filter((pr) => pr.teamIndex === t);
     const totalValue = members.reduce((a, m) => a + m.totalValue, 0);
+    const entryCost = members.reduce((a, m) => a + m.entryCost, 0);
     teams.push({
       index: t,
       playerNames: members.map((m) => m.name),
@@ -105,6 +113,8 @@ export function runBattle(
       rank: 0,
       payout: 0,
       delta: 0,
+      entryCost,
+      net: 0,
     });
   }
 
@@ -115,21 +125,38 @@ export function runBattle(
   ranked.forEach((t, i) => (t.rank = i + 1));
   const winner = ranked[0];
 
-  const borrowFraction = (100 - cfg.borrowPercent) / 100;
-  let totalFromLosers = 0;
-  for (const t of teams) {
-    if (t === winner) continue;
-    const contribution = t.totalValue * borrowFraction;
-    totalFromLosers += contribution;
-    t.payout = t.totalValue - contribution;
-    t.delta = -contribution;
-  }
-  winner.payout = winner.totalValue + totalFromLosers;
-  winner.delta = totalFromLosers;
+  const userPlayer = playerResults.find((pr) => pr.isUser);
+  const userTeamWon = userPlayer ? userPlayer.teamIndex === winner.index : false;
 
-  const userTeam = playerResults.find((pr) => pr.isUser)?.teamIndex ?? -1;
-  const userTeamResult = teams[userTeam] ?? null;
-  const userDelta = userTeamResult ? userTeamResult.delta : 0;
+  let totalBattleDrops = 0;
+  for (const t of teams) {
+    totalBattleDrops += t.totalValue;
+  }
+  const rawShare = teamSize > 0 ? totalBattleDrops / teamSize : 0;
+
+  for (const pr of playerResults) {
+    if (pr.teamIndex === winner.index) {
+      const rewardFraction = pr.isUser ? userFraction : 1;
+      pr.net = (rawShare * rewardFraction) - pr.entryCost;
+    } else {
+      pr.net = 0 - pr.entryCost;
+    }
+  }
+
+  for (const t of teams) {
+    if (t === winner) {
+      const members = playerResults.filter((pr) => pr.teamIndex === t.index);
+      t.payout = members.reduce((s, m) => s + Math.max(0, m.net + m.entryCost), 0);
+      t.net = members.reduce((s, m) => s + m.net, 0);
+      t.delta = t.net;
+    } else {
+      t.payout = 0;
+      t.delta = -t.totalValue;
+      t.net = 0 - t.entryCost;
+    }
+  }
+
+  const userNet = userPlayer ? userPlayer.net : 0;
 
   return {
     ranAt: Date.now(),
@@ -144,7 +171,7 @@ export function runBattle(
     players: playerResults,
     teams,
     winnerTeamIndex: winner.index,
-    userDelta,
+    userNet,
   };
 }
 

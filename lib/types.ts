@@ -119,6 +119,8 @@ export interface BattlePlayerResult {
   totalValue: number;
   startNonce: number;
   nonceCount: number;
+  entryCost: number;
+  net: number;
 }
 
 export interface BattleTeamResult {
@@ -128,6 +130,8 @@ export interface BattleTeamResult {
   rank: number;
   payout: number;
   delta: number;
+  entryCost: number;
+  net: number;
 }
 
 export interface BattleResult {
@@ -143,5 +147,5 @@ export interface BattleResult {
   players: BattlePlayerResult[];
   teams: BattleTeamResult[];
   winnerTeamIndex: number;
-  userDelta: number;
+  userNet: number;
 }

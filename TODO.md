@@ -295,7 +295,7 @@ Out of scope (post-MVP):
 - [x] 11. Battle engine. `lib/battleEngine.ts` exports `runBattle(cfg, serverSeed, startNonce)`, `teamColor(idx)`, `TEAM_COLORS`. Supports format `1v1|1v1v1|1v1v1v1|2v2|3v3`, mode `classic|underdog`, borrow 0..90. Config validation. Nonce chain global across all players for provable fairness. Engine test probed: classic determines correct winner, underdog inverts, borrow splits correctly, ranAt is only non-deterministic field.
   - Mode: `classic` (highest total value wins) | `underdog` (lowest total value wins).
   - Format: `1v1`, `1v1v1`, `1v1v1v1` (FFA), `2v2`, `3v3` (team value = sum of members).
-  - Borrow: integer 0..90 (% of loser loot the winner takes). 0 = full winner-take-all (winner keeps own + 100% of loser's). Higher borrow value = house covers more of the loser's share; using `pctOfLoserToWinner = 100 - borrow`. Final pot split stored on `BattleResult`.
+  - Borrow: integer 0..90 (% the house covers). 0 = full entry cost (100% of case price), winner takes 100% of loser's loot (winner-take-all). 90 = 10% entry cost, winner takes 10% of loser's loot. entryCost = rawCost × (100 - borrow) / 100; payoutFraction = (100 - borrow) / 100. Net settled per player: net = keptValue - entryCost. Final pot split stored on `BattleResult`.
   - Each player entry: `{ name, caseSlugs[], counts[], clientSeed }`. Bot clientSeeds generated once and kept stable for the session.
   - Reuses `runBatch` per (player, case) pair, nonces advance globally per round so the whole battle is one continuous chain.
   - Output: per-player `drops[]` + `totalValue`, ranked teams (1 winner + losers), final split per player after borrow, push to `localStorage` battle history (separate key from batch history).

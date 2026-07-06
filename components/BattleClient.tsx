@@ -117,8 +117,8 @@ export function BattleClient({
     for (const c of selectedCases) {
       total += c.price * (rounds[c.slug] ?? 0);
     }
-    return total;
-  }, [selectedCases, rounds]);
+    return total * (100 - borrow) / 100;
+  }, [selectedCases, rounds, borrow]);
 
   function reshuffle(): void {
     setServerSeed(randomServerSeed());
@@ -187,7 +187,7 @@ export function BattleClient({
     const totalOpens = preset.numTeams * preset.teamSize * selectedCases.reduce((s, c) => s + (rounds[c.slug] ?? 0), 0);
     const res = runBattle(cfg, serverSeed, startNonce);
     setLastNonce(startNonce + totalOpens);
-    adjustBalance(-userCost + res.userDelta);
+    adjustBalance(res.userNet);
     setBalance(getBalance());
     pushBattleHistory(res);
     setRevealed(true);
@@ -282,7 +282,7 @@ export function BattleClient({
               className="w-full accent-amber-400"
             />
             <div className="text-xs text-white/40">
-              winner takes {100 - borrow}% of loser&apos;s loot
+              winner takes {100 - borrow}% of loser&apos;s loot · entry is {100 - borrow}% of case price
             </div>
           </div>
         </div>
@@ -471,20 +471,19 @@ function BattleResultPanel({
     <section className="space-y-4">
       <div className="rounded-xl border p-4" style={{ borderColor: teamColor(result.winnerTeamIndex) + "55", background: teamColor(result.winnerTeamIndex) + "11" }}>
         <div className="text-xs uppercase tracking-wider text-white/50">
-          Winner
+          Result
         </div>
-        <div className="text-2xl font-semibold" style={{ color: teamColor(result.winnerTeamIndex) }}>
-          team {result.winnerTeamIndex + 1} ·{" "}
-          {result.teams[result.winnerTeamIndex].playerNames.join(" + ")}
-        </div>
-        <div className="text-xs text-white/40">
-          {result.format} · {result.mode} · borrow {result.borrowPercent}%
-        </div>
-        <div className="mt-2 text-sm">
-          Your delta:{" "}
-          <span className={result.userDelta >= 0 ? "text-emerald-400 font-semibold" : "text-red-400 font-semibold"}>
-            {result.userDelta >= 0 ? "+" : ""}{fmt(result.userDelta)} coins
+        <div className="mt-1 flex items-center gap-2">
+          <span className={`rounded px-2 py-0.5 text-xs font-bold uppercase ${result.userNet >= 0 ? 'bg-emerald-400/20 text-emerald-300' : 'bg-red-400/20 text-red-300'}`}>
+            {result.userNet >= 0 ? 'YOU WIN' : 'YOU LOSE'}
           </span>
+          <span className="text-sm text-white/70">
+            {result.userNet >= 0 ? '+' : ''}{fmt(result.userNet)} coins
+          </span>
+        </div>
+        <div className="mt-1 text-xs text-white/40">
+          {result.format} · {result.mode} · borrow {result.borrowPercent}% ·{" "}
+          {result.teams[result.winnerTeamIndex].playerNames.join(" + ")} took the pot
         </div>
       </div>
 
@@ -494,15 +493,13 @@ function BattleResultPanel({
             <tr>
               <th className="px-3 py-2">Team</th>
               <th className="px-3 py-2">Players</th>
-              <th className="px-3 py-2 text-right">Total value</th>
-              <th className="px-3 py-2 text-right">Rank</th>
-              <th className="px-3 py-2 text-right">Payout</th>
-              <th className="px-3 py-2 text-right">Delta</th>
+              <th className="px-3 py-2 text-right">Net</th>
             </tr>
           </thead>
           <tbody>
             {result.teams.map((t) => {
               const isWinner = t.index === result.winnerTeamIndex;
+              const members = result.players.filter((pr) => pr.teamIndex === t.index);
               return (
                 <tr
                   key={t.index}
@@ -513,17 +510,28 @@ function BattleResultPanel({
                     <span className="inline-block h-2 w-2 rounded-full mr-1" style={{ background: teamColor(t.index) }} />
                     team {t.index + 1}
                     {isWinner && <span className="ml-1">👑</span>}
+                    <span className={`ml-2 text-[10px] font-bold uppercase ${isWinner ? 'text-emerald-400' : 'text-red-400'}`}>
+                      {isWinner ? 'WIN' : 'LOSS'}
+                    </span>
                   </td>
-                  <td className="px-3 py-2 text-white/70">{t.playerNames.join(", ")}</td>
-                  <td className="px-3 py-2 text-right tabular-nums">{fmt(t.totalValue)}</td>
-                  <td className="px-3 py-2 text-right tabular-nums">#{t.rank}</td>
-                  <td className="px-3 py-2 text-right tabular-nums">{fmt(t.payout)}</td>
-                  <td
-                    className={`px-3 py-2 text-right tabular-nums ${
-                      t.delta >= 0 ? "text-emerald-400" : "text-red-400"
-                    }`}
-                  >
-                    {t.delta >= 0 ? "+" : ""}{fmt(t.delta)}
+                  <td className="px-3 py-2 text-white/70">
+                    {members.map((pr, j) => (
+                      <span key={pr.name}>
+                        {j > 0 && ', '}
+                        {pr.name}
+                        {pr.isUser && <span className="ml-0.5 text-amber-400 text-xs">(you)</span>}
+                      </span>
+                    ))}
+                  </td>
+                  <td className="px-3 py-2 text-right tabular-nums">
+                    {members.map((pr, j) => (
+                      <div key={pr.name} className={j > 0 ? 'mt-0.5' : ''}>
+                        {pr.isUser && <span className="mr-1 text-amber-400 text-xs">you</span>}
+                        <span className={pr.net >= 0 ? 'text-emerald-400' : 'text-red-400'}>
+                          {pr.net >= 0 ? '+' : ''}{fmt(pr.net)}
+                        </span>
+                      </div>
+                    ))}
                   </td>
                 </tr>
               );
@@ -531,6 +539,39 @@ function BattleResultPanel({
           </tbody>
         </table>
       </div>
+
+      {(() => {
+        const userP = result.players.find((pr) => pr.isUser);
+        if (!userP) return null;
+        const userTeamWon = userP.teamIndex === result.winnerTeamIndex;
+        const totalDrops = result.teams.reduce((s, t) => s + t.totalValue, 0);
+        const rawShare = result.teamSize > 0 ? totalDrops / result.teamSize : 0;
+        const userShare = userTeamWon ? rawShare * ((100 - result.borrowPercent) / 100) : 0;
+        return (
+          <div className="text-xs text-white/40 space-y-0.5">
+            <div>
+              Battle total: <span className="text-amber-400">{fmt(totalDrops)}</span> coins
+              {" · "}share per winner: <span className="text-amber-400">{fmt(rawShare)}</span>
+            </div>
+            <div>
+              Your entry: <span className="text-amber-400">{fmt(userP.entryCost)}</span>
+              {userTeamWon ? (
+                <>
+                  {" · "}your share:{" "}
+                  <span className="text-amber-400">{fmt(userShare)}</span>
+                  {result.borrowPercent > 0 && (
+                    <span className="text-white/30"> (borrow {result.borrowPercent}% applied)</span>
+                  )}
+                </>
+              ) : null}
+              {" · "}net:{" "}
+              <span className={userP.net >= 0 ? "text-emerald-400" : "text-red-400"}>
+                {userP.net >= 0 ? "+" : ""}{fmt(userP.net)}
+              </span>
+            </div>
+          </div>
+        );
+      })()}
 
       <div className="space-y-3">
         <div className="text-xs uppercase tracking-wider text-white/50">
@@ -562,7 +603,10 @@ function BattleResultPanel({
                 </div>
                 <div className="flex items-center gap-3 text-sm tabular-nums">
                   <span>
-                    value <span className="text-amber-400">{fmt(p.totalValue)}</span>
+                    drops <span className="text-amber-400">{fmt(p.totalValue)}</span>
+                  </span>
+                  <span className={p.net >= 0 ? "text-emerald-400" : "text-red-400"}>
+                    {p.net >= 0 ? "+" : ""}{fmt(p.net)}
                   </span>
                   <span className="text-xs text-white/40">
                     {open ? "hide" : `${p.drops.length} drops`}

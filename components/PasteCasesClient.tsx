@@ -25,7 +25,7 @@ interface ScrapeResponse {
 export function PasteCasesClient() {
   const router = useRouter();
   const [json, setJson] = useState("");
-  const [mode, setMode] = useState<"replace" | "merge">("merge");
+
   const [loading, setLoading] = useState(false);
   const [resp, setResp] = useState<ScrapeResponse | null>(null);
 
@@ -37,7 +37,7 @@ export function PasteCasesClient() {
       const r = await fetch("/api/scrape", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ json, mode }),
+        body: JSON.stringify({ json, mode: "merge" }),
       });
       const data = (await r.json()) as ScrapeResponse;
       setResp(data);
@@ -70,27 +70,7 @@ export function PasteCasesClient() {
           should be separate entries. Live scraping from keydrop is disabled
           (Cloudflare) — this is the supported path for getting real numbers in.
         </p>
-        <div className="flex items-center gap-3 text-xs">
-          <span className="text-white/50">mode</span>
-          <label className="flex items-center gap-1">
-            <input
-              type="radio"
-              checked={mode === "merge"}
-              onChange={() => setMode("merge")}
-              className="accent-amber-400"
-            />
-            merge (upsert by slug)
-          </label>
-          <label className="flex items-center gap-1">
-            <input
-              type="radio"
-              checked={mode === "replace"}
-              onChange={() => setMode("replace")}
-              className="accent-amber-400"
-            />
-            replace all
-          </label>
-        </div>
+
         <textarea
           value={json}
           onChange={(e) => setJson(e.target.value)}
@@ -115,7 +95,7 @@ export function PasteCasesClient() {
               }
             >
               {resp.ok
-                ? `OK — ${resp.count} cases in cache (${resp.accepted} upserted in ${mode} mode)`
+                ? `OK — ${resp.count} cases in cache (${resp.accepted} upserted)`
                 : `error: ${resp.reason}${resp.message ? ` — ${resp.message}` : ""}`}
             </span>
           )}
