@@ -168,7 +168,7 @@ export default async function CaseDetailPage({
                         className="inline-block h-2 w-2 shrink-0 rounded-full"
                         style={{ background: color }}
                       />
-                      <span className="min-w-0 truncate">{s.name}</span>
+                      <span className="min-w-0 truncate max-w-[180px] sm:max-w-none">{s.name}</span>
                     </div>
                     <div className="mt-1 flex h-1.5 w-full max-w-[120px] overflow-hidden rounded-full bg-white/5">
                       {WEAR_ORDER.map((w) => {

@@ -29,4 +29,13 @@ body {
   .responsive-table table {
     min-width: 600px;
   }
+  button,
+  select,
+  input:not([type="checkbox"]):not([type="range"]) {
+    min-height: 44px;
+  }
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
 }

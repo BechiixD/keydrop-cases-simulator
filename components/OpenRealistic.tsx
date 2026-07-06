@@ -74,6 +74,7 @@ export function OpenRealistic({
   const [autoDrops, setAutoDrops] = useState<Drop[]>([]);
   const [autoCurrent, setAutoCurrent] = useState(-1);
   const [openHistory, setOpenHistory] = useState<Drop[]>([]);
+  const [itemW, setItemW] = useState(ITEM_W);
   const reelRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const spinTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -95,6 +96,12 @@ export function OpenRealistic({
     } catch {
       /* ignore */
     }
+    function onResize() {
+      setItemW(window.innerWidth < 640 ? 72 : 100);
+    }
+    onResize();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
   }, []);
 
   function saveOpens(drops: Drop[]): void {
@@ -128,8 +135,8 @@ export function OpenRealistic({
 
   function containerCenter(): number {
     const el = containerRef.current;
-    if (!el) return 200;
-    return (el.clientWidth - ITEM_W) / 2;
+    if (!el) return (window.innerWidth < 640 ? 72 : 100);
+    return (el.clientWidth - itemW) / 2;
   }
 
   function doSingleOpen(): void {
@@ -159,8 +166,9 @@ export function OpenRealistic({
     const winnerIdx = caseDef.items.findIndex((s) => s.id === drop.skin.id);
     const idx = winnerIdx >= 0 ? winnerIdx : 0;
     const stripLen = caseDef.items.length;
-    const extraScroll = stripLen * ITEM_STEP * 3;
-    const target = idx * ITEM_STEP;
+    const itemStep = itemW + ITEM_GAP;
+    const extraScroll = stripLen * itemStep * 3;
+    const target = idx * itemStep;
     const endOffset = -(target + extraScroll) + containerCenter();
 
     setReelTransition(false);
@@ -219,7 +227,8 @@ export function OpenRealistic({
     saveOpens(batch.drops);
 
     const stripLen = caseDef.items.length;
-    const extraScroll = stripLen * ITEM_STEP * 3;
+    const itemStep = itemW + ITEM_GAP;
+    const extraScroll = stripLen * itemStep * 3;
 
     let i = 0;
     function next(): void {
@@ -235,7 +244,7 @@ export function OpenRealistic({
       setAutoCurrent(i);
       setWinner(drop);
       const idx = caseDef!.items.findIndex((s) => s.id === drop.skin.id);
-      const target = (idx >= 0 ? idx : 0) * ITEM_STEP;
+      const target = (idx >= 0 ? idx : 0) * itemStep;
       setReelTransition(false);
       setReelOffset(0);
       requestAnimationFrame(() => {
@@ -320,7 +329,7 @@ export function OpenRealistic({
         <div
           ref={containerRef}
           className="relative overflow-hidden rounded-xl border border-white/10 bg-black/30"
-          style={{ height: 140 }}
+          style={{ height: itemW < 90 ? 110 : 140 }}
         >
           <div className="absolute inset-0 pointer-events-none z-10">
             <div className="absolute left-1/2 top-0 bottom-0 w-[2px] -translate-x-px bg-amber-400/40" />
@@ -329,8 +338,9 @@ export function OpenRealistic({
           {items.length > 0 && (
             <div
               ref={reelRef}
-              className="absolute top-4 flex h-[108px] items-center"
+              className="absolute top-4 flex items-center"
               style={{
+                height: itemW < 90 ? 86 : 108,
                 transform: `translateX(${reelOffset}px)`,
                 transition: reelTransition
                   ? `transform ${REEL_DURATION_MS}ms cubic-bezier(0.0,0.0,0.15,1.0)`
@@ -346,7 +356,7 @@ export function OpenRealistic({
                     key={`${s.id}-${i}`}
                     className="flex shrink-0 items-center justify-center rounded"
                     style={{
-                      width: ITEM_W,
+                      width: itemW,
                       marginRight: ITEM_GAP,
                       boxShadow: isWinner
                         ? `0 0 16px ${RARITY_COLORS[s.rarity]}88, 0 0 4px ${RARITY_COLORS[s.rarity]}`
@@ -362,7 +372,7 @@ export function OpenRealistic({
                         src={s.imageUrl}
                         alt={s.name}
                         loading="lazy"
-                        className="h-24 w-24 object-contain"
+                        className="h-20 w-20 sm:h-24 sm:w-24 object-contain"
                         style={{
                           filter: spinning
                             ? "blur(0.5px)"

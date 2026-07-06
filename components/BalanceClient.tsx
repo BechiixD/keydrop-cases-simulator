@@ -170,7 +170,7 @@ export function BalanceClient() {
             {ready ? fmt(balance) : <span className="inline-block h-8 w-32 animate-pulse rounded bg-white/10" />}
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
             <input
               type="number"
               min={0}
@@ -178,11 +178,11 @@ export function BalanceClient() {
               onChange={(e) =>
                 setSetToAmt(Math.max(0, Math.floor(Number(e.target.value) || 0)))
               }
-              className="w-32 rounded bg-[#0b0e14] border border-white/10 px-2 py-1 text-sm tabular-nums"
+              className="w-full sm:w-32 rounded bg-[#0b0e14] border border-white/10 px-2 py-2 sm:py-1 text-sm tabular-nums min-h-[44px] sm:min-h-0"
             />
             <button
               onClick={doSetTo}
-              className="rounded border border-white/10 px-3 py-1 text-sm text-white/70 hover:bg-white/5"
+              className="rounded border border-white/10 px-3 py-2 sm:py-1 text-sm text-white/70 hover:bg-white/5 min-h-[44px] sm:min-h-0"
             >
               set to
             </button>
@@ -204,7 +204,7 @@ export function BalanceClient() {
           </div>
 
           <div className="border-t border-white/5 pt-2 space-y-2">
-            <div className="flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
               <input
                 type="number"
                 min={0}
@@ -212,16 +212,16 @@ export function BalanceClient() {
                 onChange={(e) =>
                   setDepositAmt(Math.max(0, Math.floor(Number(e.target.value) || 0)))
                 }
-                className="w-32 rounded bg-[#0b0e14] border border-white/10 px-2 py-1 text-sm tabular-nums"
+                className="w-full sm:w-32 rounded bg-[#0b0e14] border border-white/10 px-2 py-2 sm:py-1 text-sm tabular-nums min-h-[44px] sm:min-h-0"
               />
               <button
                 onClick={doDeposit}
-                className="rounded border border-emerald-400/30 px-3 py-1 text-sm text-emerald-400 hover:bg-emerald-400/10"
+                className="rounded border border-emerald-400/30 px-3 py-2 sm:py-1 text-sm text-emerald-400 hover:bg-emerald-400/10 min-h-[44px] sm:min-h-0"
               >
                 deposit (+)
               </button>
             </div>
-            <div className="flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
               <input
                 type="number"
                 min={0}
@@ -230,12 +230,12 @@ export function BalanceClient() {
                 onChange={(e) =>
                   setWithdrawAmt(Math.max(0, Math.floor(Number(e.target.value) || 0)))
                 }
-                className="w-32 rounded bg-[#0b0e14] border border-white/10 px-2 py-1 text-sm tabular-nums"
+                className="w-full sm:w-32 rounded bg-[#0b0e14] border border-white/10 px-2 py-2 sm:py-1 text-sm tabular-nums min-h-[44px] sm:min-h-0"
               />
               <button
                 onClick={doWithdraw}
                 disabled={withdrawAmt <= 0 || withdrawAmt > balance}
-                className="rounded border border-red-400/30 px-3 py-1 text-sm text-red-400 hover:bg-red-400/10 disabled:opacity-30"
+                className="rounded border border-red-400/30 px-3 py-2 sm:py-1 text-sm text-red-400 hover:bg-red-400/10 disabled:opacity-30 min-h-[44px] sm:min-h-0"
               >
                 withdraw (−)
               </button>

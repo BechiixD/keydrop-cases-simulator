@@ -469,6 +469,40 @@ A thin design-system + UX pass across all pages, no behavior changes.
       `pnpm build` all green after each sub-step above; tick a box only when
       those three pass.
 
+### 19. Mobile responsive pass
+
+Table wrappers already use `overflow-x-auto` (from step 18). This step covers
+the rest: layout, touch targets, text overflow, nav on narrow screens.
+
+- [x] 19.1 Nav on mobile (< 640px): hide link labels, show icon-only tabs.
+      Keep the brand name visible. Collapse into a bottom bar or keep the top
+      bar but with `overflow-x-auto` + icons only.
+- [x] 19.2 Case grid cards: stack single-column on mobile. Currently `grid-cols-1
+      sm:grid-cols-2 md:grid-cols-3` — verify it looks correct at 360px width.
+      Cards should not truncate case names; wrap to 2 lines if needed.
+- [x] 19.3 Sim mode tabs: full-width on mobile (not `w-fit`), equal-width
+      "Stats batch" / "Realistic" buttons spanning the full row.
+- [x] 19.4 OpenRealistic reel: container height and item size scale down on
+      mobile. `ITEM_W` drops from 100px to 72px, reel height from 140px to
+      110px below 640px. Center reticle stays visible.
+- [x] 19.5 Balance card controls: stack vertically on mobile. Set-to, deposit,
+      withdraw inputs + buttons each on their own row instead of flex-wrap.
+      Presets wrap to 2 rows.
+- [x] 19.6 Touch targets: all buttons, inputs, and select elements minimum
+      44px height on mobile (add `min-h-[44px]` via responsive class).
+      Checkbox inputs get a larger hit area via a wrapping label.
+- [x] 19.7 Long text: verify no horizontal overflow on 360px viewport for case
+      names, skin names, server seed display, manifest table in `/img-status`.
+      Add `break-words` or `truncate` as needed.
+- [x] 19.8 Provably-fair panel: inputs full-width on mobile (no `w-40` fixed
+      widths below 640px). Nonce input and client seed input fill available
+      width.
+- [x] 19.9 Battle page: format picker, mode toggle, borrow slider stack
+      vertically on mobile. Player name inputs full-width.
+- [x] 19.10 Verify: `pnpm typecheck`, `pnpm test:engine`, `pnpm build`. Manual
+      smoke test at 360px and 768px viewports on `/`, `/sim` (both modes),
+      `/balance`, `/battles`, `/cases/<slug>`.
+
 ---
 
 ## Phase 2 build order (verify each before moving on)

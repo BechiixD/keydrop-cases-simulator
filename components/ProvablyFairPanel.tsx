@@ -91,15 +91,15 @@ export function ProvablyFairPanel({
         <label className="block text-xs uppercase tracking-wider text-white/50">
           Client seed
         </label>
-        <div className="mt-1 flex gap-2">
+        <div className="mt-1 flex flex-col sm:flex-row gap-2">
           <input
             value={state.clientSeed}
             onChange={(e) => editClient(e.target.value)}
-            className="flex-1 rounded bg-[#0b0e14] border border-white/10 px-2 py-1 font-mono text-xs"
+            className="flex-1 rounded bg-[#0b0e14] border border-white/10 px-2 py-2 sm:py-1 font-mono text-xs min-h-[44px] sm:min-h-0"
           />
           <button
             onClick={newClient}
-            className="rounded border border-white/10 px-2 py-1 text-xs hover:bg-white/5"
+            className="rounded border border-white/10 px-2 py-2 sm:py-1 text-xs hover:bg-white/5 min-h-[44px] sm:min-h-0"
           >
             random
           </button>
@@ -114,7 +114,7 @@ export function ProvablyFairPanel({
           min={0}
           value={state.startNonce}
           onChange={(e) => editNonce(Number(e.target.value))}
-          className="mt-1 w-40 rounded bg-[#0b0e14] border border-white/10 px-2 py-1 font-mono text-xs"
+          className="mt-1 w-full sm:w-40 rounded bg-[#0b0e14] border border-white/10 px-2 py-2 sm:py-1 font-mono text-xs min-h-[44px] sm:min-h-0"
         />
       </div>
     </div>

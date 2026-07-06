@@ -51,10 +51,10 @@ export function SimPageClient({ cases }: { cases: CaseDefinition[] }) {
 
   return (
     <div className="space-y-6">
-      <nav className="flex gap-1 rounded-lg border border-white/10 p-0.5 w-fit">
+      <nav className="grid grid-cols-2 rounded-lg border border-white/10 p-0.5 w-full sm:w-fit">
         <button
           onClick={() => switchTo("stats")}
-          className={`rounded px-4 py-1.5 text-sm font-medium transition ${
+          className={`rounded px-4 py-1.5 text-sm font-medium transition min-h-[44px] ${
             mode === "stats"
               ? "bg-amber-400/20 text-amber-400"
               : "text-white/50 hover:text-white/80"
@@ -64,7 +64,7 @@ export function SimPageClient({ cases }: { cases: CaseDefinition[] }) {
         </button>
         <button
           onClick={() => switchTo("realistic")}
-          className={`rounded px-4 py-1.5 text-sm font-medium transition ${
+          className={`rounded px-4 py-1.5 text-sm font-medium transition min-h-[44px] ${
             mode === "realistic"
               ? "bg-amber-400/20 text-amber-400"
               : "text-white/50 hover:text-white/80"

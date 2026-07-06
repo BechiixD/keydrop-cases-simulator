@@ -230,7 +230,7 @@ export function HomeCasesClient({
                       className="flex-1 hover:text-amber-400"
                     >
                       <div className="flex items-baseline justify-between gap-2">
-                        <div className="text-lg font-semibold leading-tight">
+                        <div className="text-lg font-semibold leading-tight break-words">
                           {c.name}
                         </div>
                         <span
@@ -257,7 +257,7 @@ export function HomeCasesClient({
                           {edge.toFixed(2)}%
                         </span>
                       </div>
-                      <div className="mt-1 text-xs text-white/50">
+                      <div className="mt-1 text-xs text-white/50 truncate">
                         {c.items.length} items · rarest{" "}
                         <span style={{ color: RARITY_COLORS[mr] }}>
                           {rarest ? rarest.name : "—"}

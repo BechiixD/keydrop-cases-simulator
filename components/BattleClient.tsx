@@ -487,7 +487,7 @@ function BattleResultPanel({
         </div>
       </div>
 
-      <div className="overflow-hidden rounded-xl border border-white/10">
+      <div className="overflow-x-auto rounded-xl border border-white/10">
         <table className="w-full text-sm">
           <thead className="bg-white/5 text-left text-xs uppercase tracking-wider text-white/50">
             <tr>
