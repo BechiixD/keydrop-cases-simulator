@@ -74,9 +74,17 @@ function bestFit(drops: Drop[], target: number): Drop[] {
     const sel: Drop[] = [];
     let sum = 0;
     for (const d of sorted) {
-      if (sum >= target) break;
-      sel.push(d);
-      sum += d.value;
+      if (sum + d.value <= target) {
+        sel.push(d);
+        sum += d.value;
+      }
+    }
+    if (sel.length === 0 && sorted.length > 0) {
+      let closest = sorted[sorted.length - 1];
+      for (const d of sorted) {
+        if (d.value <= target) { closest = d; break; }
+      }
+      sel.push(closest);
     }
     return sel;
   }
@@ -247,10 +255,18 @@ export function BattleClient({
     const userPlayer = res.players.find((p) => p.isUser);
     if (userPlayer && userPlayer.teamIndex === res.winnerTeamIndex) {
       const payoutValue = userPlayer.net + userPlayer.entryCost;
-      const candidates = userPlayer.drops;
-      const selected = bestFit(candidates, payoutValue);
-      if (selected.length > 0) {
-        addDrops(selected, "battle", `${res.format}:${res.mode}`);
+      const ownTeamDrops = res.players
+        .filter((p) => p.teamIndex === userPlayer.teamIndex)
+        .flatMap((p) => p.drops);
+      const ownTeamValue = ownTeamDrops.reduce((a, d) => a + d.value, 0);
+      const remainingPayout = Math.max(0, payoutValue - ownTeamValue);
+      const loserDrops = res.players
+        .filter((p) => p.teamIndex !== userPlayer.teamIndex)
+        .flatMap((p) => p.drops);
+      const loserSelected = bestFit(loserDrops, remainingPayout);
+      const allSelected = [...ownTeamDrops, ...loserSelected];
+      if (allSelected.length > 0) {
+        addDrops(allSelected, "battle", `${res.format}:${res.mode}`);
       }
     }
     pushBattleHistory(res);
