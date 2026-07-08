@@ -35,9 +35,18 @@ export default function InventoryPage() {
   const [source, setSource] = useState<FilterSource>("all");
 
   useEffect(() => {
-    setItems(getInventory());
-    setBalance(getBalance());
+    function reload(): void {
+      setItems(getInventory());
+      setBalance(getBalance());
+    }
+    reload();
     setReady(true);
+    window.addEventListener("storage", reload);
+    window.addEventListener("keydrop-balance-change", reload);
+    return () => {
+      window.removeEventListener("storage", reload);
+      window.removeEventListener("keydrop-balance-change", reload);
+    };
   }, []);
 
   function refresh(): void {

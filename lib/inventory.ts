@@ -1,4 +1,5 @@
 import type { Drop, InventoryItem } from "@/lib/types";
+import { compactDrop } from "@/lib/storage";
 
 const INV_KEY = "keydrop-sim:inventory";
 const MAX_ITEMS = 500;
@@ -46,7 +47,7 @@ export function addDrops(
   const now = Date.now();
   const items: InventoryItem[] = drops.map((d) => ({
     uid: nextUid(),
-    drop: d,
+    drop: compactDrop(d),
     acquiredAt: now,
     source,
     sourceId,

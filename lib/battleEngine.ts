@@ -9,7 +9,7 @@ import type {
   Drop,
 } from "@/lib/types";
 import { hashServerSeed } from "@/lib/provablyFair";
-import { runBatch } from "@/lib/caseEngine";
+import { jokerPrice, runBatch } from "@/lib/caseEngine";
 
 function teamSizeForFormat(f: BattleFormat): number {
   if (f === "1v1" || f === "1v1v1" || f === "1v1v1v1") return 1;
@@ -68,6 +68,7 @@ export function runBattle(
   const teamSize = teamSizeForFormat(cfg.format);
   const numTeams = numTeamsForFormat(cfg.format);
   const userFraction = (100 - cfg.borrowPercent) / 100;
+  const joker = cfg.joker === true;
   let nonce = startNonce;
 
   const playerResults: BattlePlayerResult[] = cfg.players.map((p, idx) => {
@@ -79,11 +80,11 @@ export function runBattle(
       const c: CaseDefinition = cfg.cases[ci];
       const count = Math.max(0, p.counts[ci] ?? 0);
       if (count <= 0) continue;
-      const res = runBatch(c, count, serverSeed, p.clientSeed, nonce);
+      const res = runBatch(c, count, serverSeed, p.clientSeed, nonce, joker);
       nonce += count;
       drops.push(...res.drops);
       totalValue += res.totalValue;
-      entryCostRaw += c.price * count;
+      entryCostRaw += (joker ? jokerPrice(c) : c.price) * count;
     }
     const entryMultiplier = p.isUser ? userFraction : 1;
     const entryCost = entryCostRaw * entryMultiplier;
@@ -163,6 +164,7 @@ export function runBattle(
     format: cfg.format,
     mode: cfg.mode,
     borrowPercent: cfg.borrowPercent,
+    joker,
     serverSeed,
     serverSeedHash: hashServerSeed(serverSeed),
     startNonce,

@@ -19,6 +19,49 @@ export interface OpenInput {
   clientSeed: string;
   nonce: number;
   caseSlug?: string;
+  joker?: boolean;
+}
+
+export function jokerCase(c: CaseDefinition): CaseDefinition {
+  const n = c.items.length;
+  if (n === 0) return { ...c, items: [], price: 0 };
+  const uniform = 1 / n;
+  const items = c.items.map((skin) => {
+    const total = skin.totalProbability;
+    const wears = skin.wears.map((w) => ({
+      ...w,
+      probability:
+        total > 0
+          ? (w.probability / total) * uniform
+          : skin.wears.length > 0
+            ? uniform / skin.wears.length
+            : uniform,
+    }));
+    return { ...skin, wears, totalProbability: uniform };
+  });
+  const jokerEV = items.reduce(
+    (a, s) => a + s.wears.reduce((b, w) => b + w.probability * w.value, 0),
+    0,
+  );
+  const origEV = expectedValue(c);
+  let price: number;
+  if (origEV <= 0 || c.price <= 0) {
+    price = jokerEV;
+  } else {
+    const origEdge = 1 - origEV / c.price;
+    price = jokerEV / (1 - origEdge);
+  }
+  return { ...c, items, price };
+}
+
+export function jokerPrice(c: CaseDefinition): number {
+  return jokerCase(c).price;
+}
+
+export function jokerEdge(c: CaseDefinition): number {
+  const origEV = expectedValue(c);
+  if (origEV <= 0 || c.price <= 0) return 0;
+  return 1 - origEV / c.price;
 }
 
 export function openOnce({
@@ -27,11 +70,13 @@ export function openOnce({
   clientSeed,
   nonce,
   caseSlug,
+  joker,
 }: OpenInput): Drop | null {
+  const effective = joker ? jokerCase(c) : c;
   const ticket = computeTicket(serverSeed, clientSeed, nonce);
   const skinFloat = floatFromTicket(ticket, 0);
   const wearFloat = floatFromTicket(ticket, 8);
-  const picked = pickSkinByFloat(c.items, skinFloat);
+  const picked = pickSkinByFloat(effective.items, skinFloat);
   if (!picked) return null;
   const wear = pickWearByFloat(picked.skin, wearFloat);
   if (!wear) return null;
@@ -44,6 +89,7 @@ export function openOnce({
     clientSeed,
     serverSeedHash: hashServerSeed(serverSeed),
     ticket,
+    joker: joker === true,
   };
 }
 
@@ -65,6 +111,7 @@ export function runBatch(
   serverSeed: string,
   clientSeed: string,
   startNonce: number,
+  joker?: boolean,
 ): BatchResult {
   const drops: Drop[] = [];
   const { bySkin, byWear, byRarity } = emptyFreq();
@@ -77,6 +124,7 @@ export function runBatch(
       serverSeed,
       clientSeed,
       nonce,
+      joker,
     });
     if (!drop) continue;
     drops.push(drop);
@@ -86,7 +134,8 @@ export function runBatch(
     bump(byRarity, drop.skin.rarity);
   }
 
-  const totalCost = c.price * count;
+  const effective = joker ? jokerCase(c) : c;
+  const totalCost = effective.price * count;
   const net = totalValue - totalCost;
   const roi = totalCost > 0 ? net / totalCost : 0;
   const dropValue = (d: Drop) => d.value;
@@ -99,7 +148,7 @@ export function runBatch(
 
   return {
     caseSlug: c.slug,
-    caseName: c.name,
+    caseName: joker ? `${c.name} (Joker)` : c.name,
     drops,
     count,
     totalCost,
@@ -119,6 +168,7 @@ export function runMultiBatch(
   serverSeed: string,
   clientSeed: string,
   startNonce: number,
+  joker?: boolean,
 ): MultiBatchResult {
   let nonce = startNonce;
   const results: BatchResult[] = [];
@@ -132,6 +182,7 @@ export function runMultiBatch(
       serverSeed,
       clientSeed,
       nonce,
+      joker,
     );
     nonce += sel.count;
     results.push(res);

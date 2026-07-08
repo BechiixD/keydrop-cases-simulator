@@ -1,4 +1,8 @@
-import type { BattleResult, MultiBatchResult } from "@/lib/types";
+import type {
+  BattleResult,
+  Drop,
+  MultiBatchResult,
+} from "@/lib/types";
 
 const KEYS = {
   balance: "keydrop-sim:balance",
@@ -8,11 +12,27 @@ const KEYS = {
   serverSeed: "keydrop-sim:serverSeed",
   lastNonce: "keydrop-sim:lastNonce",
   simMode: "keydrop-sim:simMode",
+  jokerMode: "keydrop-sim:jokerMode",
 } as const;
 
 export const DEFAULT_BALANCE = 10000;
 const MAX_HISTORY = 50;
 const MAX_BATTLE_HISTORY = 50;
+
+export function compactDrop(d: Drop): Drop {
+  return {
+    ...d,
+    skin: {
+      ...d.skin,
+      wears: [],
+      totalProbability: 0,
+    },
+  };
+}
+
+function compactBatchDrops(drops: Drop[]): Drop[] {
+  return drops.map(compactDrop);
+}
 
 function emitBalanceChange(): void {
   if (typeof window === "undefined") return;
@@ -28,12 +48,18 @@ function safeGet(key: string): string | null {
   }
 }
 
-function safeSet(key: string, value: string): void {
-  if (typeof window === "undefined") return;
+function safeSet(key: string, value: string): boolean {
+  if (typeof window === "undefined") return false;
   try {
     window.localStorage.setItem(key, value);
-  } catch {
-    /* ignore quota / disabled storage */
+    return true;
+  } catch (e) {
+    console.warn(
+      `[storage] localStorage write failed for key "${key}" ` +
+        `(${(value.length / 1024).toFixed(1)} KB):`,
+      e instanceof Error ? e.message : e,
+    );
+    return false;
   }
 }
 
@@ -82,7 +108,16 @@ export function getHistory(): MultiBatchResult[] {
 }
 
 export function pushHistory(result: MultiBatchResult): MultiBatchResult[] {
-  const next = [result, ...getHistory()].slice(0, MAX_HISTORY);
+  const compact: MultiBatchResult = {
+    ...result,
+    results: result.results.map((r) => ({
+      ...r,
+      drops: compactBatchDrops(r.drops),
+      best: r.best ? compactDrop(r.best) : r.best,
+      worst: r.worst ? compactDrop(r.worst) : r.worst,
+    })),
+  };
+  const next = [compact, ...getHistory()].slice(0, MAX_HISTORY);
   safeSet(KEYS.history, JSON.stringify(next));
   return next;
 }
@@ -103,7 +138,14 @@ export function getBattleHistory(): BattleResult[] {
 }
 
 export function pushBattleHistory(result: BattleResult): BattleResult[] {
-  const next = [result, ...getBattleHistory()].slice(0, MAX_BATTLE_HISTORY);
+  const compact: BattleResult = {
+    ...result,
+    players: result.players.map((p) => ({
+      ...p,
+      drops: compactBatchDrops(p.drops),
+    })),
+  };
+  const next = [compact, ...getBattleHistory()].slice(0, MAX_BATTLE_HISTORY);
   safeSet(KEYS.battleHistory, JSON.stringify(next));
   return next;
 }
@@ -147,4 +189,12 @@ export function getSimMode(): "stats" | "realistic" {
 
 export function setSimMode(mode: "stats" | "realistic"): void {
   safeSet(KEYS.simMode, mode);
+}
+
+export function getJokerMode(): boolean {
+  return safeGet(KEYS.jokerMode) === "1";
+}
+
+export function setJokerMode(on: boolean): void {
+  safeSet(KEYS.jokerMode, on ? "1" : "0");
 }

@@ -25,6 +25,11 @@ values, StatTrak variants — and lets you:
 - Verify every single drop through a real **provably-fair** chain (server
   seed hash + client seed + nonce + HMAC_SHA256), so you can prove the
   outcomes weren't retroactively changed.
+- Toggle **Joker mode** on `/sim`: every weapon in a case gets **equal
+  odds** (uniform `1/N`), and the open price rises so the case keeps its
+  **original house edge** (same % edge as normal mode, just at higher
+  stakes). Joker drops carry a `joker` flag so the verify endpoint applies
+  the same transformation and the chain stays verifiable.
 
 The goal is to let you answer questions like: *"If I open this case 500 times,
 what's my expected return? How often do I hit a Covert? Is this case +EV over
@@ -128,8 +133,32 @@ Then visit:
    drop frequency tables, best/worst drop, rare-drop rate (Covert + Knife +
    Gloves combined).
 5. **Verify** any drop with the "Verify" button → it calls
-   `/api/provably-fair` with `{serverSeed, clientSeed, nonce, caseSlug}` and
-   recomputes the ticket, confirming the displayed drop matches.
+   `/api/provably-fair` with `{serverSeed, clientSeed, nonce, caseSlug,
+   joker}` and recomputes the ticket, confirming the displayed drop matches.
+
+---
+
+## Joker mode
+
+A toggle on `/sim` (both Stats batch and Realistic). When ON:
+
+- Every skin in the case gets **equal probability** (`1/N`, where `N` is the
+  item count). Per-wear ratios within a skin are preserved, only the skin
+  selection is flattened to uniform.
+- The open **price is raised so the case keeps its original house edge**:
+  `jokerPrice = jokerEV / (1 - origEdge)`, where `origEdge =
+  1 - origEV / origPrice`. In other words the joker price is the uniform EV
+  scaled by the original `price/EV` ratio. Because rare items
+  (Covert/Knife/Gloves) normally have tiny odds, the uniform EV — and thus
+  the joker price — is dramatically higher than the listed case price, but
+  the % edge the house keeps is the same as in normal mode (keydrop does
+  the same — joker mode is not a 0-edge game).
+- Each drop is stamped with `joker: true` and stored in history / inventory
+  with that flag. The verify endpoint applies the same `jokerCase()`
+  transformation before recomputing the ticket, so the provably-fair chain
+  stays verifiable end-to-end.
+- The toggle persists in `localStorage` (`keydrop-sim:jokerMode`) and is
+  shared across both sim modes.
 
 ---
 

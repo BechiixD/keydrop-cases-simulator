@@ -529,6 +529,58 @@ wear, and source. Items can be sold individually or in bulk to recover balance.
 - [x] 20.7 Nav link to `/inventory` with box icon.
 - [x] 20.8 Verify: `pnpm typecheck`, `pnpm test:engine`, `pnpm build`.
 
+### 21. Joker mode — uniform odds, fair-price opening
+
+A toggle on `/sim` (both Stats batch and Realistic) that flattens every
+case to **equal per-skin odds** and raises the open price to the case's
+**expected value** under that uniform distribution. Result: a fair,
+0% house-edge game where rare items (Covert/Knife/Gloves) become as
+likely as any Mil-Spec. The provably-fair chain stays verifiable.
+
+- [x] 21.1 Engine: `jokerCase(c)` in `lib/caseEngine.ts` builds a copy of
+      the case where each skin's `totalProbability = 1/N` and each wear's
+      probability is rescaled to `(w.probability / skin.totalProbability) *
+      (1/N)` (per-wear ratios preserved, skin selection uniform).
+      `jokerPrice(c)` returns the uniform-EV price scaled to keep the
+      case's **original house edge**: `jokerPrice = jokerEV / (1 - origEdge)`
+      where `origEdge = 1 - origEV / origPrice` (== `jokerEV * origPrice /
+      origEV`). This matches keydrop's real joker pricing (verified against
+      two cases: ICE BLAST 0.32→2.90 vs keydrop 3.03; GIRLS FAVORITE
+      1→33.04 vs keydrop 33.65; residual gap is stale skin values in the
+      cache). `openOnce` / `runBatch` / `runMultiBatch` accept a
+      `joker?: boolean` and, when set, open against `jokerCase(c)` while
+      keeping `caseSlug` on the original slug so cache lookup still resolves.
+- [x] 21.2 `Drop` gains `joker?: boolean`; every joker drop is stamped
+      `joker: true` so history + inventory carry the flag.
+- [x] 21.3 Verify: `/api/provably-fair` accepts `joker` in the request and
+      applies `jokerCase()` before recomputing the ticket. `SimVerifier`
+      sends `drop.joker`. Probed end-to-end: `joker:true` → full match
+      (hash/ticket/skin/wear); `joker:false` on the same drop → skin
+      mismatch (confirms the flag changes the outcome and the endpoint
+      honors it).
+- [x] 21.4 UI: a `🃏 Joker mode` toggle (persisted in `localStorage` via
+      `getJokerMode`/`setJokerMode`) is shown on both `SimClient` (stats
+      batch) and `OpenRealistic`. When ON, case cards / the case picker
+      show the joker price in fuchsia with the original price struck
+      through; cost summaries, balance-gate checks, and button-disable
+      conditions all use the joker price.
+- [x] 21.5 Verify: `pnpm typecheck`, `pnpm test:engine`, `pnpm build` all
+      green; standalone sanity script confirmed uniform 1/N distribution
+      over 20k rolls, edge preserved (= original case edge), wear ratios
+      preserved, and byte-identical determinism for fixed seeds.
+- [x] 21.6 Joker in battles. `BattleConfig` and `BattleResult` gain
+      `joker?: boolean`. `runBattle` threads `cfg.joker` into `runBatch`
+      and uses `jokerPrice(c)` instead of `c.price` for entry-cost
+      calculation, so the battle economy stays consistent with sim mode.
+      `BattleClient` gets the same `🃏 Joker mode` toggle (persisted via
+      `getJokerMode`/`setJokerMode`, shared with sim), joker pricing in
+      case cards with strikethrough, and passes `joker` into the cfg.
+      Result panel + `BattleHistoryCard` on `/balance` show a `🃏 joker`
+      badge. End-to-end probe: joker battle entry cost = jokerPrice ×
+      rounds, drops are uniform across all rarities (knife shows up in
+      10 opens), `result.joker = true`, all drops carry `joker: true`,
+      and the verify endpoint confirms `match: true` with the joker flag.
+
 ---
 
 ## Phase 2 build order (verify each before moving on)

@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { CaseDefinition, Drop } from "@/lib/types";
-import { openOnce, runBatch } from "@/lib/caseEngine";
+import { jokerPrice, openOnce, runBatch } from "@/lib/caseEngine";
 import {
   hashServerSeed,
   randomClientSeed,
@@ -11,12 +11,15 @@ import {
   adjustBalance,
   getBalance,
   getClientSeed,
+  getJokerMode,
   getLastNonce,
   getServerSeed,
   pushHistory,
   setClientSeed,
+  setJokerMode,
   setLastNonce,
   setServerSeed,
+  compactDrop,
 } from "@/lib/storage";
 import { SimVerifier } from "@/components/SimVerifier";
 import { ProvablyFairPanel, type ProvablyFairState } from "@/components/ProvablyFairPanel";
@@ -76,6 +79,7 @@ export function OpenRealistic({
   const [autoCurrent, setAutoCurrent] = useState(-1);
   const [openHistory, setOpenHistory] = useState<Drop[]>([]);
   const [itemW, setItemW] = useState(ITEM_W);
+  const [joker, setJoker] = useState(false);
   const reelRef = useRef<HTMLDivElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
   const spinTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -86,9 +90,21 @@ export function OpenRealistic({
     [cases, selectedSlug],
   );
 
+  const openPrice = useMemo(
+    () => (caseDef ? (joker ? jokerPrice(caseDef) : caseDef.price) : 0),
+    [caseDef, joker],
+  );
+
+  function toggleJoker(next: boolean): void {
+    setJoker(next);
+    setJokerMode(next);
+    setWinner(null);
+  }
+
   useEffect(() => {
     setBalance(getBalance());
     setBalanceBusy(false);
+    setJoker(getJokerMode());
     const cs = getClientSeed(randomClientSeed());
     setClientSeedState(cs);
     try {
@@ -106,7 +122,8 @@ export function OpenRealistic({
   }, []);
 
   function saveOpens(drops: Drop[]): void {
-    const next = [...drops, ...openHistory].slice(0, 200);
+    const compacted = drops.map(compactDrop);
+    const next = [...compacted, ...openHistory].slice(0, 200);
     setOpenHistory(next);
     try {
       window.localStorage.setItem(OPEN_HISTORY_KEY, JSON.stringify(next));
@@ -142,7 +159,7 @@ export function OpenRealistic({
 
   function doSingleOpen(): void {
     if (!caseDef) return;
-    if (balance < caseDef.price) return;
+    if (balance < openPrice) return;
     if (spinTimerRef.current) clearTimeout(spinTimerRef.current);
     spinTimerRef.current = null;
 
@@ -152,6 +169,7 @@ export function OpenRealistic({
       serverSeed,
       clientSeed,
       nonce,
+      joker,
     });
     if (!drop) return;
 
@@ -159,7 +177,7 @@ export function OpenRealistic({
     setSpinning(true);
     setServerSeedRevealed(true);
 
-    const newBalance = adjustBalance(-caseDef.price);
+    const newBalance = adjustBalance(-openPrice);
     setBalance(newBalance);
     setLastNonce(nonce + 1);
     saveOpens([drop]);
@@ -194,7 +212,7 @@ export function OpenRealistic({
     if (!caseDef || autoRunning) return;
     const count = Math.max(1, Math.min(50, Math.floor(autoCount)));
     if (count <= 0) return;
-    const totalCost = caseDef.price * count;
+    const totalCost = openPrice * count;
     if (balance < totalCost) return;
     if (spinTimerRef.current) clearTimeout(spinTimerRef.current);
     if (autoTimerRef.current) clearTimeout(autoTimerRef.current);
@@ -209,7 +227,7 @@ export function OpenRealistic({
     setServerSeedRevealed(true);
 
     const startN = getLastNonce();
-    const batch = runBatch(caseDef, count, serverSeed, clientSeed, startN);
+    const batch = runBatch(caseDef, count, serverSeed, clientSeed, startN, joker);
 
     const newBalance = adjustBalance(-totalCost);
     setBalance(newBalance);
@@ -273,7 +291,7 @@ export function OpenRealistic({
         </h1>
         <div className="text-sm text-white/50">
           Balance{" "}
-          <span className={caseDef && balance < caseDef.price ? "text-red-400" : "text-amber-400"}>
+          <span className={caseDef && balance < openPrice ? "text-red-400" : "text-amber-400"}>
             {balanceBusy ? (
               <span className="inline-block h-5 w-20 animate-pulse rounded bg-white/10 align-middle" />
             ) : (
@@ -283,6 +301,45 @@ export function OpenRealistic({
           coins
         </div>
       </header>
+
+      <button
+        type="button"
+        onClick={() => toggleJoker(!joker)}
+        disabled={spinning || autoRunning}
+        aria-pressed={joker}
+        className={`flex w-full items-center justify-between gap-3 rounded-xl border px-4 py-3 text-left transition disabled:opacity-50 ${
+          joker
+            ? "border-fuchsia-400/60 bg-fuchsia-400/10"
+            : "border-white/10 bg-white/5 hover:bg-white/10"
+        }`}
+      >
+        <div className="flex items-center gap-3">
+          <span className="text-xl">🃏</span>
+          <div>
+            <div className="font-semibold">
+              Joker mode{" "}
+              <span className={joker ? "text-fuchsia-400" : "text-white/40"}>
+                {joker ? "ON" : "OFF"}
+              </span>
+            </div>
+            <div className="text-xs text-white/50">
+              All weapons get equal odds. Price rises to keep the case&apos;s
+              original house edge.
+            </div>
+          </div>
+        </div>
+        <span
+          className={`relative h-6 w-11 shrink-0 rounded-full transition ${
+            joker ? "bg-fuchsia-400/80" : "bg-white/15"
+          }`}
+        >
+          <span
+            className={`absolute top-0.5 h-5 w-5 rounded-full bg-white transition-all ${
+              joker ? "left-[22px]" : "left-0.5"
+            }`}
+          />
+        </span>
+      </button>
 
       <section className="grid gap-4 md:grid-cols-2">
         <div className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-3">
@@ -297,7 +354,7 @@ export function OpenRealistic({
           >
             {cases.map((c) => (
               <option key={c.slug} value={c.slug}>
-                {c.name} · {c.price.toLocaleString()} coins · {c.items.length} items
+                {c.name} · {(joker ? jokerPrice(c) : c.price).toLocaleString()} coins · {c.items.length} items
               </option>
             ))}
           </select>
@@ -313,7 +370,15 @@ export function OpenRealistic({
               <div>
                 <div className="font-medium">{caseDef.name}</div>
                 <div className="text-xs text-white/50">
-                  {caseDef.price.toLocaleString()} coins per open
+                  {joker ? (
+                    <>
+                      <span className="text-fuchsia-400">{openPrice.toLocaleString()} coins</span>{" "}
+                      <span className="line-through text-white/30">{caseDef.price.toLocaleString()}</span>
+                      {" "}per open
+                    </>
+                  ) : (
+                    <>{caseDef.price.toLocaleString()} coins per open</>
+                  )}
                 </div>
               </div>
             </div>
@@ -408,20 +473,20 @@ export function OpenRealistic({
           </div>
           <div className="text-sm text-white/60">
             {caseDef
-              ? `Cost: ${caseDef.price.toLocaleString()} coins`
+              ? `Cost: ${openPrice.toLocaleString()} coins`
               : ""}
           </div>
           <button
             onClick={doSingleOpen}
             disabled={
               !caseDef ||
-              balance < (caseDef?.price ?? 0)
+              balance < openPrice
             }
             className="mt-auto rounded bg-amber-500 px-4 py-2 text-sm font-semibold text-black disabled:opacity-40"
           >
             {spinning ? "Open again" : "Open"}
           </button>
-          {caseDef && balance < caseDef.price && (
+          {caseDef && balance < openPrice && (
             <div className="text-xs text-red-400">
               Insufficient balance
             </div>
@@ -460,7 +525,7 @@ export function OpenRealistic({
           </div>
           <div className="text-sm text-white/60">
             {caseDef
-              ? `Total cost: ${(caseDef.price * autoCount).toLocaleString()} coins`
+              ? `Total cost: ${(openPrice * autoCount).toLocaleString()} coins`
               : ""}
           </div>
           <div className="text-xs text-white/40">
@@ -472,7 +537,7 @@ export function OpenRealistic({
               spinning ||
               autoRunning ||
               !caseDef ||
-              balance < (caseDef?.price ?? 0) * autoCount
+              balance < openPrice * autoCount
             }
             className="rounded border border-amber-400/40 px-4 py-2 text-sm font-semibold text-amber-400 hover:bg-amber-400/10 disabled:opacity-30"
           >

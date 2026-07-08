@@ -48,6 +48,7 @@ export function SimVerifier({
           expectedTicket: drop.ticket,
           expectedSkinName: drop.skin.name,
           expectedWear: drop.wear.wear,
+          joker: drop.joker === true,
         }),
       });
       const json = (await res.json()) as VerifyResponse;

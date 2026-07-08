@@ -2,15 +2,17 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { BatchResult, CaseDefinition, MultiBatchResult } from "@/lib/types";
-import { runMultiBatch } from "@/lib/caseEngine";
+import { jokerPrice, runMultiBatch } from "@/lib/caseEngine";
 import {
   adjustBalance,
   getBalance,
   getClientSeed,
+  getJokerMode,
   getLastNonce,
   getServerSeed,
   pushHistory,
   setClientSeed,
+  setJokerMode,
   setLastNonce,
   setServerSeed,
 } from "@/lib/storage";
@@ -59,6 +61,21 @@ export function SimClient({
   const [error, setError] = useState<string | null>(null);
   const [runStarted, setRunStarted] = useState(false);
   const [sendToInventory, setSendToInventory] = useState(true);
+  const [joker, setJoker] = useState(false);
+
+  useEffect(() => {
+    setJoker(getJokerMode());
+  }, []);
+
+  function toggleJoker(next: boolean): void {
+    setJoker(next);
+    setJokerMode(next);
+    setResult(null);
+  }
+
+  function priceOf(c: CaseDefinition): number {
+    return joker ? jokerPrice(c) : c.price;
+  }
 
   useEffect(() => {
     setBalance(getBalance());
@@ -94,11 +111,12 @@ export function SimClient({
     for (const c of cases) {
       if (selected[c.slug]) {
         const n = Math.max(0, counts[c.slug] ?? 0);
-        cost += c.price * n;
+        cost += priceOf(c) * n;
       }
     }
     return cost;
-  }, [cases, selected, counts]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [cases, selected, counts, joker]);
 
   const totalOpens = useMemo(() => {
     let n = 0;
@@ -163,6 +181,7 @@ export function SimClient({
       serverSeed,
       clientSeed,
       startNonce,
+      joker,
     );
     const newBalance = adjustBalance(-res.totalCost);
     setBalance(newBalance);
@@ -198,16 +217,57 @@ export function SimClient({
         </div>
       </header>
 
+      <button
+        type="button"
+        onClick={() => toggleJoker(!joker)}
+        aria-pressed={joker}
+        className={`flex w-full items-center justify-between gap-3 rounded-xl border px-4 py-3 text-left transition ${
+          joker
+            ? "border-fuchsia-400/60 bg-fuchsia-400/10"
+            : "border-white/10 bg-white/5 hover:bg-white/10"
+        }`}
+      >
+        <div className="flex items-center gap-3">
+          <span className="text-xl">🃏</span>
+          <div>
+            <div className="font-semibold">
+              Joker mode{" "}
+              <span className={joker ? "text-fuchsia-400" : "text-white/40"}>
+                {joker ? "ON" : "OFF"}
+              </span>
+            </div>
+            <div className="text-xs text-white/50">
+              All weapons get equal odds. Price rises to keep the case&apos;s
+              original house edge.
+            </div>
+          </div>
+        </div>
+        <span
+          className={`relative h-6 w-11 shrink-0 rounded-full transition ${
+            joker ? "bg-fuchsia-400/80" : "bg-white/15"
+          }`}
+        >
+          <span
+            className={`absolute top-0.5 h-5 w-5 rounded-full bg-white transition-all ${
+              joker ? "left-[22px]" : "left-0.5"
+            }`}
+          />
+        </span>
+      </button>
+
       <section className="rounded-xl border border-white/10 bg-white/5 p-4">
         <div className="grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3">
           {cases.map((c) => {
             const isSel = !!selected[c.slug];
+            const price = priceOf(c);
             return (
               <label
                 key={c.slug}
                 className={`cursor-pointer rounded-lg border p-3 transition ${
                   isSel
-                    ? "border-amber-400/60 bg-amber-400/5"
+                    ? joker
+                      ? "border-fuchsia-400/60 bg-fuchsia-400/5"
+                      : "border-amber-400/60 bg-amber-400/5"
                     : "border-white/10 bg-white/0 hover:bg-white/5"
                 }`}
               >
@@ -235,7 +295,19 @@ export function SimClient({
                   <div className="min-w-0 flex-1">
                     <div className="truncate font-medium">{c.name}</div>
                     <div className="text-xs text-white/50">
-                      {c.price.toLocaleString()} coins · {c.items.length} items
+                      {joker ? (
+                        <>
+                          <span className="text-fuchsia-400">
+                            {price.toLocaleString()} coins
+                          </span>{" "}
+                          <span className="line-through text-white/30">
+                            {c.price.toLocaleString()}
+                          </span>
+                        </>
+                      ) : (
+                        <>{c.price.toLocaleString()} coins</>
+                      )}{" "}
+                      · {c.items.length} items
                     </div>
                   </div>
                 </div>

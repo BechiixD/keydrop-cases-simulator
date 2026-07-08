@@ -15,12 +15,15 @@ import {
   randomClientSeed,
   randomServerSeed,
 } from "@/lib/provablyFair";
+import { jokerPrice } from "@/lib/caseEngine";
 import { addDrops } from "@/lib/inventory";
 import {
   adjustBalance,
   getBalance,
+  getJokerMode,
   getLastNonce,
   pushBattleHistory,
+  setJokerMode,
   setLastNonce,
 } from "@/lib/storage";
 import { SimVerifier } from "@/components/SimVerifier";
@@ -122,6 +125,7 @@ export function BattleClient({
   const [balanceBusy, setBalanceBusy] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [botSeeds, setBotSeeds] = useState<string[]>([]);
+  const [joker, setJoker] = useState(false);
 
   const preset = useMemo(
     () => PRESETS.find((p) => p.format === format) ?? PRESETS[0],
@@ -131,6 +135,7 @@ export function BattleClient({
   useEffect(() => {
     setBalance(getBalance());
     setBalanceBusy(false);
+    setJoker(getJokerMode());
     const totalBots = preset.numTeams * preset.teamSize - 1;
     setBotSeeds((prev) => {
       const next = [...prev];
@@ -150,13 +155,24 @@ export function BattleClient({
     [cases, selected, rounds],
   );
 
+  function priceOf(c: CaseDefinition): number {
+    return joker ? jokerPrice(c) : c.price;
+  }
+
+  function toggleJoker(next: boolean): void {
+    setJoker(next);
+    setJokerMode(next);
+    setResult(null);
+  }
+
   const userCost = useMemo(() => {
     let total = 0;
     for (const c of selectedCases) {
-      total += c.price * (rounds[c.slug] ?? 0);
+      total += priceOf(c) * (rounds[c.slug] ?? 0);
     }
     return total * (100 - borrow) / 100;
-  }, [selectedCases, rounds, borrow]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [selectedCases, rounds, borrow, joker]);
 
   function reshuffle(): void {
     setServerSeed(randomServerSeed());
@@ -222,6 +238,7 @@ export function BattleClient({
       cases: selectedCases,
       roundsPerCase: selectedCases.length,
       players,
+      joker,
     };
     const startNonce = getLastNonce();
     const totalOpens = preset.numTeams * preset.teamSize * selectedCases.reduce((s, c) => s + (rounds[c.slug] ?? 0), 0);
@@ -253,6 +270,44 @@ export function BattleClient({
           coins
         </div>
       </header>
+
+      <button
+        type="button"
+        onClick={() => toggleJoker(!joker)}
+        aria-pressed={joker}
+        className={`flex w-full items-center justify-between gap-3 rounded-xl border px-4 py-3 text-left transition ${
+          joker
+            ? "border-fuchsia-400/60 bg-fuchsia-400/10"
+            : "border-white/10 bg-white/5 hover:bg-white/10"
+        }`}
+      >
+        <div className="flex items-center gap-3">
+          <span className="text-xl">🃏</span>
+          <div>
+            <div className="font-semibold">
+              Joker mode{" "}
+              <span className={joker ? "text-fuchsia-400" : "text-white/40"}>
+                {joker ? "ON" : "OFF"}
+              </span>
+            </div>
+            <div className="text-xs text-white/50">
+              All weapons get equal odds. Price rises to keep the case&apos;s
+              original house edge.
+            </div>
+          </div>
+        </div>
+        <span
+          className={`relative h-6 w-11 shrink-0 rounded-full transition ${
+            joker ? "bg-fuchsia-400/80" : "bg-white/15"
+          }`}
+        >
+          <span
+            className={`absolute top-0.5 h-5 w-5 rounded-full bg-white transition-all ${
+              joker ? "left-[22px]" : "left-0.5"
+            }`}
+          />
+        </span>
+      </button>
 
       <section className="rounded-xl border border-white/10 bg-white/5 p-4 space-y-4">
         <div>
@@ -342,12 +397,15 @@ export function BattleClient({
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
           {cases.map((c) => {
             const isSel = !!selected[c.slug];
+            const price = priceOf(c);
             return (
               <label
                 key={c.slug}
                 className={`flex cursor-pointer items-center gap-2 rounded-lg border p-3 transition ${
                   isSel
-                    ? "border-amber-400/60 bg-amber-400/5"
+                    ? joker
+                      ? "border-fuchsia-400/60 bg-fuchsia-400/5"
+                      : "border-amber-400/60 bg-amber-400/5"
                     : "border-white/10 bg-white/0 hover:bg-white/5"
                 }`}
               >
@@ -372,7 +430,18 @@ export function BattleClient({
                 <div className="min-w-0 flex-1">
                   <div className="truncate text-sm font-medium">{c.name}</div>
                   <div className="text-xs text-white/50">
-                    {c.price.toLocaleString()} coins
+                    {joker ? (
+                      <>
+                        <span className="text-fuchsia-400">
+                          {price.toLocaleString(undefined, { maximumFractionDigits: 2 })} coins
+                        </span>{" "}
+                        <span className="line-through text-white/30">
+                          {c.price.toLocaleString()}
+                        </span>
+                      </>
+                    ) : (
+                      <>{c.price.toLocaleString()} coins</>
+                    )}
                   </div>
                 </div>
                 <input
@@ -529,7 +598,7 @@ function BattleResultPanel({
           </span>
         </div>
         <div className="mt-1 text-xs text-white/40">
-          {result.format} · {result.mode} · borrow {result.borrowPercent}% ·{" "}
+          {result.format} · {result.mode} · borrow {result.borrowPercent}%{result.joker && " · 🃏 joker"} ·{" "}
           {result.teams[result.winnerTeamIndex].playerNames.join(" + ")} took the pot
         </div>
       </div>

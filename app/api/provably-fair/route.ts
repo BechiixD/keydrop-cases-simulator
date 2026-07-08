@@ -13,6 +13,7 @@ interface VerifyRequest {
   expectedTicket?: string;
   expectedSkinName?: string;
   expectedWear?: string;
+  joker?: boolean;
 }
 
 export async function POST(req: Request): Promise<NextResponse> {
@@ -53,6 +54,7 @@ export async function POST(req: Request): Promise<NextResponse> {
     clientSeed,
     nonce,
     caseSlug,
+    joker: body.joker === true,
   });
   if (!drop) {
     return NextResponse.json(

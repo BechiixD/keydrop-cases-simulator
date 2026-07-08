@@ -59941,7 +59941,2732 @@
         }
       ],
       "imageUrlRemote": "https://key-drop.com/uploads/skins/flame.png"
+    },
+    {
+      "slug": "yakuza-bite",
+      "name": "YAKUZA BITE",
+      "price": 1,
+      "imageUrl": "https://key-drop.com/uploads/skins/1_YAKUZA_BITE.png",
+      "imageUrlRemote": "https://key-drop.com/uploads/skins/1_YAKUZA_BITE.png",
+      "scrapedAt": 1783533346524,
+      "items": [
+        {
+          "id": "2a3275468913cd45ccfefb7ceddae0de",
+          "name": "★ Survival Knife | Doppler - Ruby",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/db/db52ac108b591ad0840ae24a1a6c63dd.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/db/db52ac108b591ad0840ae24a1a6c63dd.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00005,
+              "value": 729.88
+            }
+          ],
+          "totalProbability": 0.00005
+        },
+        {
+          "id": "e18fb635cb3ce55884ce2e6db27f3286",
+          "name": "AK-47 | Aquamarine Revenge",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/4c/4cf819dfbccf571e206c3276ffd012fb.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/4c/4cf819dfbccf571e206c3276ffd012fb.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00002,
+              "value": 90.67
+            },
+            {
+              "wear": "FT",
+              "probability": 0.00004,
+              "value": 56.78
+            },
+            {
+              "wear": "BS",
+              "probability": 0.00005,
+              "value": 46.94
+            },
+            {
+              "wear": "WW",
+              "probability": 0.00006,
+              "value": 46.23
+            }
+          ],
+          "totalProbability": 0.00017
+        },
+        {
+          "id": "e6557c2310e928bc2f1959cfd310631f",
+          "name": "M4A1-S | Vaporwave",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/41/416f1eef96fab42fdc344ccab7ccdb3d.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/41/416f1eef96fab42fdc344ccab7ccdb3d.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.00003,
+              "value": 76.06
+            },
+            {
+              "wear": "WW",
+              "probability": 0.00004,
+              "value": 71.38
+            },
+            {
+              "wear": "BS",
+              "probability": 0.00005,
+              "value": 62.01
+            }
+          ],
+          "totalProbability": 0.00012
+        },
+        {
+          "id": "beb5474018b18a37f25ea3fb6be037be",
+          "name": "AK-47 | Neon Rider",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/e8/e8079ea19a8dcf1e1577126cf725e9bf.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e8/e8079ea19a8dcf1e1577126cf725e9bf.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.00010999999999999999,
+              "value": 67.02
+            }
+          ],
+          "totalProbability": 0.00010999999999999999
+        },
+        {
+          "id": "4c5855cd2adb2d972bc0f8dca94169bd",
+          "name": "AWP | Ice Coaled",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/3d/3d1c93c9f0cf0f59a8bfee0147bc16e4.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3d/3d1c93c9f0cf0f59a8bfee0147bc16e4.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00002,
+              "value": 47.41
+            },
+            {
+              "wear": "MW",
+              "probability": 0.00004,
+              "value": 22.21
+            },
+            {
+              "wear": "FT",
+              "probability": 0.00014000000000000001,
+              "value": 10.79
+            },
+            {
+              "wear": "WW",
+              "probability": 0.00025,
+              "value": 7.82
+            },
+            {
+              "wear": "BS",
+              "probability": 0.0004,
+              "value": 6.07
+            }
+          ],
+          "totalProbability": 0.00085
+        },
+        {
+          "id": "b2776415b5ef039d42e4b17a50630a56",
+          "name": "Glock-18 | Snack Attack",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/28/288ebd726a1b7d09617f82ea1c38e615.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/28/288ebd726a1b7d09617f82ea1c38e615.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00003,
+              "value": 46.26
+            },
+            {
+              "wear": "FT",
+              "probability": 0.00008,
+              "value": 25.47
+            },
+            {
+              "wear": "WW",
+              "probability": 0.00008999999999999999,
+              "value": 22.56
+            },
+            {
+              "wear": "BS",
+              "probability": 0.00010999999999999999,
+              "value": 20.71
+            }
+          ],
+          "totalProbability": 0.00030999999999999995
+        },
+        {
+          "id": "a0eac65ca2cfe3c1b494b0727dbf8586",
+          "name": "Glock-18 | Shinobu",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/9b/9b904b9323bf3676c892aa976d4f31cf.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/9b/9b904b9323bf3676c892aa976d4f31cf.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00008,
+              "value": 12.72
+            },
+            {
+              "wear": "FT",
+              "probability": 0.00029,
+              "value": 6.41
+            },
+            {
+              "wear": "WW",
+              "probability": 0.00033,
+              "value": 5.99
+            },
+            {
+              "wear": "BS",
+              "probability": 0.00035999999999999997,
+              "value": 5.75
+            }
+          ],
+          "totalProbability": 0.0010600000000000002
+        },
+        {
+          "id": "28631d3014fb0aabd36b7bf3651a0005",
+          "name": "USP-S | Jawbreaker",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/0d/0d8c5f9d132d9d45d68eeb6ae91aa625.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/0d/0d8c5f9d132d9d45d68eeb6ae91aa625.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00012,
+              "value": 8.98
+            },
+            {
+              "wear": "FT",
+              "probability": 0.00033,
+              "value": 5.23
+            },
+            {
+              "wear": "WW",
+              "probability": 0.00043999999999999996,
+              "value": 4.47
+            },
+            {
+              "wear": "BS",
+              "probability": 0.0005,
+              "value": 4.19
+            }
+          ],
+          "totalProbability": 0.0013900000000000002
+        },
+        {
+          "id": "0e65b520504e64540864b2cd037ee8a0",
+          "name": "UMP-45 | Wild Child",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/c3/c3cfb42e6da53a0af1b2add8c187ea4a.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c3/c3cfb42e6da53a0af1b2add8c187ea4a.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00012,
+              "value": 8.69
+            },
+            {
+              "wear": "FT",
+              "probability": 0.00035999999999999997,
+              "value": 4.85
+            },
+            {
+              "wear": "WW",
+              "probability": 0.00046,
+              "value": 4.27
+            },
+            {
+              "wear": "BS",
+              "probability": 0.0005099999999999999,
+              "value": 4.04
+            }
+          ],
+          "totalProbability": 0.00145
+        },
+        {
+          "id": "136a882b1cb6501f7729bc76e77f5097",
+          "name": "Sawed-Off | Apocalypto",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/62/62045e62a26aceaadaad9476a7905fec.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/62/62045e62a26aceaadaad9476a7905fec.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00004,
+              "value": 6.52
+            },
+            {
+              "wear": "MW",
+              "probability": 0.00703,
+              "value": 1.54
+            },
+            {
+              "wear": "FT",
+              "probability": 0.00384,
+              "value": 0.77
+            },
+            {
+              "wear": "WW",
+              "probability": 0.00384,
+              "value": 0.74
+            },
+            {
+              "wear": "BS",
+              "probability": 0.00431,
+              "value": 0.71
+            }
+          ],
+          "totalProbability": 0.01906
+        },
+        {
+          "id": "817de30aba673825b8966383fbd4e286",
+          "name": "R8 Revolver | Tango",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/31/31b8e54970cc49c06d3b2e2df28010ad.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/31/31b8e54970cc49c06d3b2e2df28010ad.png?v4",
+          "rarity": "Mil-Spec",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00003,
+              "value": 4.37
+            },
+            {
+              "wear": "MW",
+              "probability": 0.0014399999999999999,
+              "value": 0.67
+            },
+            {
+              "wear": "FT",
+              "probability": 0.00623,
+              "value": 0.29
+            },
+            {
+              "wear": "BS",
+              "probability": 0.0091,
+              "value": 0.23
+            },
+            {
+              "wear": "WW",
+              "probability": 0.0091,
+              "value": 0.23
+            }
+          ],
+          "totalProbability": 0.025900000000000003
+        },
+        {
+          "id": "5d9afe6f90108e28bf5c2c62a96c2357",
+          "name": "AK-47 | Midnight Laminate",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/ad/adb860403dc4f3bc4bcf3ffa0677076d.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ad/adb860403dc4f3bc4bcf3ffa0677076d.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.0007599999999999999,
+              "value": 4.32
+            },
+            {
+              "wear": "FT",
+              "probability": 0.0008100000000000001,
+              "value": 4.19
+            }
+          ],
+          "totalProbability": 0.00157
+        },
+        {
+          "id": "11195e4b3c54546a1682ddd4a28fb9c8",
+          "name": "Dual Berettas | Twin Turbo",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/ed/ed72f327788eca900f5141ddfc75b500.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ed/ed72f327788eca900f5141ddfc75b500.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.00062,
+              "value": 4.24
+            },
+            {
+              "wear": "WW",
+              "probability": 0.044770000000000004,
+              "value": 2.73
+            }
+          ],
+          "totalProbability": 0.04539000000000001
+        },
+        {
+          "id": "ebcc6225c7c8562fbe0e7af87fcf993d",
+          "name": "MAC-10 | Saibā Oni",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/76/76026874c1accc5f373e84995e75eab0.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/76/76026874c1accc5f373e84995e75eab0.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00021,
+              "value": 3.97
+            },
+            {
+              "wear": "WW",
+              "probability": 0.01307,
+              "value": 1.71
+            },
+            {
+              "wear": "BS",
+              "probability": 0.01592,
+              "value": 1.55
+            },
+            {
+              "wear": "FT",
+              "probability": 0.01614,
+              "value": 1.54
+            }
+          ],
+          "totalProbability": 0.04534
+        },
+        {
+          "id": "e1589ce4f55ddc770259294bcf08526b",
+          "name": "M4A1-S | Night Terror",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/5e/5e96fe4aadd13f698f2f9aa0ebbf7fbd.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/5e/5e96fe4aadd13f698f2f9aa0ebbf7fbd.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00313,
+              "value": 3.74
+            },
+            {
+              "wear": "MW",
+              "probability": 0.02995,
+              "value": 1.15
+            },
+            {
+              "wear": "WW",
+              "probability": 0.04192,
+              "value": 0.89
+            },
+            {
+              "wear": "BS",
+              "probability": 0.043840000000000004,
+              "value": 0.87
+            },
+            {
+              "wear": "FT",
+              "probability": 0.04824,
+              "value": 0.83
+            }
+          ],
+          "totalProbability": 0.16707999999999998
+        },
+        {
+          "id": "e5c2de609504b78f6575136187f95f74",
+          "name": "Glock-18 | Block-18",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/66/6671ef4aaa29ca4e9087c1457d643586.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/66/6671ef4aaa29ca4e9087c1457d643586.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00344,
+              "value": 3.06
+            },
+            {
+              "wear": "MW",
+              "probability": 0.01714,
+              "value": 1.31
+            },
+            {
+              "wear": "BS",
+              "probability": 0.00431,
+              "value": 0.59
+            },
+            {
+              "wear": "WW",
+              "probability": 0.00431,
+              "value": 0.59
+            },
+            {
+              "wear": "FT",
+              "probability": 0.00479,
+              "value": 0.58
+            }
+          ],
+          "totalProbability": 0.03399
+        },
+        {
+          "id": "5ea2004f5919c8a91dbc570cb7805ef3",
+          "name": "M4A4 | Choppa",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/ed/eddb4a84c9da7b3e7b3270c8c367f452.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ed/eddb4a84c9da7b3e7b3270c8c367f452.png?v4",
+          "rarity": "Mil-Spec",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0006900000000000001,
+              "value": 2.73
+            },
+            {
+              "wear": "MW",
+              "probability": 0.0028799999999999997,
+              "value": 0.25
+            },
+            {
+              "wear": "FT",
+              "probability": 0.013879999999999998,
+              "value": 0.09
+            },
+            {
+              "wear": "BS",
+              "probability": 0.01675,
+              "value": 0.08
+            },
+            {
+              "wear": "WW",
+              "probability": 0.01675,
+              "value": 0.08
+            }
+          ],
+          "totalProbability": 0.050949999999999995
+        },
+        {
+          "id": "5d3bbf75f8c18f0dd217bc0f46db978b",
+          "name": "M4A1-S | Glitched Paint",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/0b/0b5c1de698c0c5fa512254c6b9869de9.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/0b/0b5c1de698c0c5fa512254c6b9869de9.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.01099,
+              "value": 2.24
+            },
+            {
+              "wear": "FT",
+              "probability": 0.01307,
+              "value": 2.06
+            },
+            {
+              "wear": "BS",
+              "probability": 0.01647,
+              "value": 1.83
+            }
+          ],
+          "totalProbability": 0.04053
+        },
+        {
+          "id": "223c43360b64dbd221c9ea9f87b7fd16",
+          "name": "AWP | Pit Viper",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/76/76caa59be6388ed7daeb959f844afbfc.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/76/76caa59be6388ed7daeb959f844afbfc.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00923,
+              "value": 2.09
+            },
+            {
+              "wear": "WW",
+              "probability": 0.05252,
+              "value": 1.31
+            },
+            {
+              "wear": "BS",
+              "probability": 0.05588,
+              "value": 1.27
+            }
+          ],
+          "totalProbability": 0.11763
+        },
+        {
+          "id": "f558f64a5f50d63c0975b1724da234f2",
+          "name": "SSG 08 | Calligrafaux",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/f7/f72b32c1945b566c0ea394619d25164a.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f7/f72b32c1945b566c0ea394619d25164a.png?v4",
+          "rarity": "Industrial",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00023,
+              "value": 2.06
+            },
+            {
+              "wear": "MW",
+              "probability": 0.0024,
+              "value": 0.14
+            },
+            {
+              "wear": "WW",
+              "probability": 0.030619999999999998,
+              "value": 0.03
+            },
+            {
+              "wear": "FT",
+              "probability": 0.030619999999999998,
+              "value": 0.03
+            },
+            {
+              "wear": "BS",
+              "probability": 0.030619999999999998,
+              "value": 0.03
+            }
+          ],
+          "totalProbability": 0.09449
+        },
+        {
+          "id": "01f5bd3f7383b2ca6b79b7961a30e03c",
+          "name": "UMP-45 | Continuum",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/31/31c646b1eadd5ef7fc3b7f28ec6c5024.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/31/31c646b1eadd5ef7fc3b7f28ec6c5024.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00769,
+              "value": 1.94
+            },
+            {
+              "wear": "FT",
+              "probability": 0.05743,
+              "value": 0.97
+            },
+            {
+              "wear": "WW",
+              "probability": 0.00623,
+              "value": 0.78
+            }
+          ],
+          "totalProbability": 0.07135000000000001
+        },
+        {
+          "id": "664d2cef17a40483bb291210031d143f",
+          "name": "P90 | Freight",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/d3/d3bbdc1201b65ff9c75bfde3c778f9a0.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d3/d3bbdc1201b65ff9c75bfde3c778f9a0.png?v4",
+          "rarity": "Mil-Spec",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00241,
+              "value": 1.22
+            },
+            {
+              "wear": "MW",
+              "probability": 0.0028799999999999997,
+              "value": 0.21
+            },
+            {
+              "wear": "BS",
+              "probability": 0.01149,
+              "value": 0.09
+            },
+            {
+              "wear": "WW",
+              "probability": 0.02153,
+              "value": 0.06
+            },
+            {
+              "wear": "FT",
+              "probability": 0.02153,
+              "value": 0.06
+            }
+          ],
+          "totalProbability": 0.05984
+        },
+        {
+          "id": "e2cd60bb77dff6bc9d6777efbd5c5384",
+          "name": "XM1014 | Mockingbird",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/f6/f6642b3ec07ee2a160ba26f126cc225c.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f6/f6642b3ec07ee2a160ba26f126cc225c.png?v4",
+          "rarity": "Mil-Spec",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0022500000000000003,
+              "value": 1.18
+            },
+            {
+              "wear": "MW",
+              "probability": 0.00384,
+              "value": 0.16
+            },
+            {
+              "wear": "BS",
+              "probability": 0.01914,
+              "value": 0.06
+            },
+            {
+              "wear": "FT",
+              "probability": 0.01866,
+              "value": 0.06
+            },
+            {
+              "wear": "WW",
+              "probability": 0.01866,
+              "value": 0.06
+            }
+          ],
+          "totalProbability": 0.06255
+        },
+        {
+          "id": "1259ad39c77d9e02f16dc85571007c5a",
+          "name": "M4A4 | Naval Shred Camo",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/6f/6f6c407bb347e520f7104e8fbb40aba6.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6f/6f6c407bb347e520f7104e8fbb40aba6.png?v4",
+          "rarity": "Industrial",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00336,
+              "value": 0.1
+            },
+            {
+              "wear": "FT",
+              "probability": 0.02297,
+              "value": 0.03
+            },
+            {
+              "wear": "BS",
+              "probability": 0.13249,
+              "value": 0.01
+            }
+          ],
+          "totalProbability": 0.15882000000000002
+        }
+      ]
+    },
+    {
+      "slug": "oasis",
+      "name": "OASIS",
+      "price": 5,
+      "imageUrl": "https://key-drop.com/uploads/skins/3_OASIS.png",
+      "imageUrlRemote": "https://key-drop.com/uploads/skins/3_OASIS.png",
+      "scrapedAt": 1783533359410,
+      "items": [
+        {
+          "id": "b47e8d454e6ee1bc9499f10d627511fe",
+          "name": "★ Bayonet | Gamma Doppler - Phase 2",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/6c/6c920455d1181f1960c2efc05c729354.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6c/6c920455d1181f1960c2efc05c729354.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00005,
+              "value": 943.52
+            }
+          ],
+          "totalProbability": 0.00005
+        },
+        {
+          "id": "83fbc1a649f3a7b6fd81fc552e8ae4b1",
+          "name": "★ Bayonet | Doppler - Phase 1",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/d6/d6fb2730dea8c3d2acca35ba09417657.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d6/d6fb2730dea8c3d2acca35ba09417657.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00015,
+              "value": 594.71
+            }
+          ],
+          "totalProbability": 0.00015
+        },
+        {
+          "id": "14fac4be126aa5ff7b14af87935a2cd5",
+          "name": "★ Flip Knife | Tiger Tooth",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/d1/d1291bf6035aa8224884aa6eb3856858.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d1/d1291bf6035aa8224884aa6eb3856858.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0002,
+              "value": 319.3
+            }
+          ],
+          "totalProbability": 0.0002
+        },
+        {
+          "id": "be2fe4ea8c8879c6810daaa561a754dd",
+          "name": "★ Survival Knife | Marble Fade",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/ea/eac562546c3f79f03e769cba28787deb.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ea/eac562546c3f79f03e769cba28787deb.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0002,
+              "value": 184.61
+            }
+          ],
+          "totalProbability": 0.0002
+        },
+        {
+          "id": "c3af7f2d03364e79516fea602c6bf4b8",
+          "name": "M4A1-S | Player Two",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/c4/c4ccec3550877e173f64b7ceae11d5a9.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c4/c4ccec3550877e173f64b7ceae11d5a9.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.0006,
+              "value": 75.9
+            }
+          ],
+          "totalProbability": 0.0006
+        },
+        {
+          "id": "3c2445c0e4f566351fd4a1c7dd62c736",
+          "name": "AWP | Containment Breach",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/b6/b68875422ef7fd3aeb9cb7cfd0870e84.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b6/b68875422ef7fd3aeb9cb7cfd0870e84.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.0005,
+              "value": 75.27
+            }
+          ],
+          "totalProbability": 0.0005
+        },
+        {
+          "id": "2d2ccc0e2bb76cc888a8d72872da5f54",
+          "name": "AK-47 | Inheritance",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/00/00188be0a6f709fcd05fe4b73184970a.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/00/00188be0a6f709fcd05fe4b73184970a.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.0001,
+              "value": 59.13
+            },
+            {
+              "wear": "FT",
+              "probability": 0.0004,
+              "value": 55
+            },
+            {
+              "wear": "BS",
+              "probability": 0.0002,
+              "value": 52.04
+            }
+          ],
+          "totalProbability": 0.0007000000000000001
+        },
+        {
+          "id": "54f5bc7f319ca62e6213fda0160e885c",
+          "name": "M4A4 | Full Throttle",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/4f/4fd390541e3439e8f90fa971da6834ca.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/4f/4fd390541e3439e8f90fa971da6834ca.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.00196,
+              "value": 46.54
+            }
+          ],
+          "totalProbability": 0.00196
+        },
+        {
+          "id": "c3ad70ac4d2ef0e96dfe166979921e2d",
+          "name": "M4A1-S | Party Animal",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/f7/f7e944aff652d4d891c3aa7a7e8dc982.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f7/f7e944aff652d4d891c3aa7a7e8dc982.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00041,
+              "value": 28.37
+            },
+            {
+              "wear": "WW",
+              "probability": 0.00577,
+              "value": 12.78
+            },
+            {
+              "wear": "FT",
+              "probability": 0.0154,
+              "value": 11.89
+            },
+            {
+              "wear": "BS",
+              "probability": 0.0161,
+              "value": 11.66
+            }
+          ],
+          "totalProbability": 0.03768
+        },
+        {
+          "id": "2b0acc65bef52b307ab5a99c86bb77a2",
+          "name": "AWP | Phobos",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/05/0523e8b163652eee2352420e81bd7c11.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/05/0523e8b163652eee2352420e81bd7c11.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00023,
+              "value": 21.08
+            },
+            {
+              "wear": "WW",
+              "probability": 0.0394,
+              "value": 4.47
+            },
+            {
+              "wear": "MW",
+              "probability": 0.0115,
+              "value": 3.37
+            },
+            {
+              "wear": "FT",
+              "probability": 0.013999999999999999,
+              "value": 2.93
+            }
+          ],
+          "totalProbability": 0.06513
+        },
+        {
+          "id": "a8b2a77a95169b3ea324863d8973c6c0",
+          "name": "M4A1-S | Nightmare",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/a9/a929b63366cfa201bda9804af49b06d9.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/a9/a929b63366cfa201bda9804af49b06d9.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.01957,
+              "value": 13.56
+            }
+          ],
+          "totalProbability": 0.01957
+        },
+        {
+          "id": "bcc9770054bdc8edfe6dd48cca143707",
+          "name": "AK-47 | Crane Flight",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/d0/d09916aa6909c90f6ed2e30e1c42de35.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d0/d09916aa6909c90f6ed2e30e1c42de35.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "BS",
+              "probability": 0.01966,
+              "value": 13.5
+            }
+          ],
+          "totalProbability": 0.01966
+        },
+        {
+          "id": "75898332817f9e65fbdb5f8d026e195a",
+          "name": "AK-47 | Searing Rage",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/16/16b99d55c16ff00f6f3ae794d98d96f6.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/16/16b99d55c16ff00f6f3ae794d98d96f6.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00971,
+              "value": 10.4
+            },
+            {
+              "wear": "FT",
+              "probability": 0.00886,
+              "value": 6.69
+            },
+            {
+              "wear": "WW",
+              "probability": 0.01095,
+              "value": 5.99
+            },
+            {
+              "wear": "BS",
+              "probability": 0.012150000000000001,
+              "value": 5.68
+            }
+          ],
+          "totalProbability": 0.04167
+        },
+        {
+          "id": "3e64fa1306651576f8a7f1d333ede269",
+          "name": "MP7 | Smoking Kills",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/9a/9a82647fe6b9a9ffba68de518baede0b.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/9a/9a82647fe6b9a9ffba68de518baede0b.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.024300000000000002,
+              "value": 10.25
+            },
+            {
+              "wear": "WW",
+              "probability": 0.020099999999999996,
+              "value": 6.9
+            }
+          ],
+          "totalProbability": 0.044399999999999995
+        },
+        {
+          "id": "4c5855cd2adb2d972bc0f8dca94169bd",
+          "name": "AWP | Ice Coaled",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/3d/3d1c93c9f0cf0f59a8bfee0147bc16e4.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3d/3d1c93c9f0cf0f59a8bfee0147bc16e4.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.03449,
+              "value": 7.82
+            },
+            {
+              "wear": "BS",
+              "probability": 0.02145,
+              "value": 6.07
+            }
+          ],
+          "totalProbability": 0.05594
+        },
+        {
+          "id": "ebda4102dd10355b78b6d7f4880ec19b",
+          "name": "M4A1-S | Black Lotus",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/6c/6c24bbdbf080a46acc61fb78151869ed.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6c/6c24bbdbf080a46acc61fb78151869ed.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "BS",
+              "probability": 0.03629,
+              "value": 6.37
+            }
+          ],
+          "totalProbability": 0.03629
+        },
+        {
+          "id": "4e846411d7e5d37d8b5cbab6c18471e1",
+          "name": "UMP-45 | K.O. Factory",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/3b/3b163b29e9162764a467b6cda9fccc4e.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3b/3b163b29e9162764a467b6cda9fccc4e.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.01875,
+              "value": 5.99
+            },
+            {
+              "wear": "BS",
+              "probability": 0.02145,
+              "value": 5.6
+            }
+          ],
+          "totalProbability": 0.04019999999999999
+        },
+        {
+          "id": "5c46be35f726a88f4c81f2ec4292d35f",
+          "name": "Zeus x27 | Olympus",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/3d/3d123dfe6da93e298d2b62235bf548d4.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3d/3d123dfe6da93e298d2b62235bf548d4.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.0702,
+              "value": 4.77
+            },
+            {
+              "wear": "BS",
+              "probability": 0.0904,
+              "value": 4.2
+            }
+          ],
+          "totalProbability": 0.1606
+        },
+        {
+          "id": "e1589ce4f55ddc770259294bcf08526b",
+          "name": "M4A1-S | Night Terror",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/5e/5e96fe4aadd13f698f2f9aa0ebbf7fbd.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/5e/5e96fe4aadd13f698f2f9aa0ebbf7fbd.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00201,
+              "value": 3.74
+            },
+            {
+              "wear": "MW",
+              "probability": 0.0125,
+              "value": 1.15
+            },
+            {
+              "wear": "WW",
+              "probability": 0.018500000000000003,
+              "value": 0.89
+            },
+            {
+              "wear": "BS",
+              "probability": 0.0195,
+              "value": 0.87
+            },
+            {
+              "wear": "FT",
+              "probability": 0.021,
+              "value": 0.83
+            }
+          ],
+          "totalProbability": 0.07351
+        },
+        {
+          "id": "aabd10dde156580b8bd19ac59e054e2c",
+          "name": "MP9 | Urban Sovereign",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/96/96aaa61b562736448b411c1c4caacffa.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/96/96aaa61b562736448b411c1c4caacffa.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.04349,
+              "value": 2.3
+            }
+          ],
+          "totalProbability": 0.04349
+        },
+        {
+          "id": "4aacb243c5669ed700736ff7ab2003e9",
+          "name": "P90 | Randy Rush",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/e3/e31305e178cde8b2833ab61399b4721c.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e3/e31305e178cde8b2833ab61399b4721c.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.0105,
+              "value": 1.71
+            },
+            {
+              "wear": "BS",
+              "probability": 0.03,
+              "value": 0.89
+            },
+            {
+              "wear": "FT",
+              "probability": 0.03249,
+              "value": 0.84
+            }
+          ],
+          "totalProbability": 0.07299
+        },
+        {
+          "id": "d6e1c51f28175d78edca612b36b7bd03",
+          "name": "P90 | Wave Breaker",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/11/1181f93b5040f334991f6edd6f2c675b.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/11/1181f93b5040f334991f6edd6f2c675b.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00801,
+              "value": 1.28
+            },
+            {
+              "wear": "FT",
+              "probability": 0.027000000000000003,
+              "value": 0.6
+            },
+            {
+              "wear": "BS",
+              "probability": 0.0285,
+              "value": 0.58
+            },
+            {
+              "wear": "WW",
+              "probability": 0.031,
+              "value": 0.55
+            }
+          ],
+          "totalProbability": 0.09451000000000001
+        },
+        {
+          "id": "b719cdd2f3cfe955320af6b846b55ddd",
+          "name": "Desert Eagle | Serpent Strike",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/0f/0fe3e907466213325020446c5e0ff421.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/0f/0fe3e907466213325020446c5e0ff421.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.01,
+              "value": 1.12
+            },
+            {
+              "wear": "WW",
+              "probability": 0.025,
+              "value": 0.63
+            },
+            {
+              "wear": "BS",
+              "probability": 0.027999999999999997,
+              "value": 0.59
+            },
+            {
+              "wear": "FT",
+              "probability": 0.031,
+              "value": 0.55
+            }
+          ],
+          "totalProbability": 0.094
+        },
+        {
+          "id": "fad4ac2b95b5bf89eccfe4c07db02147",
+          "name": "Zeus x27 | Tosai",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/07/071d85fe131dbecf7f84cc410d675574.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/07/071d85fe131dbecf7f84cc410d675574.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.0105,
+              "value": 1.06
+            },
+            {
+              "wear": "FT",
+              "probability": 0.027000000000000003,
+              "value": 0.59
+            },
+            {
+              "wear": "WW",
+              "probability": 0.0275,
+              "value": 0.58
+            },
+            {
+              "wear": "BS",
+              "probability": 0.031,
+              "value": 0.54
+            }
+          ],
+          "totalProbability": 0.096
+        }
+      ]
+    },
+    {
+      "slug": "last-game",
+      "name": "LAST GAME",
+      "price": 20,
+      "imageUrl": "https://key-drop.com/uploads/skins/4_LAST_GAME.png",
+      "imageUrlRemote": "https://key-drop.com/uploads/skins/4_LAST_GAME.png",
+      "scrapedAt": 1783533365404,
+      "items": [
+        {
+          "id": "c6a813cfed8ea811b0f90f7d568f9d43",
+          "name": "★ Skeleton Knife | Doppler - Sapphire",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/4d/4d06e25cd01ac139f68a04f740471a9e.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/4d/4d06e25cd01ac139f68a04f740471a9e.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00008999999999999999,
+              "value": 2202.32
+            }
+          ],
+          "totalProbability": 0.00008999999999999999
+        },
+        {
+          "id": "77c9805474799d0bff4845f9a971f910",
+          "name": "★ Flip Knife | Gamma Doppler - Emerald",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/41/412bbf47fa9e1707402f8c666ea421ca.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/41/412bbf47fa9e1707402f8c666ea421ca.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0001,
+              "value": 2020.08
+            }
+          ],
+          "totalProbability": 0.0001
+        },
+        {
+          "id": "f0d55bce89e048c3b0079612ac474dba",
+          "name": "★ M9 Bayonet | Tiger Tooth",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/6d/6d8f2fd4ed5ffba12c81d4e7298419cc.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6d/6d8f2fd4ed5ffba12c81d4e7298419cc.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00018999999999999998,
+              "value": 994.28
+            }
+          ],
+          "totalProbability": 0.00018999999999999998
+        },
+        {
+          "id": "589d7d891212334bfa79c397f3e4cb8f",
+          "name": "★ Skeleton Knife | Slaughter",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/05/05f863f365465dd514c58ca27abcfc16.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/05/05f863f365465dd514c58ca27abcfc16.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.00032,
+              "value": 569.91
+            }
+          ],
+          "totalProbability": 0.00032
+        },
+        {
+          "id": "065dd17161b7547dca70771b5ca82d11",
+          "name": "★ Paracord Knife | Doppler - Phase 4",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/bc/bc9bb897b5f243446c6dfe2cb879635b.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/bc/bc9bb897b5f243446c6dfe2cb879635b.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0005600000000000001,
+              "value": 325.16
+            }
+          ],
+          "totalProbability": 0.0005600000000000001
+        },
+        {
+          "id": "08a86a99c85565dcf18c8a3794ce750a",
+          "name": "★ Ursus Knife | Fade",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/e8/e81c17f9b5235d434f505a4fc1b43681.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e8/e81c17f9b5235d434f505a4fc1b43681.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00061,
+              "value": 296.73
+            }
+          ],
+          "totalProbability": 0.00061
+        },
+        {
+          "id": "90fff593600fd009d237a56cbbca6a8e",
+          "name": "★ Survival Knife | Fade",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/95/95dabe2423e42156f732083f18ba1c1f.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/95/95dabe2423e42156f732083f18ba1c1f.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00089,
+              "value": 203.96
+            }
+          ],
+          "totalProbability": 0.00089
+        },
+        {
+          "id": "7038da33f540efba6a894d390ce74c46",
+          "name": "★ Gut Knife | Doppler - Phase 4",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/7b/7b9f7eb1e3c268b40d490689b6c49b42.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7b/7b9f7eb1e3c268b40d490689b6c49b42.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.001,
+              "value": 181.02
+            }
+          ],
+          "totalProbability": 0.001
+        },
+        {
+          "id": "fe6c8a4cc18c9a438ed8f076fa8b29f6",
+          "name": "★ Broken Fang Gloves | Jade",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/4a/4a5bbe7373ee13b63fd4c685386e1905.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/4a/4a5bbe7373ee13b63fd4c685386e1905.png?v4",
+          "rarity": "Gloves",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.00153,
+              "value": 118.04
+            }
+          ],
+          "totalProbability": 0.00153
+        },
+        {
+          "id": "935eeb409a5139d612535689b966de5f",
+          "name": "★ Gut Knife | Freehand",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/eb/eba331f9163f46fdf83ce2e3423dce80.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/eb/eba331f9163f46fdf83ce2e3423dce80.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.00208,
+              "value": 86.79
+            }
+          ],
+          "totalProbability": 0.00208
+        },
+        {
+          "id": "c3af7f2d03364e79516fea602c6bf4b8",
+          "name": "M4A1-S | Player Two",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/c4/c4ccec3550877e173f64b7ceae11d5a9.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c4/c4ccec3550877e173f64b7ceae11d5a9.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "BS",
+              "probability": 0.00843,
+              "value": 73.37
+            }
+          ],
+          "totalProbability": 0.00843
+        },
+        {
+          "id": "beb5474018b18a37f25ea3fb6be037be",
+          "name": "AK-47 | Neon Rider",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/e8/e8079ea19a8dcf1e1577126cf725e9bf.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e8/e8079ea19a8dcf1e1577126cf725e9bf.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.00422,
+              "value": 71.08
+            },
+            {
+              "wear": "FT",
+              "probability": 0.00477,
+              "value": 67.02
+            }
+          ],
+          "totalProbability": 0.00899
+        },
+        {
+          "id": "6009db78d15e49cfed1b6ffc1aa4ab55",
+          "name": "AWP | Printstream",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/e1/e1caf5ce57fd2e33755ec5d898e40eb8.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e1/e1caf5ce57fd2e33755ec5d898e40eb8.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.010209999999999999,
+              "value": 60.86
+            }
+          ],
+          "totalProbability": 0.010209999999999999
+        },
+        {
+          "id": "39f3471904cab8acf11f0e2ac2ce0b05",
+          "name": "AK-47 | Asiimov",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/3d/3d6b4ac1c1dd329b8f735c63a2d72cb6.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3d/3d6b4ac1c1dd329b8f735c63a2d72cb6.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.00536,
+              "value": 57.73
+            },
+            {
+              "wear": "BS",
+              "probability": 0.0054600000000000004,
+              "value": 57.2
+            }
+          ],
+          "totalProbability": 0.010820000000000001
+        },
+        {
+          "id": "0294d24802ae2ac932a5592f96e21783",
+          "name": "USP-S | Printstream",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/ad/ad900a08828281d511691b19efbcdb48.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ad/ad900a08828281d511691b19efbcdb48.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.00536,
+              "value": 56.63
+            },
+            {
+              "wear": "WW",
+              "probability": 0.005809999999999999,
+              "value": 54.64
+            }
+          ],
+          "totalProbability": 0.01117
+        },
+        {
+          "id": "75898332817f9e65fbdb5f8d026e195a",
+          "name": "AK-47 | Searing Rage",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/16/16b99d55c16ff00f6f3ae794d98d96f6.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/16/16b99d55c16ff00f6f3ae794d98d96f6.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0032700000000000003,
+              "value": 40.19
+            },
+            {
+              "wear": "MW",
+              "probability": 0.00683,
+              "value": 10.4
+            },
+            {
+              "wear": "FT",
+              "probability": 0.01414,
+              "value": 6.69
+            },
+            {
+              "wear": "WW",
+              "probability": 0.01706,
+              "value": 5.99
+            },
+            {
+              "wear": "BS",
+              "probability": 0.01853,
+              "value": 5.68
+            }
+          ],
+          "totalProbability": 0.059829999999999994
+        },
+        {
+          "id": "098b6ef8e56efcdad31d2c2171c90f7e",
+          "name": "USP-S | Monster Mashup",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/5b/5b1f5225143e77aea57d77722454edfe.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/5b/5b1f5225143e77aea57d77722454edfe.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.10189,
+              "value": 31.77
+            }
+          ],
+          "totalProbability": 0.10189
+        },
+        {
+          "id": "b52d9a3e1c509edadb52b097c77f66f6",
+          "name": "AK-47 | Frontside Misty",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/d9/d93301718757dd98163b91da61dedef3.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d9/d93301718757dd98163b91da61dedef3.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.07658999999999999,
+              "value": 22.48
+            },
+            {
+              "wear": "BS",
+              "probability": 0.07876,
+              "value": 22.15
+            }
+          ],
+          "totalProbability": 0.15535
+        },
+        {
+          "id": "6f275646efe67c862c78841e9f2e4e79",
+          "name": "M4A4 | Desolate Space",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/f4/f4a688afeed6475453916aa412e88ee1.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f4/f4a688afeed6475453916aa412e88ee1.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.07878,
+              "value": 19.48
+            },
+            {
+              "wear": "WW",
+              "probability": 0.11622,
+              "value": 16.03
+            },
+            {
+              "wear": "BS",
+              "probability": 0.01268,
+              "value": 15.9
+            }
+          ],
+          "totalProbability": 0.20768
+        },
+        {
+          "id": "e9f4de9e303c7e39ae76bc2ceb889b5f",
+          "name": "AK-47 | Nouveau Rouge",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/7a/7a827eec318301f261401a1e5422912f.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7a/7a827eec318301f261401a1e5422912f.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.00927,
+              "value": 14.15
+            },
+            {
+              "wear": "WW",
+              "probability": 0.01804,
+              "value": 9.29
+            },
+            {
+              "wear": "BS",
+              "probability": 0.01853,
+              "value": 9.14
+            }
+          ],
+          "totalProbability": 0.04584
+        },
+        {
+          "id": "0eec884e44fc3c7691cddd4714e64468",
+          "name": "Glock-18 | Vogue",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/72/7253853cb8f95183cf6ec3ce5c5e756e.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/72/7253853cb8f95183cf6ec3ce5c5e756e.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00927,
+              "value": 8.15
+            },
+            {
+              "wear": "WW",
+              "probability": 0.01853,
+              "value": 5.19
+            },
+            {
+              "wear": "FT",
+              "probability": 0.01901,
+              "value": 5.16
+            },
+            {
+              "wear": "BS",
+              "probability": 0.0195,
+              "value": 5
+            }
+          ],
+          "totalProbability": 0.06631000000000001
+        },
+        {
+          "id": "cd9431bdb3f5aed77bb7aac8afc25de4",
+          "name": "M4A1-S | Solitude",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/ef/ef20e0d0073e8779a33184dda902b728.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ef/ef20e0d0073e8779a33184dda902b728.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00586,
+              "value": 6.56
+            },
+            {
+              "wear": "FT",
+              "probability": 0.02973,
+              "value": 2.33
+            },
+            {
+              "wear": "WW",
+              "probability": 0.032170000000000004,
+              "value": 2.22
+            },
+            {
+              "wear": "BS",
+              "probability": 0.04533,
+              "value": 1.79
+            }
+          ],
+          "totalProbability": 0.11309000000000001
+        },
+        {
+          "id": "e5957d6367f4c5ce6c0ab1a5dfe470c1",
+          "name": "AK-47 | Ice Coaled",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/3b/3bfab044c6893393119ca1bec96c1938.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3b/3bfab044c6893393119ca1bec96c1938.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.0195,
+              "value": 6.06
+            },
+            {
+              "wear": "FT",
+              "probability": 0.01999,
+              "value": 5.95
+            },
+            {
+              "wear": "BS",
+              "probability": 0.02632,
+              "value": 5.01
+            }
+          ],
+          "totalProbability": 0.06581
+        },
+        {
+          "id": "34f73d5ac2902090f02cfd6b82cfe767",
+          "name": "USP-S | Bleeding Edge",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/9e/9e409265094cf092d09425c653520d63.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/9e/9e409265094cf092d09425c653520d63.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.01073,
+              "value": 4.68
+            },
+            {
+              "wear": "FT",
+              "probability": 0.05556,
+              "value": 1.69
+            },
+            {
+              "wear": "WW",
+              "probability": 0.060919999999999995,
+              "value": 1.59
+            }
+          ],
+          "totalProbability": 0.12721
+        }
+      ]
+    },
+    {
+      "slug": "test-subject",
+      "name": "TEST SUBJECT",
+      "price": 50,
+      "imageUrl": "https://key-drop.com/uploads/skins/5_TEST_SUBJECT.png",
+      "imageUrlRemote": "https://key-drop.com/uploads/skins/5_TEST_SUBJECT.png",
+      "scrapedAt": 1783533374014,
+      "items": [
+        {
+          "id": "6c29033b2e7ccc04a5eba3db9e621741",
+          "name": "★ Sport Gloves | Pandora's Box",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/d9/d9e2c2c357a065e91500b9057b714055.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d9/d9e2c2c357a065e91500b9057b714055.png?v4",
+          "rarity": "Gloves",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.0001,
+              "value": 5724.69
+            }
+          ],
+          "totalProbability": 0.0001
+        },
+        {
+          "id": "c476fce2739a82e727f68efc562dcd06",
+          "name": "★ Butterfly Knife | Gamma Doppler - Phase 2",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/09/09cc1b599aa8866cf506ff6ab8ffa147.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/09/09cc1b599aa8866cf506ff6ab8ffa147.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0002,
+              "value": 3553.82
+            }
+          ],
+          "totalProbability": 0.0002
+        },
+        {
+          "id": "2b263797d6122541faf0cc0f103bc45d",
+          "name": "★ Butterfly Knife | Tiger Tooth",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/b0/b0e35569af7a1c6eb0bc73c7f325fef5.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b0/b0e35569af7a1c6eb0bc73c7f325fef5.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0004,
+              "value": 1673.53
+            }
+          ],
+          "totalProbability": 0.0004
+        },
+        {
+          "id": "2b72b76428c924103c8e64f8cb0c1b6c",
+          "name": "Desert Eagle | Blaze",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/54/544434032792476ae9f29e896e799b5a.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/54/544434032792476ae9f29e896e799b5a.png?v4",
+          "rarity": "Restricted",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0007000000000000001,
+              "value": 1007.84
+            }
+          ],
+          "totalProbability": 0.0007000000000000001
+        },
+        {
+          "id": "5fc2181b85571bdd4e9d04538e44d830",
+          "name": "★ Paracord Knife | Doppler - Ruby",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/24/245b88426df2ccf6917f6947de3e4e7e.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/24/245b88426df2ccf6917f6947de3e4e7e.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0008,
+              "value": 883.99
+            }
+          ],
+          "totalProbability": 0.0008
+        },
+        {
+          "id": "44279c8d9abe35012040c4c7c2f4ec70",
+          "name": "★ Skeleton Knife | Fade",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/d1/d154108731db7976a4abb2668167563a.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d1/d154108731db7976a4abb2668167563a.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00027,
+              "value": 796.93
+            }
+          ],
+          "totalProbability": 0.00027
+        },
+        {
+          "id": "f1e64880716ef506a6f98b3de6ee435a",
+          "name": "★ Skeleton Knife | Marble Fade",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/5f/5f3adcc9431d50b8831e16ceb40c7720.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/5f/5f3adcc9431d50b8831e16ceb40c7720.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00037,
+              "value": 591.43
+            }
+          ],
+          "totalProbability": 0.00037
+        },
+        {
+          "id": "112c3d8cccee6497aeb9717de1539c1f",
+          "name": "★ Survival Knife | Doppler - Phase 1",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/f3/f35a0076757fbccf408a5837f99b25c6.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f3/f35a0076757fbccf408a5837f99b25c6.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0007599999999999999,
+              "value": 280.2
+            }
+          ],
+          "totalProbability": 0.0007599999999999999
+        },
+        {
+          "id": "5e25ce2e18e5aa26ea559b1560f90e45",
+          "name": "★ Gut Knife | Gamma Doppler - Phase 1",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/ab/ab8d91f88dc14f115cb428f8367a119e.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ab/ab8d91f88dc14f115cb428f8367a119e.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00091,
+              "value": 233.43
+            }
+          ],
+          "totalProbability": 0.00091
+        },
+        {
+          "id": "5088440dd9623e8b6cf7ab68aa2e9a80",
+          "name": "★ Paracord Knife | Fade",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/41/418e86397ed31c4b4303582b6011a372.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/41/418e86397ed31c4b4303582b6011a372.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00098,
+              "value": 216.12
+            }
+          ],
+          "totalProbability": 0.00098
+        },
+        {
+          "id": "191a6bc464e5ea380ea58594b09933d8",
+          "name": "★ Navaja Knife | Marble Fade",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/b5/b553887a34e27281fb8228c0251ebd59.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b5/b553887a34e27281fb8228c0251ebd59.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03204,
+              "value": 139.48
+            }
+          ],
+          "totalProbability": 0.03204
+        },
+        {
+          "id": "6631da3132d68b2867e42f18f515e710",
+          "name": "AWP | Asiimov",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/7e/7ebc80509abf40dd39befc48d9ce1c84.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7e/7ebc80509abf40dd39befc48d9ce1c84.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.01614,
+              "value": 128.94
+            },
+            {
+              "wear": "BS",
+              "probability": 0.01747,
+              "value": 112.27
+            }
+          ],
+          "totalProbability": 0.03361
+        },
+        {
+          "id": "b8345a80a4d3a075a6d3696085cf9938",
+          "name": "★ Survival Knife | Stained",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/f1/f1d475c67a5b14ae3b475e4f56d49e13.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f1/f1d475c67a5b14ae3b475e4f56d49e13.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.04277,
+              "value": 85.76
+            }
+          ],
+          "totalProbability": 0.04277
+        },
+        {
+          "id": "1b99ac56b01d2ee909f7040cb874c897",
+          "name": "★ Gut Knife | Ultraviolet",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/d6/d627c205030e309409e628123fd96e0c.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d6/d627c205030e309409e628123fd96e0c.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.04433,
+              "value": 82.8
+            }
+          ],
+          "totalProbability": 0.04433
+        },
+        {
+          "id": "eb91488cff3887a7a06f970307fc2731",
+          "name": "★ Shadow Daggers | Bright Water",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/35/35a523595e04f4bb7d634748b304ec0b.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/35/35a523595e04f4bb7d634748b304ec0b.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.05969,
+              "value": 58.67
+            }
+          ],
+          "totalProbability": 0.05969
+        },
+        {
+          "id": "e15bfe5238dfcc3dd36d754b0b0e41cf",
+          "name": "AK-47 | The Oligarch",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/63/63bf376e62a33d725ba0c4960c4d5a2f.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/63/63bf376e62a33d725ba0c4960c4d5a2f.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.027610000000000003,
+              "value": 56.95
+            },
+            {
+              "wear": "BS",
+              "probability": 0.07228,
+              "value": 46.32
+            }
+          ],
+          "totalProbability": 0.09989
+        },
+        {
+          "id": "c39bba8a6f3466ea2a060ade3aee02b9",
+          "name": "Desert Eagle | Printstream",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/33/33391818759e7127c4f61ad842a05ce1.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/33/33391818759e7127c4f61ad842a05ce1.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.02114,
+              "value": 53.9
+            },
+            {
+              "wear": "WW",
+              "probability": 0.02191,
+              "value": 52.79
+            },
+            {
+              "wear": "BS",
+              "probability": 0.02391,
+              "value": 50.51
+            }
+          ],
+          "totalProbability": 0.06695999999999999
+        },
+        {
+          "id": "54f5bc7f319ca62e6213fda0160e885c",
+          "name": "M4A4 | Full Throttle",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/4f/4fd390541e3439e8f90fa971da6834ca.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/4f/4fd390541e3439e8f90fa971da6834ca.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.059519999999999997,
+              "value": 46.54
+            },
+            {
+              "wear": "BS",
+              "probability": 0.020630000000000003,
+              "value": 39.18
+            }
+          ],
+          "totalProbability": 0.08015
+        },
+        {
+          "id": "dca004c2e7814df57db2f3dfa4f6f98e",
+          "name": "AK-47 | Head Shot",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/10/10456499abc5f189389797435e598b02.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/10/10456499abc5f189389797435e598b02.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.06463,
+              "value": 43.61
+            },
+            {
+              "wear": "BS",
+              "probability": 0.02112,
+              "value": 37.89
+            }
+          ],
+          "totalProbability": 0.08574999999999999
+        },
+        {
+          "id": "e5957d6367f4c5ce6c0ab1a5dfe470c1",
+          "name": "AK-47 | Ice Coaled",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/3b/3bfab044c6893393119ca1bec96c1938.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3b/3bfab044c6893393119ca1bec96c1938.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00737,
+              "value": 23.61
+            },
+            {
+              "wear": "MW",
+              "probability": 0.02456,
+              "value": 11.13
+            },
+            {
+              "wear": "FT",
+              "probability": 0.06628,
+              "value": 5.95
+            }
+          ],
+          "totalProbability": 0.09820999999999999
+        },
+        {
+          "id": "4c5855cd2adb2d972bc0f8dca94169bd",
+          "name": "AWP | Ice Coaled",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/3d/3d1c93c9f0cf0f59a8bfee0147bc16e4.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3d/3d1c93c9f0cf0f59a8bfee0147bc16e4.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.009340000000000001,
+              "value": 22.21
+            },
+            {
+              "wear": "FT",
+              "probability": 0.02897,
+              "value": 10.79
+            },
+            {
+              "wear": "WW",
+              "probability": 0.04861,
+              "value": 7.82
+            }
+          ],
+          "totalProbability": 0.08692
+        },
+        {
+          "id": "30ee3a64269c1c10b4f33e226a1838b6",
+          "name": "AK-47 | The Outsiders",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/fd/fdb6e14f8f4d91f469f64287c6e1dde0.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/fd/fdb6e14f8f4d91f469f64287c6e1dde0.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.00688,
+              "value": 21.08
+            },
+            {
+              "wear": "FT",
+              "probability": 0.022099999999999998,
+              "value": 10.19
+            },
+            {
+              "wear": "WW",
+              "probability": 0.02799,
+              "value": 8.84
+            },
+            {
+              "wear": "BS",
+              "probability": 0.03143,
+              "value": 8.15
+            }
+          ],
+          "totalProbability": 0.08839999999999999
+        },
+        {
+          "id": "e9f4de9e303c7e39ae76bc2ceb889b5f",
+          "name": "AK-47 | Nouveau Rouge",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/7a/7a827eec318301f261401a1e5422912f.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7a/7a827eec318301f261401a1e5422912f.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.01719,
+              "value": 14.15
+            },
+            {
+              "wear": "WW",
+              "probability": 0.03388,
+              "value": 9.29
+            },
+            {
+              "wear": "BS",
+              "probability": 0.03486,
+              "value": 9.14
+            }
+          ],
+          "totalProbability": 0.08593
+        },
+        {
+          "id": "a8b2a77a95169b3ea324863d8973c6c0",
+          "name": "M4A1-S | Nightmare",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/a9/a929b63366cfa201bda9804af49b06d9.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/a9/a929b63366cfa201bda9804af49b06d9.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "BS",
+              "probability": 0.0437,
+              "value": 9.67
+            },
+            {
+              "wear": "WW",
+              "probability": 0.04616,
+              "value": 9.37
+            }
+          ],
+          "totalProbability": 0.08986000000000001
+        }
+      ]
+    },
+    {
+      "slug": "utopia",
+      "name": "UTOPIA",
+      "price": 250,
+      "imageUrl": "https://key-drop.com/uploads/skins/6_UTOPIA.png",
+      "imageUrlRemote": "https://key-drop.com/uploads/skins/6_UTOPIA.png",
+      "scrapedAt": 1783533379912,
+      "items": [
+        {
+          "id": "64a55e55cb159aa2234b6083d25b7265",
+          "name": "★ M9 Bayonet | Doppler - Ruby",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/b3/b3c736118a5a9a8da7cd212c8d31daad.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b3/b3c736118a5a9a8da7cd212c8d31daad.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0001,
+              "value": 12156.83
+            }
+          ],
+          "totalProbability": 0.0001
+        },
+        {
+          "id": "831ed4b20933a7dc69e593578dd9dbfe",
+          "name": "AWP | Gungnir",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/9e/9e3e92304a81db366ea41c8c0324f994.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/9e/9e3e92304a81db366ea41c8c0324f994.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.0002,
+              "value": 10831.72
+            }
+          ],
+          "totalProbability": 0.0002
+        },
+        {
+          "id": "16856954a12f1c7d0684366a4e86133b",
+          "name": "AWP | Dragon Lore",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/af/afc9bcb65d41de58f6865b29faf1e396.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/af/afc9bcb65d41de58f6865b29faf1e396.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.0003,
+              "value": 9189.64
+            }
+          ],
+          "totalProbability": 0.0003
+        },
+        {
+          "id": "0932b88a4aaf3e597d745a72986e2bf1",
+          "name": "★ Butterfly Knife | Gamma Doppler - Phase 3",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/08/0875748650910d075861fc05bfcf4974.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/08/0875748650910d075861fc05bfcf4974.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0008799999999999999,
+              "value": 2810.63
+            }
+          ],
+          "totalProbability": 0.0008799999999999999
+        },
+        {
+          "id": "0042de29b6362675883bfe46536a4879",
+          "name": "★ Bayonet | Doppler - Ruby",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/45/450de1240cbbd536afc32cba40907f77.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/45/450de1240cbbd536afc32cba40907f77.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00092,
+              "value": 2686.17
+            }
+          ],
+          "totalProbability": 0.00092
+        },
+        {
+          "id": "c6a813cfed8ea811b0f90f7d568f9d43",
+          "name": "★ Skeleton Knife | Doppler - Sapphire",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/4d/4d06e25cd01ac139f68a04f740471a9e.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/4d/4d06e25cd01ac139f68a04f740471a9e.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0011200000000000001,
+              "value": 2202.32
+            }
+          ],
+          "totalProbability": 0.0011200000000000001
+        },
+        {
+          "id": "24aa54ccb5f822ae3ab6fdf27dcb154a",
+          "name": "★ Ursus Knife | Doppler - Ruby",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/7f/7f313cb8cb84380c05a179a30bdb74db.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7f/7f313cb8cb84380c05a179a30bdb74db.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00227,
+              "value": 1082.02
+            }
+          ],
+          "totalProbability": 0.00227
+        },
+        {
+          "id": "71a8bca1c0dbf87ff96e562a9eaa3618",
+          "name": "★ Bowie Knife | Gamma Doppler - Emerald",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/c7/c75eb5fabaafa87ed14d100b96afeb4e.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c7/c75eb5fabaafa87ed14d100b96afeb4e.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.031110000000000002,
+              "value": 718.35
+            }
+          ],
+          "totalProbability": 0.031110000000000002
+        },
+        {
+          "id": "589d7d891212334bfa79c397f3e4cb8f",
+          "name": "★ Skeleton Knife | Slaughter",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/05/05f863f365465dd514c58ca27abcfc16.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/05/05f863f365465dd514c58ca27abcfc16.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01669,
+              "value": 633.75
+            },
+            {
+              "wear": "FT",
+              "probability": 0.01566,
+              "value": 569.91
+            }
+          ],
+          "totalProbability": 0.032350000000000004
+        },
+        {
+          "id": "74e9c3485dfbcbe3c9ff0c9b901b1454",
+          "name": "★ Bayonet | Doppler - Phase 3",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/53/53f265ccbf46c093a8911e1dd85c5ce3.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/53/53f265ccbf46c093a8911e1dd85c5ce3.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.029009999999999998,
+              "value": 583.53
+            }
+          ],
+          "totalProbability": 0.029009999999999998
+        },
+        {
+          "id": "589ba36a086c6ce249cb88c548cd0293",
+          "name": "★ Shadow Daggers | Doppler - Ruby",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/9d/9d1f21efd2ff13f9f7f1257d0e2f85c9.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/9d/9d1f21efd2ff13f9f7f1257d0e2f85c9.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03016,
+              "value": 560.87
+            }
+          ],
+          "totalProbability": 0.03016
+        },
+        {
+          "id": "4183ce0422b2d8f03ae0be26c8c2e2a6",
+          "name": "★ M9 Bayonet | Lore",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/17/1731efe80560b104e3d50c16de1f3f71.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/17/1731efe80560b104e3d50c16de1f3f71.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "BS",
+              "probability": 0.030270000000000002,
+              "value": 560.6
+            }
+          ],
+          "totalProbability": 0.030270000000000002
+        },
+        {
+          "id": "06a950134c2bead65fa95ee0669fd5c8",
+          "name": "★ Survival Knife | Doppler - Phase 4",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/f8/f896487ec4e103c8e4eac475331a4b0e.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f8/f896487ec4e103c8e4eac475331a4b0e.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.15381,
+              "value": 286.09
+            }
+          ],
+          "totalProbability": 0.15381
+        },
+        {
+          "id": "eaadd25938124242c268cf7dccf77440",
+          "name": "★ Ursus Knife | Marble Fade",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/9a/9ab8a3e4bb261b1e990de0eb66423a20.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/9a/9ab8a3e4bb261b1e990de0eb66423a20.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.06129,
+              "value": 237.36
+            }
+          ],
+          "totalProbability": 0.06129
+        },
+        {
+          "id": "5088440dd9623e8b6cf7ab68aa2e9a80",
+          "name": "★ Paracord Knife | Fade",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/41/418e86397ed31c4b4303582b6011a372.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/41/418e86397ed31c4b4303582b6011a372.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.06718,
+              "value": 216.12
+            }
+          ],
+          "totalProbability": 0.06718
+        },
+        {
+          "id": "6bbf0aa75542ec6bf5f142770a9c20f4",
+          "name": "★ Driver Gloves | King Snake",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/f3/f3cd6e03453332b20fc417d4c4690ccd.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f3/f3cd6e03453332b20fc417d4c4690ccd.png?v4",
+          "rarity": "Gloves",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.06796,
+              "value": 213.73
+            }
+          ],
+          "totalProbability": 0.06796
+        },
+        {
+          "id": "98e4351b6ae3905741fceb6495f66918",
+          "name": "★ Falchion Knife | Bright Water",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/50/5023ea802fb3f5d03b654bf1f9dd9548.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/50/5023ea802fb3f5d03b654bf1f9dd9548.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01375,
+              "value": 124.89
+            },
+            {
+              "wear": "FT",
+              "probability": 0.01964,
+              "value": 100.85
+            }
+          ],
+          "totalProbability": 0.03339
+        },
+        {
+          "id": "09c8a33a02f6f3e1d2d189f28ec187e0",
+          "name": "★ Gut Knife | Lore",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/87/873f599b2d24d77eecd80f46a0384775.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/87/873f599b2d24d77eecd80f46a0384775.png?v4",
+          "rarity": "Knife",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FT",
+              "probability": 0.03142,
+              "value": 120.32
+            }
+          ],
+          "totalProbability": 0.03142
+        },
+        {
+          "id": "6009db78d15e49cfed1b6ffc1aa4ab55",
+          "name": "AWP | Printstream",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/e1/e1caf5ce57fd2e33755ec5d898e40eb8.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e1/e1caf5ce57fd2e33755ec5d898e40eb8.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.005410000000000001,
+              "value": 110.57
+            },
+            {
+              "wear": "FT",
+              "probability": 0.01179,
+              "value": 67.78
+            },
+            {
+              "wear": "WW",
+              "probability": 0.01375,
+              "value": 60.86
+            },
+            {
+              "wear": "BS",
+              "probability": 0.01375,
+              "value": 60.2
+            }
+          ],
+          "totalProbability": 0.044700000000000004
+        },
+        {
+          "id": "beb5474018b18a37f25ea3fb6be037be",
+          "name": "AK-47 | Neon Rider",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/e8/e8079ea19a8dcf1e1577126cf725e9bf.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e8/e8079ea19a8dcf1e1577126cf725e9bf.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.0059,
+              "value": 108.94
+            },
+            {
+              "wear": "WW",
+              "probability": 0.0113,
+              "value": 71.08
+            },
+            {
+              "wear": "FT",
+              "probability": 0.012769999999999998,
+              "value": 67.02
+            },
+            {
+              "wear": "BS",
+              "probability": 0.012769999999999998,
+              "value": 66.08
+            }
+          ],
+          "totalProbability": 0.04274
+        },
+        {
+          "id": "ec54d0b34e3a0435a933540b7f19ddd3",
+          "name": "AWP | Neo-Noir",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/75/75d71bf8b2efe3d8d308043f7de56489.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/75/75d71bf8b2efe3d8d308043f7de56489.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00787,
+              "value": 81.26
+            },
+            {
+              "wear": "MW",
+              "probability": 0.01179,
+              "value": 63.17
+            },
+            {
+              "wear": "FT",
+              "probability": 0.013260000000000001,
+              "value": 58.4
+            },
+            {
+              "wear": "BS",
+              "probability": 0.01376,
+              "value": 56.75
+            }
+          ],
+          "totalProbability": 0.04668
+        },
+        {
+          "id": "effe833a119fa312a1adf7ac11c9d86d",
+          "name": "M4A4 | Neo-Noir",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/6b/6b9387171fe5bbe8d4b8ea97bf2e8855.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6b/6b9387171fe5bbe8d4b8ea97bf2e8855.png?v4",
+          "rarity": "Covert",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "MW",
+              "probability": 0.01572,
+              "value": 79.8
+            },
+            {
+              "wear": "FT",
+              "probability": 0.0329,
+              "value": 49.96
+            }
+          ],
+          "totalProbability": 0.048620000000000003
+        },
+        {
+          "id": "fee1bb433205a56246e104540a795ee8",
+          "name": "AWP | Fever Dream",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/42/4232ccdf2e6b3795ff883432023d7c9d.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/42/4232ccdf2e6b3795ff883432023d7c9d.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.005410000000000001,
+              "value": 42.61
+            },
+            {
+              "wear": "MW",
+              "probability": 0.01768,
+              "value": 20.62
+            },
+            {
+              "wear": "FT",
+              "probability": 0.02406,
+              "value": 17.05
+            },
+            {
+              "wear": "WW",
+              "probability": 0.02406,
+              "value": 17.01
+            },
+            {
+              "wear": "BS",
+              "probability": 0.02504,
+              "value": 16.61
+            }
+          ],
+          "totalProbability": 0.09625
+        },
+        {
+          "id": "e9f4de9e303c7e39ae76bc2ceb889b5f",
+          "name": "AK-47 | Nouveau Rouge",
+          "imageUrl": "https://cdnkd.com/csgo_icons/images/7a/7a827eec318301f261401a1e5422912f.png?v4",
+          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7a/7a827eec318301f261401a1e5422912f.png?v4",
+          "rarity": "Classified",
+          "statTrak": false,
+          "wears": [
+            {
+              "wear": "WW",
+              "probability": 0.07264999999999999,
+              "value": 9.29
+            },
+            {
+              "wear": "BS",
+              "probability": 0.07461999999999999,
+              "value": 9.14
+            }
+          ],
+          "totalProbability": 0.14727
+        }
+      ]
     }
   ],
-  "scrapedAt": 1783317053005
+  "scrapedAt": 1783533379923
 }

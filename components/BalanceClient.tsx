@@ -48,13 +48,22 @@ export function BalanceClient() {
   const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
-    setBalance(getBalance());
-    setHistory(getHistory());
-    setBattleHistory(getBattleHistory());
-    const inv = getInventory();
-    setInvVal(inventoryValue());
-    setInvCount(inv.length);
+    function reload(): void {
+      setBalance(getBalance());
+      setHistory(getHistory());
+      setBattleHistory(getBattleHistory());
+      const inv = getInventory();
+      setInvVal(inventoryValue());
+      setInvCount(inv.length);
+    }
+    reload();
     setReady(true);
+    window.addEventListener("storage", reload);
+    window.addEventListener("keydrop-balance-change", reload);
+    return () => {
+      window.removeEventListener("storage", reload);
+      window.removeEventListener("keydrop-balance-change", reload);
+    };
   }, []);
 
   const showToast = useCallback((msg: string) => {
@@ -505,6 +514,11 @@ function BattleHistoryCard({ result }: { result: BattleResult }) {
           <div className="text-sm font-medium">{when(result.ranAt)}</div>
           <div className="text-xs text-white/50">
             {result.format} · {result.mode} · borrow {result.borrowPercent}%
+            {result.joker && (
+              <span className="ml-1 rounded bg-fuchsia-400/15 px-1 py-0.5 text-[10px] font-bold uppercase text-fuchsia-400">
+                🃏 joker
+              </span>
+            )}
           </div>
         </div>
         <div className="flex items-center gap-2 text-sm tabular-nums">

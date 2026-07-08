@@ -44,8 +44,9 @@ export interface Drop {
   value: number;
   nonce: number;
   clientSeed: string;
-  serverSeedHash: string;
-  ticket: string;
+  serverSeedHash: string;   // SHA256(serverSeed)
+  ticket: string;          // hex of HMAC output used
+  joker?: boolean;         // true when opened in joker mode (uniform skin odds)
 }
 
 export interface BatchResult {
@@ -110,6 +111,7 @@ export interface BattleConfig {
   cases: CaseDefinition[];
   players: BattlePlayerConfig[];
   roundsPerCase: number;
+  joker?: boolean;
 }
 
 export interface BattlePlayerResult {
@@ -141,6 +143,7 @@ export interface BattleResult {
   format: BattleFormat;
   mode: BattleMode;
   borrowPercent: number;
+  joker?: boolean;
   serverSeed: string;
   serverSeedHash: string;
   startNonce: number;
