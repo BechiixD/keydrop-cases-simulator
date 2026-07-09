@@ -78,6 +78,40 @@ export function inventoryValue(): number {
   return getInventory().reduce((a, i) => a + i.drop.value, 0);
 }
 
+export function addBattlePayout(
+  amount: number,
+  sourceId: string,
+): InventoryItem[] {
+  if (amount <= 0) return getInventory();
+  const item: InventoryItem = {
+    uid: nextUid(),
+    drop: {
+      caseSlug: sourceId,
+      skin: {
+        id: "battle-payout",
+        name: "Battle winnings",
+        imageUrl: "",
+        rarity: "Covert",
+        statTrak: false,
+        wears: [],
+        totalProbability: 0,
+      },
+      wear: { wear: "FN", probability: 1, value: amount },
+      value: amount,
+      nonce: 0,
+      clientSeed: "",
+      serverSeedHash: "",
+      ticket: "",
+    },
+    acquiredAt: Date.now(),
+    source: "battle",
+    sourceId,
+  };
+  const next = [item, ...getInventory()].slice(0, MAX_ITEMS);
+  safeSet(INV_KEY, JSON.stringify(next));
+  return next;
+}
+
 export function clearInventory(): void {
   if (typeof window === "undefined") return;
   try {

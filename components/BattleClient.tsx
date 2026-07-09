@@ -7,7 +7,6 @@ import type {
   BattleMode,
   BattleResult,
   CaseDefinition,
-  Drop,
 } from "@/lib/types";
 import { runBattle, teamColor } from "@/lib/battleEngine";
 import {
@@ -16,7 +15,7 @@ import {
   randomServerSeed,
 } from "@/lib/provablyFair";
 import { jokerPrice } from "@/lib/caseEngine";
-import { addDrops } from "@/lib/inventory";
+import { addBattlePayout } from "@/lib/inventory";
 import {
   adjustBalance,
   getBalance,
@@ -65,51 +64,6 @@ const PRESETS: FormatPreset[] = [
   { format: "2v2", label: "2v2", numTeams: 2, teamSize: 2 },
   { format: "3v3", label: "3v3", numTeams: 2, teamSize: 3 },
 ];
-
-function bestFit(drops: Drop[], target: number): Drop[] {
-  if (drops.length === 0 || target <= 0) return [];
-  const n = drops.length;
-  if (n > 20) {
-    const sorted = [...drops].sort((a, b) => b.value - a.value);
-    const sel: Drop[] = [];
-    let sum = 0;
-    for (const d of sorted) {
-      if (sum + d.value <= target) {
-        sel.push(d);
-        sum += d.value;
-      }
-    }
-    if (sel.length === 0 && sorted.length > 0) {
-      let closest = sorted[sorted.length - 1];
-      for (const d of sorted) {
-        if (d.value <= target) { closest = d; break; }
-      }
-      sel.push(closest);
-    }
-    return sel;
-  }
-  const total = 1 << n;
-  let bestMask = 0;
-  let bestError = Infinity;
-  let bestSum = 0;
-  for (let mask = 1; mask < total; mask++) {
-    let sum = 0;
-    for (let i = 0; i < n; i++) {
-      if (mask & (1 << i)) sum += drops[i].value;
-    }
-    const err = Math.abs(sum - target);
-    if (err < bestError || (err === bestError && sum < bestSum)) {
-      bestError = err;
-      bestMask = mask;
-      bestSum = sum;
-    }
-  }
-  const out: Drop[] = [];
-  for (let i = 0; i < n; i++) {
-    if (bestMask & (1 << i)) out.push(drops[i]);
-  }
-  return out;
-}
 
 export function BattleClient({
   cases,
@@ -255,19 +209,7 @@ export function BattleClient({
     const userPlayer = res.players.find((p) => p.isUser);
     if (userPlayer && userPlayer.teamIndex === res.winnerTeamIndex) {
       const payoutValue = userPlayer.net + userPlayer.entryCost;
-      const ownTeamDrops = res.players
-        .filter((p) => p.teamIndex === userPlayer.teamIndex)
-        .flatMap((p) => p.drops);
-      const ownTeamValue = ownTeamDrops.reduce((a, d) => a + d.value, 0);
-      const remainingPayout = Math.max(0, payoutValue - ownTeamValue);
-      const loserDrops = res.players
-        .filter((p) => p.teamIndex !== userPlayer.teamIndex)
-        .flatMap((p) => p.drops);
-      const loserSelected = bestFit(loserDrops, remainingPayout);
-      const allSelected = [...ownTeamDrops, ...loserSelected];
-      if (allSelected.length > 0) {
-        addDrops(allSelected, "battle", `${res.format}:${res.mode}`);
-      }
+      addBattlePayout(payoutValue, `${res.format}:${res.mode}`);
     }
     pushBattleHistory(res);
     setRevealed(true);
