@@ -51,6 +51,9 @@ export function pickWearByFloat(
   skin: SkinItem,
   f: number,
 ): WearTier | null {
+  if (skin.wears.length === 0) {
+    return { wear: "FN", probability: skin.totalProbability, value: 0 };
+  }
   if (skin.totalProbability <= 0) return skin.wears[0] ?? null;
   const total = skin.totalProbability;
   let cumulative = 0;

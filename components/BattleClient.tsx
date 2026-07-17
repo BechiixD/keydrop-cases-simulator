@@ -204,7 +204,12 @@ export function BattleClient({
     };
     const startNonce = getLastNonce();
     const totalOpens = preset.numTeams * preset.teamSize * selectedCases.reduce((s, c) => s + (rounds[c.slug] ?? 0), 0);
-    const res = runBattle(cfg, serverSeed, startNonce);
+    const arr = new Uint8Array(32);
+    crypto.getRandomValues(arr);
+    const nextSeed = Array.from(arr, (b) => b.toString(16).padStart(2, "0")).join("");
+    setServerSeed(nextSeed);
+    setRevealed(false);
+    const res = runBattle(cfg, nextSeed, startNonce);
     setLastNonce(startNonce + totalOpens);
     const userPlayer = res.players.find((p) => p.isUser);
     if (userPlayer && userPlayer.teamIndex === res.winnerTeamIndex) {

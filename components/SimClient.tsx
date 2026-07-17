@@ -173,12 +173,18 @@ export function SimClient({
       return;
     }
     setRunStarted(true);
+    const arr = new Uint8Array(32);
+    crypto.getRandomValues(arr);
+    const nextSeed = Array.from(arr, (b) => b.toString(16).padStart(2, "0")).join("");
+    setServerSeedState(nextSeed);
+    setServerSeed(nextSeed);
+    setServerSeedRevealed(false);
     const selections = cases
       .filter((c) => selected[c.slug] && (counts[c.slug] ?? 0) > 0)
       .map((c) => ({ case: c, count: Math.max(0, counts[c.slug] ?? 0) }));
     const res = runMultiBatch(
       selections,
-      serverSeed,
+      nextSeed,
       clientSeed,
       startNonce,
       joker,

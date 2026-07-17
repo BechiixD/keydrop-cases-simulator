@@ -14372,606 +14372,6 @@
       "imageUrlRemote": "https://key-drop.com/uploads/skins/5_EGGSPLOSION.png"
     },
     {
-      "slug": "drive",
-      "name": "DRIVE",
-      "price": 6.09,
-      "imageUrl": "/img/cases/drive.png",
-      "scrapedAt": 1783303356727,
-      "items": [
-        {
-          "id": "d557ae44cec511ca3b7326bf1674590f",
-          "name": "M4A4 | Buzz Kill",
-          "imageUrl": "/img/skins/d557ae44cec511ca3b7326bf1674590f.png",
-          "rarity": "Covert",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00002,
-              "value": 941.24
-            },
-            {
-              "wear": "MW",
-              "probability": 0.00003,
-              "value": 557.37
-            },
-            {
-              "wear": "BS",
-              "probability": 0.00004,
-              "value": 386.4
-            }
-          ],
-          "totalProbability": 0.00009,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6c/6cf2293ab252ee5f8e44e60752634540.png?v4"
-        },
-        {
-          "id": "901408f2e4aa2c3d1c52295879d03dcc",
-          "name": "FAMAS | Mecha Industries",
-          "imageUrl": "/img/skins/901408f2e4aa2c3d1c52295879d03dcc.png",
-          "rarity": "Classified",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00002,
-              "value": 314.63
-            },
-            {
-              "wear": "FT",
-              "probability": 0.00052,
-              "value": 47.77
-            }
-          ],
-          "totalProbability": 0.00054,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/db/db1e8b93f3149be808c1d9b966266025.png?v4"
-        },
-        {
-          "id": "60e81d6ee4ee78fadb49de6d6196fd9c",
-          "name": "★ Moto Gloves | Polygon",
-          "imageUrl": "/img/skins/60e81d6ee4ee78fadb49de6d6196fd9c.png",
-          "rarity": "Gloves",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "MW",
-              "probability": 0.00010999999999999999,
-              "value": 288.09
-            }
-          ],
-          "totalProbability": 0.00010999999999999999,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/02/025561bfea14e4250713ac245f9ba353.png?v4"
-        },
-        {
-          "id": "c250ccee400c493e1ffbb073a43dfa77",
-          "name": "MP9 | Stained Glass",
-          "imageUrl": "/img/skins/c250ccee400c493e1ffbb073a43dfa77.png",
-          "rarity": "Restricted",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00016,
-              "value": 198.85
-            }
-          ],
-          "totalProbability": 0.00016,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/17/170e2be3ecb01136a5d18130dc6836dc.png?v4"
-        },
-        {
-          "id": "d1fda5350daee15899d757956918a920",
-          "name": "★ Gut Knife | Fade",
-          "imageUrl": "/img/skins/d1fda5350daee15899d757956918a920.png",
-          "rarity": "Knife",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00017,
-              "value": 190.2
-            }
-          ],
-          "totalProbability": 0.00017,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/8e/8eecc649e255064f0d40df10392aa88a.png?v4"
-        },
-        {
-          "id": "bed3a411402d9824ea82c1fcac52fcc3",
-          "name": "M4A4 | The Battlestar",
-          "imageUrl": "/img/skins/bed3a411402d9824ea82c1fcac52fcc3.png",
-          "rarity": "Covert",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00004,
-              "value": 174.17
-            },
-            {
-              "wear": "FT",
-              "probability": 0.00058,
-              "value": 42.07
-            }
-          ],
-          "totalProbability": 0.00062,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/66/666776d8fc435cc601b7e863a8f00c70.png?v4"
-        },
-        {
-          "id": "b88d267664d1a6ed4a1fc5aef7a8d8c4",
-          "name": "SSG 08 | Blood in the Water",
-          "imageUrl": "/img/skins/b88d267664d1a6ed4a1fc5aef7a8d8c4.png",
-          "rarity": "Covert",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "MW",
-              "probability": 0.0002,
-              "value": 137.67
-            }
-          ],
-          "totalProbability": 0.0002,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c3/c3051522a2c0bc764dfd31236b48719c.png?v4"
-        },
-        {
-          "id": "e0aeebcd2fd3e26f6fe6af21ec6eb83b",
-          "name": "Desert Eagle | Ocean Drive",
-          "imageUrl": "/img/skins/e0aeebcd2fd3e26f6fe6af21ec6eb83b.png",
-          "rarity": "Covert",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "MW",
-              "probability": 0.00007000000000000001,
-              "value": 127.48
-            },
-            {
-              "wear": "FT",
-              "probability": 0.00013,
-              "value": 97.32
-            },
-            {
-              "wear": "BS",
-              "probability": 0.00014000000000000001,
-              "value": 92.49
-            }
-          ],
-          "totalProbability": 0.00034,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/1f/1f8779796507d40a3f9d588272723bd4.png?v4"
-        },
-        {
-          "id": "c95963b1cb4867c8797ef0db1e7a554d",
-          "name": "R8 Revolver | Fade",
-          "imageUrl": "/img/skins/c95963b1cb4867c8797ef0db1e7a554d.png",
-          "rarity": "Covert",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00010999999999999999,
-              "value": 126.99
-            },
-            {
-              "wear": "MW",
-              "probability": 0.00016,
-              "value": 111.84
-            }
-          ],
-          "totalProbability": 0.00027,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/59/592745ea8e484def1b417aa9ef6525a4.png?v4"
-        },
-        {
-          "id": "4e6cf1a724e1ea5db32d9d4e7b94d133",
-          "name": "M4A4 | Royal Paladin",
-          "imageUrl": "/img/skins/4e6cf1a724e1ea5db32d9d4e7b94d133.png",
-          "rarity": "Covert",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "MW",
-              "probability": 0.0001,
-              "value": 120.75
-            },
-            {
-              "wear": "FT",
-              "probability": 0.0001,
-              "value": 112.21
-            },
-            {
-              "wear": "WW",
-              "probability": 0.00008999999999999999,
-              "value": 111.96
-            }
-          ],
-          "totalProbability": 0.00029,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/76/76eec284757bde57bcaeee1559ac5c3f.png?v4"
-        },
-        {
-          "id": "018896d53cd24a6a1bb05891d3663806",
-          "name": "P90 | Death by Kitty",
-          "imageUrl": "/img/skins/018896d53cd24a6a1bb05891d3663806.png",
-          "rarity": "Covert",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FT",
-              "probability": 0.00027,
-              "value": 108.38
-            }
-          ],
-          "totalProbability": 0.00027,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/a7/a7ec051ead4260692d55ac2540a183e4.png?v4"
-        },
-        {
-          "id": "b8b82f51f1d5f7debad3baa78925abc9",
-          "name": "SSG 08 | Turbo Peek",
-          "imageUrl": "/img/skins/b8b82f51f1d5f7debad3baa78925abc9.png",
-          "rarity": "Classified",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00004,
-              "value": 89.48
-            },
-            {
-              "wear": "FT",
-              "probability": 0.00049,
-              "value": 25.96
-            },
-            {
-              "wear": "BS",
-              "probability": 0.00052,
-              "value": 23.05
-            }
-          ],
-          "totalProbability": 0.0010500000000000002,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/00/002949366ad41d2d7664ad4416ff1835.png?v4"
-        },
-        {
-          "id": "7f59709a341c070c1c9e647858f2682f",
-          "name": "AK-47 | Legion of Anubis",
-          "imageUrl": "/img/skins/7f59709a341c070c1c9e647858f2682f.png",
-          "rarity": "Covert",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00008999999999999999,
-              "value": 82.65
-            },
-            {
-              "wear": "FT",
-              "probability": 0.00021,
-              "value": 50.3
-            },
-            {
-              "wear": "BS",
-              "probability": 0.00027,
-              "value": 46.51
-            }
-          ],
-          "totalProbability": 0.00057,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e6/e62da3d4f8245d0c3cd7229816e80e05.png?v4"
-        },
-        {
-          "id": "c3af7f2d03364e79516fea602c6bf4b8",
-          "name": "M4A1-S | Player Two",
-          "imageUrl": "/img/skins/c3af7f2d03364e79516fea602c6bf4b8.png",
-          "rarity": "Covert",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FT",
-              "probability": 0.00017999999999999998,
-              "value": 77.86
-            },
-            {
-              "wear": "BS",
-              "probability": 0.0002,
-              "value": 75.36
-            }
-          ],
-          "totalProbability": 0.00037999999999999997,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c4/c4ccec3550877e173f64b7ceae11d5a9.png?v4"
-        },
-        {
-          "id": "dca004c2e7814df57db2f3dfa4f6f98e",
-          "name": "AK-47 | Head Shot",
-          "imageUrl": "/img/skins/dca004c2e7814df57db2f3dfa4f6f98e.png",
-          "rarity": "Covert",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "MW",
-              "probability": 0.0001,
-              "value": 76.97
-            },
-            {
-              "wear": "FT",
-              "probability": 0.00021999999999999998,
-              "value": 50.9
-            },
-            {
-              "wear": "BS",
-              "probability": 0.00033,
-              "value": 37.02
-            }
-          ],
-          "totalProbability": 0.00065,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/10/10456499abc5f189389797435e598b02.png?v4"
-        },
-        {
-          "id": "fe72b09d917e67b9c5ed27b415f50aaf",
-          "name": "Five-SeveN | Monkey Business",
-          "imageUrl": "/img/skins/fe72b09d917e67b9c5ed27b415f50aaf.png",
-          "rarity": "Classified",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "MW",
-              "probability": 0.00004,
-              "value": 63.26
-            },
-            {
-              "wear": "FT",
-              "probability": 0.011279999999999998,
-              "value": 15.93
-            },
-            {
-              "wear": "BS",
-              "probability": 0.03984,
-              "value": 15.58
-            },
-            {
-              "wear": "WW",
-              "probability": 0.01153,
-              "value": 15.47
-            }
-          ],
-          "totalProbability": 0.06269,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/a2/a2032413c641dea25cb30a2b1d2bb578.png?v4"
-        },
-        {
-          "id": "63a174f6dcb4638d6e7b0d3a04f10c34",
-          "name": "AWP | Hyper Beast",
-          "imageUrl": "/img/skins/63a174f6dcb4638d6e7b0d3a04f10c34.png",
-          "rarity": "Covert",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FT",
-              "probability": 0.0003,
-              "value": 49.43
-            },
-            {
-              "wear": "WW",
-              "probability": 0.00034,
-              "value": 47.08
-            }
-          ],
-          "totalProbability": 0.00064,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/04/04a262f56caf635efae2317fd99982eb.png?v4"
-        },
-        {
-          "id": "b52d9a3e1c509edadb52b097c77f66f6",
-          "name": "AK-47 | Frontside Misty",
-          "imageUrl": "/img/skins/b52d9a3e1c509edadb52b097c77f66f6.png",
-          "rarity": "Classified",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "MW",
-              "probability": 0.00015,
-              "value": 43.29
-            },
-            {
-              "wear": "FT",
-              "probability": 0.01057,
-              "value": 23.23
-            },
-            {
-              "wear": "BS",
-              "probability": 0.010620000000000001,
-              "value": 22.45
-            }
-          ],
-          "totalProbability": 0.021339999999999998,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d9/d93301718757dd98163b91da61dedef3.png?v4"
-        },
-        {
-          "id": "43a3bf3f13fa21c23c4b8b590bcc2591",
-          "name": "AK-47 | Phantom Disruptor",
-          "imageUrl": "/img/skins/43a3bf3f13fa21c23c4b8b590bcc2591.png",
-          "rarity": "Classified",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00008,
-              "value": 42.29
-            },
-            {
-              "wear": "MW",
-              "probability": 0.05671,
-              "value": 11.34
-            },
-            {
-              "wear": "FT",
-              "probability": 0.05173,
-              "value": 7.57
-            }
-          ],
-          "totalProbability": 0.10852,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/93/93b5d67c23515122c71ef55b0410e889.png?v4"
-        },
-        {
-          "id": "93cdbe4da296876f6bd1f4c37e3ee644",
-          "name": "XM1014 | XOXO",
-          "imageUrl": "/img/skins/93cdbe4da296876f6bd1f4c37e3ee644.png",
-          "rarity": "Classified",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00017999999999999998,
-              "value": 25.46
-            },
-            {
-              "wear": "FT",
-              "probability": 0.19136,
-              "value": 4.92
-            }
-          ],
-          "totalProbability": 0.19154,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/5c/5c40612b463bd2167f34092ed1111e51.png?v4"
-        },
-        {
-          "id": "00d78c0254e0b90cb2607e21415007a3",
-          "name": "AWP | Duality",
-          "imageUrl": "/img/skins/00d78c0254e0b90cb2607e21415007a3.png",
-          "rarity": "Classified",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00008,
-              "value": 24.1
-            },
-            {
-              "wear": "FT",
-              "probability": 0.01238,
-              "value": 4.8
-            },
-            {
-              "wear": "WW",
-              "probability": 0.012589999999999999,
-              "value": 4.37
-            },
-            {
-              "wear": "BS",
-              "probability": 0.01369,
-              "value": 3.94
-            }
-          ],
-          "totalProbability": 0.03874,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/61/6197ab8e79cc50dcc8d8162c3db95e31.png?v4"
-        },
-        {
-          "id": "34f73d5ac2902090f02cfd6b82cfe767",
-          "name": "USP-S | Bleeding Edge",
-          "imageUrl": "/img/skins/34f73d5ac2902090f02cfd6b82cfe767.png",
-          "rarity": "Restricted",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.00481,
-              "value": 12.55
-            },
-            {
-              "wear": "MW",
-              "probability": 0.00384,
-              "value": 4.77
-            },
-            {
-              "wear": "FT",
-              "probability": 0.01688,
-              "value": 1.75
-            },
-            {
-              "wear": "WW",
-              "probability": 0.01885,
-              "value": 1.61
-            },
-            {
-              "wear": "BS",
-              "probability": 0.02527,
-              "value": 1.39
-            }
-          ],
-          "totalProbability": 0.06965,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/9e/9e409265094cf092d09425c653520d63.png?v4"
-        },
-        {
-          "id": "4edda0de8f8304a6b29224292039a28e",
-          "name": "AUG | Momentum",
-          "imageUrl": "/img/skins/4edda0de8f8304a6b29224292039a28e.png",
-          "rarity": "Classified",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FT",
-              "probability": 0.02948,
-              "value": 7.83
-            },
-            {
-              "wear": "BS",
-              "probability": 0.03589,
-              "value": 7.44
-            },
-            {
-              "wear": "WW",
-              "probability": 0.03246,
-              "value": 7.34
-            }
-          ],
-          "totalProbability": 0.09783,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/1d/1db72686785d3873750594ea33208653.png?v4"
-        },
-        {
-          "id": "11195e4b3c54546a1682ddd4a28fb9c8",
-          "name": "Dual Berettas | Twin Turbo",
-          "imageUrl": "/img/skins/11195e4b3c54546a1682ddd4a28fb9c8.png",
-          "rarity": "Classified",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FT",
-              "probability": 0.04149,
-              "value": 4.61
-            }
-          ],
-          "totalProbability": 0.04149,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ed/ed72f327788eca900f5141ddfc75b500.png?v4"
-        },
-        {
-          "id": "bbae3e3c869a2dc693426bfb1aae6263",
-          "name": "MP5-SD | Liquidation",
-          "imageUrl": "/img/skins/bbae3e3c869a2dc693426bfb1aae6263.png",
-          "rarity": "Mil-Spec",
-          "statTrak": false,
-          "wears": [
-            {
-              "wear": "FN",
-              "probability": 0.0010199999999999999,
-              "value": 1.31
-            },
-            {
-              "wear": "MW",
-              "probability": 0.017390000000000003,
-              "value": 0.23
-            },
-            {
-              "wear": "WW",
-              "probability": 0.19012,
-              "value": 0.06
-            },
-            {
-              "wear": "FT",
-              "probability": 0.08221,
-              "value": 0.06
-            },
-            {
-              "wear": "BS",
-              "probability": 0.07110999999999999,
-              "value": 0.06
-            }
-          ],
-          "totalProbability": 0.36185,
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/0b/0b3b0ca8421d1d6b20f58aa192074ab3.png?v4"
-        }
-      ],
-      "imageUrlRemote": "https://key-drop.com/uploads/skins/ANIME_11.png"
-    },
-    {
       "slug": "ice-blast",
       "name": "ICE BLAST",
       "price": 0.32,
@@ -74288,7 +73688,7 @@
       "price": 0.5,
       "imageUrl": "https://key-drop.com/uploads/skins/1_SURGE.png",
       "imageUrlRemote": "https://key-drop.com/uploads/skins/1_SURGE.png",
-      "scrapedAt": 1784237550111,
+      "scrapedAt": 1784240176579,
       "items": [
         {
           "id": "54342eb76689f5890b77cec6cade6248",
@@ -74297,7 +73697,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/11/11c5b87ad045a2e36446ede4603b1c2c.png?v4",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00013,
+              "value": 47.2
+            }
+          ],
           "totalProbability": 0.00013
         },
         {
@@ -74307,7 +73713,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/5d/5d982eb2f88352484e70379c616f076c.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00017999999999999998,
+              "value": 31.4
+            }
+          ],
           "totalProbability": 0.00017999999999999998
         },
         {
@@ -74317,7 +73729,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d6/d6173efb77e66805bf09293b149066a9.png?v4",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00032,
+              "value": 18.42
+            }
+          ],
           "totalProbability": 0.00032
         },
         {
@@ -74327,7 +73745,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6e/6e113620ad81e203fd056572961aff0b.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00046,
+              "value": 12.68
+            }
+          ],
           "totalProbability": 0.00046
         },
         {
@@ -74337,7 +73761,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7f/7fb6b7bc88ba81ea93c77f6729bdb2fe.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00048,
+              "value": 11.9
+            }
+          ],
           "totalProbability": 0.00048
         },
         {
@@ -74347,7 +73777,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7e/7e60dd8000d3f01a549a692558959bd8.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00068,
+              "value": 8.36
+            }
+          ],
           "totalProbability": 0.00068
         },
         {
@@ -74357,7 +73793,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/70/70244e1ba5f73ce42a446fd59930b260.png?v4",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00082,
+              "value": 6.98
+            }
+          ],
           "totalProbability": 0.00082
         },
         {
@@ -74367,7 +73809,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/23/234b5a4b740d07b6f5833b1218ec9e13.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00092,
+              "value": 6.21
+            }
+          ],
           "totalProbability": 0.00092
         },
         {
@@ -74377,7 +73825,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/a8/a8b9be7739c516a21030e974ee36ad5c.png?v4",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00108,
+              "value": 5.26
+            }
+          ],
           "totalProbability": 0.00108
         },
         {
@@ -74387,7 +73841,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b3/b30a2e4ee4f6438ebbe47f436f013f95.png?v4",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00134,
+              "value": 4.23
+            }
+          ],
           "totalProbability": 0.00134
         },
         {
@@ -74397,7 +73857,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e7/e7c2b3706d868942334a5ad1cb9dd733.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0013700000000000001,
+              "value": 4.16
+            }
+          ],
           "totalProbability": 0.0013700000000000001
         },
         {
@@ -74407,7 +73873,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b8/b8d2abbf9ecaffec9acaef7f0f1935e2.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0018,
+              "value": 3.16
+            }
+          ],
           "totalProbability": 0.0018
         },
         {
@@ -74417,7 +73889,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/31/3112773da9b75901344f1fe405f92574.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00249,
+              "value": 2.28
+            }
+          ],
           "totalProbability": 0.00249
         },
         {
@@ -74427,7 +73905,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/5b/5b82668867b8f37baae7da18e5384510.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00254,
+              "value": 2.22
+            }
+          ],
           "totalProbability": 0.00254
         },
         {
@@ -74437,7 +73921,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/59/5980be66f39718af7a35fa9d75255654.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0027700000000000003,
+              "value": 2.05
+            }
+          ],
           "totalProbability": 0.0027700000000000003
         },
         {
@@ -74447,7 +73937,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/da/dab0082d4b7e3e0d1b84e6b15a79ebd7.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01204,
+              "value": 1.84
+            }
+          ],
           "totalProbability": 0.01204
         },
         {
@@ -74457,7 +73953,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6d/6d377987cdadd1a4922b8595472ebe56.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01265,
+              "value": 1.75
+            }
+          ],
           "totalProbability": 0.01265
         },
         {
@@ -74467,7 +73969,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/03/039f53757a1fb55d2cbf4568da1c3919.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01376,
+              "value": 1.61
+            }
+          ],
           "totalProbability": 0.01376
         },
         {
@@ -74477,7 +73985,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/9d/9d45dc8cf17e6714292d8f4fcbbc203c.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01276,
+              "value": 1.04
+            }
+          ],
           "totalProbability": 0.01276
         },
         {
@@ -74487,7 +74001,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6d/6dab6716da84c59d904e62722c37c973.png?v4",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01351,
+              "value": 0.99
+            }
+          ],
           "totalProbability": 0.01351
         },
         {
@@ -74497,7 +74017,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/99/996e0297f48aaf33c0c7dbd3825b6430.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01351,
+              "value": 0.99
+            }
+          ],
           "totalProbability": 0.01351
         },
         {
@@ -74507,7 +74033,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/af/afd040b16086375afb7245f01e538e57.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01455,
+              "value": 0.92
+            }
+          ],
           "totalProbability": 0.01455
         },
         {
@@ -74517,7 +74049,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b5/b5d0f93373669fec9268e72da3360087.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.015,
+              "value": 0.89
+            }
+          ],
           "totalProbability": 0.015
         },
         {
@@ -74527,7 +74065,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ee/ee86a66eafc52646a0bcbac89496c534.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.015,
+              "value": 0.89
+            }
+          ],
           "totalProbability": 0.015
         },
         {
@@ -74537,7 +74081,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/cf/cf490b670d86a9f189f42c4af5bc2700.png?v4",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.015449999999999998,
+              "value": 0.86
+            }
+          ],
           "totalProbability": 0.015449999999999998
         },
         {
@@ -74547,7 +74097,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/15/15426e04c361c3f369a9b12a84795242.png?v4",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01605,
+              "value": 0.83
+            }
+          ],
           "totalProbability": 0.01605
         },
         {
@@ -74557,7 +74113,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/37/375d0ec1dd46f47f0aeb8bc1e5dc91c9.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0171,
+              "value": 0.78
+            }
+          ],
           "totalProbability": 0.0171
         },
         {
@@ -74567,7 +74129,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/46/465402d9def9cbb72f1635f4cb28437e.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0171,
+              "value": 0.78
+            }
+          ],
           "totalProbability": 0.0171
         },
         {
@@ -74577,7 +74145,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/06/0663bd48a0c097483f1bbc212eaa7268.png?v4",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02926,
+              "value": 0.71
+            }
+          ],
           "totalProbability": 0.02926
         },
         {
@@ -74587,7 +74161,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/1e/1e6ee084ef8a20630586761dd7c96777.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03257,
+              "value": 0.64
+            }
+          ],
           "totalProbability": 0.03257
         },
         {
@@ -74597,7 +74177,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/86/86f5bc28b1dbca54071bd243239b9ff1.png?v4",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03535,
+              "value": 0.59
+            }
+          ],
           "totalProbability": 0.03535
         },
         {
@@ -74607,7 +74193,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/9a/9abe2395afb2db379b218bb973a35e81.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03848,
+              "value": 0.54
+            }
+          ],
           "totalProbability": 0.03848
         },
         {
@@ -74617,7 +74209,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/12/12c192e2a9ec25e4ff1f2ee7829f2b1b.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03848,
+              "value": 0.54
+            }
+          ],
           "totalProbability": 0.03848
         },
         {
@@ -74627,7 +74225,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/44/4462667dfe869040c19c37331be66996.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02667,
+              "value": 0.38
+            }
+          ],
           "totalProbability": 0.02667
         },
         {
@@ -74637,7 +74241,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/67/676fd5b3fe6845065783988947c6dc66.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02852,
+              "value": 0.33
+            }
+          ],
           "totalProbability": 0.02852
         },
         {
@@ -74647,7 +74257,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/19/197f7a087cb5260eeba9c10b575ddcb4.png?v4",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.054560000000000004,
+              "value": 0.09
+            }
+          ],
           "totalProbability": 0.054560000000000004
         },
         {
@@ -74657,7 +74273,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3b/3b075afdb13f49cc600e7e6f47782cb8.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.058280000000000005,
+              "value": 0.08
+            }
+          ],
           "totalProbability": 0.058280000000000005
         },
         {
@@ -74667,7 +74289,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e9/e96ed5fec23aadd728893ad6b74c9ee4.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.06695999999999999,
+              "value": 0.06
+            }
+          ],
           "totalProbability": 0.06695999999999999
         },
         {
@@ -74677,7 +74305,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b3/b34a781d203911b5fdbad966128c5ec8.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.07378,
+              "value": 0.05
+            }
+          ],
           "totalProbability": 0.07378
         },
         {
@@ -74687,7 +74321,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/26/264de81483d5c964b2446a09bcf96d99.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.07378,
+              "value": 0.05
+            }
+          ],
           "totalProbability": 0.07378
         },
         {
@@ -74697,7 +74337,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/19/19e840bed885a55f608116b74fb86041.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.07316,
+              "value": 0.05
+            }
+          ],
           "totalProbability": 0.07316
         },
         {
@@ -74707,7 +74353,13 @@
           "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/87/877b7c709c4f9ce5bda4997d750bc08e.png?v4",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.16429,
+              "value": 0.01
+            }
+          ],
           "totalProbability": 0.16429
         }
       ]
@@ -74718,426 +74370,678 @@
       "price": 3,
       "imageUrl": "https://key-drop.com/uploads/skins/2_APEX.png",
       "imageUrlRemote": "https://key-drop.com/uploads/skins/2_APEX.png",
-      "scrapedAt": 1784237562610,
+      "scrapedAt": 1784241440190,
       "items": [
         {
-          "id": "679e9e9f8d0f6bbf755e5a1bd5bd3fab",
+          "id": "sticker-crown",
           "name": "Sticker | Crown",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/96/9668142bacdf72a7785a44d616c50a36.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/96/9668142bacdf72a7785a44d616c50a36.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00005,
+              "value": 534.84
+            }
+          ],
           "totalProbability": 0.00005
         },
         {
-          "id": "b632eca8728ef780d1b910e1804018a2",
-          "name": "Sticker | 3DMAX | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/c8/c88aa6952be8796774d6c613e0fdcb3e.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c8/c88aa6952be8796774d6c613e0fdcb3e.png?v4",
+          "id": "sticker-3dmax-kato15",
+          "name": "Sticker | 3DMAX Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00015,
+              "value": 257.43
+            }
+          ],
           "totalProbability": 0.00015
         },
         {
-          "id": "8f94dae02e9dca65974190f8f708f13f",
-          "name": "Sticker | Flipsid3 Tactics | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/fe/fea88db8e83f63f04e409a234db47579.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/fe/fea88db8e83f63f04e409a234db47579.png?v4",
+          "id": "sticker-flipsid3-kato15",
+          "name": "Sticker | Flipsid3 Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0002,
+              "value": 191.33
+            }
+          ],
           "totalProbability": 0.0002
         },
         {
-          "id": "648646513bde8ed2c2f70de075a9e31d",
+          "id": "sticker-cotton-candy-flow",
           "name": "Sticker | Cotton Candy Flow",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/2f/2fed5b9a9cd76d0fa8274667cfd13a38.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/2f/2fed5b9a9cd76d0fa8274667cfd13a38.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00062,
+              "value": 35.64
+            }
+          ],
           "totalProbability": 0.00062
         },
         {
-          "id": "7787028c40e48ba814a525a867997c02",
+          "id": "sticker-crimson-web-poison-frog",
           "name": "Sticker | Crimson Web Poison Frog",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/f9/f91c330bb79ff7ea7f39e6b85e5e36bd.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f9/f91c330bb79ff7ea7f39e6b85e5e36bd.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00067,
+              "value": 33.13
+            }
+          ],
           "totalProbability": 0.00067
         },
         {
-          "id": "30ef0a5f9327cda2b29d3f303aadd307",
+          "id": "sticker-miami-tier6",
           "name": "Sticker | Miami Tier6",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/ad/ad6ce5de9935430808e3638ca39390ed.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ad/ad6ce5de9935430808e3638ca39390ed.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00079,
+              "value": 28.03
+            }
+          ],
           "totalProbability": 0.00079
         },
         {
-          "id": "b5f025b99742184a0338c6d244aad1c5",
+          "id": "sticker-great-wave",
           "name": "Sticker | Great Wave",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/e1/e12f3077bd8b9d0eab7c4b5e3f9d2d81.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e1/e12f3077bd8b9d0eab7c4b5e3f9d2d81.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00127,
+              "value": 17.39
+            }
+          ],
           "totalProbability": 0.00127
         },
         {
-          "id": "e6449d6f16844f65a67cc500e1d9a260",
+          "id": "sticker-lucky-13",
           "name": "Sticker | Lucky 13",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/bb/bbc4f30ed9c1f02f79fe6f637742fbae.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/bb/bbc4f30ed9c1f02f79fe6f637742fbae.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00135,
+              "value": 16.39
+            }
+          ],
           "totalProbability": 0.00135
         },
         {
-          "id": "44e8beaabb666ee65394dc4c8f6426c9",
+          "id": "sticker-health",
           "name": "Sticker | Health",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/54/54e01abd79e93723ea82304e0690fb45.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/54/54e01abd79e93723ea82304e0690fb45.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0017000000000000001,
+              "value": 12.96
+            }
+          ],
           "totalProbability": 0.0017000000000000001
         },
         {
-          "id": "2f5714cab4100bb3f181852b9a1ef636",
+          "id": "sticker-miami-flick",
           "name": "Sticker | Miami Flick",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/2b/2bdb9f276aeea888202c247edde00b82.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/2b/2bdb9f276aeea888202c247edde00b82.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.010709999999999999,
+              "value": 11.39
+            }
+          ],
           "totalProbability": 0.010709999999999999
         },
         {
-          "id": "fe8568932fabb07764c6f97e387d7612",
+          "id": "sticker-dark-water-surf-ava",
           "name": "Sticker | Dark Water Surf Ava",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/6d/6d2e9c51492a5464b1153f89b78bcf48.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6d/6d2e9c51492a5464b1153f89b78bcf48.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01076,
+              "value": 11.33
+            }
+          ],
           "totalProbability": 0.01076
         },
         {
-          "id": "b0e28dc2102f758cd2ef42ea70f52404",
+          "id": "sticker-tornado-chaos",
           "name": "Sticker | Tornado Chaos",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/f0/f0d93dd6a1cca9796b67018341e194b1.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f0/f0d93dd6a1cca9796b67018341e194b1.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01498,
+              "value": 8.13
+            }
+          ],
           "totalProbability": 0.01498
         },
         {
-          "id": "18643b8018194f47218f966444e508ea",
+          "id": "sticker-lotus",
           "name": "Sticker | Lotus",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/84/849b2d28f941ddf969bfa8a949b23bae.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/84/849b2d28f941ddf969bfa8a949b23bae.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01577,
+              "value": 7.74
+            }
+          ],
           "totalProbability": 0.01577
         },
         {
-          "id": "5200a2444cce0cf0e50fb44841e95a59",
-          "name": "Sticker | Team Liquid | Austin 2025",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/ae/aeba83da7320f1eb49a4d9421f316bd7.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ae/aeba83da7320f1eb49a4d9421f316bd7.png?v4",
+          "id": "sticker-team-liquid-austin25",
+          "name": "Sticker | Team Liquid Austin25",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.006939999999999999,
+              "value": 7.39
+            }
+          ],
           "totalProbability": 0.006939999999999999
         },
         {
-          "id": "58d5b31ef1ce044ba19229260c7683af",
+          "id": "sticker-neon-mvp",
           "name": "Sticker | Neon MVP",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/1d/1dc34eca41fdd2e271d2d373f9ff500f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/1d/1dc34eca41fdd2e271d2d373f9ff500f.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Covert",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00716,
+              "value": 7.14
+            }
+          ],
           "totalProbability": 0.00716
         },
         {
-          "id": "a133f6ccdd038ba83fd77285fcff6fb8",
+          "id": "sticker-candy-buttery",
           "name": "Sticker | Candy Buttery",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/b6/b619fcf68d425d1a07c234db857d0052.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b6/b619fcf68d425d1a07c234db857d0052.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0072699999999999996,
+              "value": 7.06
+            }
+          ],
           "totalProbability": 0.0072699999999999996
         },
         {
-          "id": "810ab3014f3f1689cc04f1d5aa6ff72a",
+          "id": "sticker-kill-count",
           "name": "Sticker | Kill Count",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/c6/c602e7783418e6f93a905ae858f7f8b4.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c6/c602e7783418e6f93a905ae858f7f8b4.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00738,
+              "value": 6.96
+            }
+          ],
           "totalProbability": 0.00738
         },
         {
-          "id": "24836a25a0978ccbcc1f6a54fe35212a",
+          "id": "sticker-loving-eyes",
           "name": "Sticker | Loving Eyes",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/fc/fc1ece6aee384098ac059df01f98d718.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/fc/fc1ece6aee384098ac059df01f98d718.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0076,
+              "value": 6.76
+            }
+          ],
           "totalProbability": 0.0076
         },
         {
-          "id": "e72455e98346f4eabfe9a400a67f7376",
+          "id": "sticker-gold-web",
           "name": "Sticker | Gold Web",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/47/47e9d567f2a5210a708a97339577bcbb.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/47/47e9d567f2a5210a708a97339577bcbb.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00782,
+              "value": 6.58
+            }
+          ],
           "totalProbability": 0.00782
         },
         {
-          "id": "cf421de25c1240e65a5c7abdadd90066",
+          "id": "sticker-aces-high",
           "name": "Sticker | Aces High",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/08/085c42513487024e371c9ae1fe890255.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/08/085c42513487024e371c9ae1fe890255.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00815,
+              "value": 6.26
+            }
+          ],
           "totalProbability": 0.00815
         },
         {
-          "id": "2bd1a7e599b23d23164bcc7df061e888",
+          "id": "sticker-v-for-victory",
           "name": "Sticker | V For Victory",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/bd/bdf4713b0617b17fdb851568f418dde0.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/bd/bdf4713b0617b17fdb851568f418dde0.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00848,
+              "value": 6.04
+            }
+          ],
           "totalProbability": 0.00848
         },
         {
-          "id": "8468c5df1acb41a186223b7292e4c684",
+          "id": "sticker-the-pro",
           "name": "Sticker | The Pro",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/3c/3c4b500d25445b8ebaeda01ba12ea3cb.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3c/3c4b500d25445b8ebaeda01ba12ea3cb.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00892,
+              "value": 5.74
+            }
+          ],
           "totalProbability": 0.00892
         },
         {
-          "id": "bb415223a548bc7816db095944fe179a",
+          "id": "sticker-no-pats",
           "name": "Sticker | No Pats",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/e7/e7e9327d0106502b85df1615b2f4dd08.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e7/e7e9327d0106502b85df1615b2f4dd08.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0098,
+              "value": 5.23
+            }
+          ],
           "totalProbability": 0.0098
         },
         {
-          "id": "7a3e9e53f81d793c4d022e2c0037c9d5",
+          "id": "sticker-ruby-stream",
           "name": "Sticker | Ruby Stream",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/55/554e34da4794d986d5a584efa4f1ea88.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/55/554e34da4794d986d5a584efa4f1ea88.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Covert",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.010129999999999998,
+              "value": 5.04
+            }
+          ],
           "totalProbability": 0.010129999999999998
         },
         {
-          "id": "1e8b301b11c7f87674dc2f475d699c76",
+          "id": "sticker-taste-buddy",
           "name": "Sticker | Taste Buddy",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/56/566fa0d15a2c8299d1e112022135dd3f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/56/566fa0d15a2c8299d1e112022135dd3f.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01012,
+              "value": 5.04
+            }
+          ],
           "totalProbability": 0.01012
         },
         {
-          "id": "d85b6cceeb3af4598c75f7736c285dfb",
+          "id": "sticker-phoenix-reborn",
           "name": "Sticker | Phoenix Reborn",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/4b/4be09cfe9e40277064737b8ddb0fd545.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/4b/4be09cfe9e40277064737b8ddb0fd545.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01034,
+              "value": 4.92
+            }
+          ],
           "totalProbability": 0.01034
         },
         {
-          "id": "2d07501bcc56afc6d16b4b38fde289e9",
+          "id": "sticker-ouchie",
           "name": "Sticker | Ouchie",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/5e/5e022dd73d4de10d003bf37e3b09e07f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/5e/5e022dd73d4de10d003bf37e3b09e07f.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02835,
+              "value": 3.79
+            }
+          ],
           "totalProbability": 0.02835
         },
         {
-          "id": "370e5e69a6c2b18c2f5b06255971f9af",
+          "id": "sticker-pac-ai",
           "name": "Sticker | PAC AI",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/91/911c992951515a5f888f46087f3aa489.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/91/911c992951515a5f888f46087f3aa489.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03041,
+              "value": 3.55
+            }
+          ],
           "totalProbability": 0.03041
         },
         {
-          "id": "6b1f0c25991a9ad4e0c8cb11a144f54e",
-          "name": "Sticker | 3DMAX | Austin 2025",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/15/1529284d83f5c717f4b5431d36130e6a.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/15/1529284d83f5c717f4b5431d36130e6a.png?v4",
+          "id": "sticker-3dmax-austin25",
+          "name": "Sticker | 3DMAX Austin25",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03104,
+              "value": 3.46
+            }
+          ],
           "totalProbability": 0.03104
         },
         {
-          "id": "2b0b7464c5fb214d283f8835000d87c9",
+          "id": "sticker-unicorn",
           "name": "Sticker | Unicorn",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/b8/b8d2abbf9ecaffec9acaef7f0f1935e2.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b8/b8d2abbf9ecaffec9acaef7f0f1935e2.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03405,
+              "value": 3.16
+            }
+          ],
           "totalProbability": 0.03405
         },
         {
-          "id": "2700060a22a443e7878430df340063f7",
+          "id": "sticker-killjoy",
           "name": "Sticker | Killjoy",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/d1/d191a55f149a90b614238c551a73532e.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d1/d191a55f149a90b614238c551a73532e.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03452,
+              "value": 3.12
+            }
+          ],
           "totalProbability": 0.03452
         },
         {
-          "id": "0d0b347bf4abd6e3eb33e65181e6d925",
+          "id": "sticker-infinite-triangle",
           "name": "Sticker | Infinite Triangle",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/c9/c9fb57dbb65c26a71a8a2593e71f4d6a.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c9/c9fb57dbb65c26a71a8a2593e71f4d6a.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05918,
+              "value": 2.98
+            }
+          ],
           "totalProbability": 0.05918
         },
         {
-          "id": "fb7708e618f2c7ba00a25080fe6b3b34",
+          "id": "sticker-smoke-criminal",
           "name": "Sticker | Smoke Criminal",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/3f/3f490c0f0d79d6106898e829168bc7d0.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3f/3f490c0f0d79d6106898e829168bc7d0.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.06456,
+              "value": 2.73
+            }
+          ],
           "totalProbability": 0.06456
         },
         {
-          "id": "bab2e4ac70a6a9d211b2e2a022d185ee",
+          "id": "sticker-bomb-doge",
           "name": "Sticker | Bomb Doge",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/de/defe9d3fa1ff75015cda171b9992bdcf.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/de/defe9d3fa1ff75015cda171b9992bdcf.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0684,
+              "value": 2.58
+            }
+          ],
           "totalProbability": 0.0684
         },
         {
-          "id": "5bebe95af17909c644afbc5b0993825a",
+          "id": "sticker-poorly-drawn-sas",
           "name": "Sticker | Poorly Drawn SAS",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/7d/7d6fda7497ef14c8787e14ddc35ea49d.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7d/7d6fda7497ef14c8787e14ddc35ea49d.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.051399999999999994,
+              "value": 0.45
+            }
+          ],
           "totalProbability": 0.051399999999999994
         },
         {
-          "id": "b4eb8b3f33c1399b33865103b6281839",
+          "id": "sticker-wingsuit",
           "name": "Sticker | Wingsuit",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/ab/ab583561032e9b002198343bde824b8a.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ab/ab583561032e9b002198343bde824b8a.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05716,
+              "value": 0.38
+            }
+          ],
           "totalProbability": 0.05716
         },
         {
-          "id": "fd9f0a24ff4f31450129e88cf65eaea8",
+          "id": "sticker-ct-tracks",
           "name": "Sticker | CT Tracks",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/3c/3c8a2fafdcb3c75ca802ade12eb92352.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3c/3c8a2fafdcb3c75ca802ade12eb92352.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05716,
+              "value": 0.38
+            }
+          ],
           "totalProbability": 0.05716
         },
         {
-          "id": "bef3a4b764eb5ada003d3fce6123e7cf",
+          "id": "sticker-jack",
           "name": "Sticker | Jack",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/2b/2bcb08cd99a9215cce34c15822907238.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/2b/2bcb08cd99a9215cce34c15822907238.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05908,
+              "value": 0.36
+            }
+          ],
           "totalProbability": 0.05908
         },
         {
-          "id": "02382e76a7ff119bdb2a32ee63cd15b9",
+          "id": "sticker-forty-two",
           "name": "Sticker | Forty Two",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/fa/fa61eede5a918731c22f8a3262a62f9f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/fa/fa61eede5a918731c22f8a3262a62f9f.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.06005,
+              "value": 0.35
+            }
+          ],
           "totalProbability": 0.06005
         },
         {
-          "id": "fa25398952d7acbeb8159c351c22d211",
+          "id": "sticker-big-hugs",
           "name": "Sticker | Big Hugs",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/ca/ca3e772c01fcd4a424249eb23603f214.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ca/ca3e772c01fcd4a424249eb23603f214.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.06005,
+              "value": 0.35
+            }
+          ],
           "totalProbability": 0.06005
         },
         {
-          "id": "3898985e6205babbb500d62d8829eb27",
+          "id": "sticker-pegasus",
           "name": "Sticker | Pegasus",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/69/6980673df36d0c512cb2961e88bfdc91.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/69/6980673df36d0c512cb2961e88bfdc91.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.06197,
+              "value": 0.33
+            }
+          ],
           "totalProbability": 0.06197
         },
         {
-          "id": "754456cf155613adebd2327fef77daf8",
+          "id": "sticker-little-mischief",
           "name": "Sticker | Little Mischief",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/d1/d1f8c5acb42263952551b54038714d2a.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d1/d1f8c5acb42263952551b54038714d2a.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.07349,
+              "value": 0.25
+            }
+          ],
           "totalProbability": 0.07349
         }
       ]
@@ -75148,426 +75052,678 @@
       "price": 7,
       "imageUrl": "https://key-drop.com/uploads/skins/3_PRIME.png",
       "imageUrlRemote": "https://key-drop.com/uploads/skins/3_PRIME.png",
-      "scrapedAt": 1784237568902,
+      "scrapedAt": 1784241440190,
       "items": [
         {
-          "id": "0703a11f7284642e9b22355d3c882bb8",
-          "name": "Sticker | Titan | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/0d/0d5dd0291aa34b7755753b40910db06b.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/0d/0d5dd0291aa34b7755753b40910db06b.png?v4",
+          "id": "sticker-titan-kato15",
+          "name": "Sticker | Titan Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0001,
+              "value": 680.93
+            }
+          ],
           "totalProbability": 0.0001
         },
         {
-          "id": "8f94dae02e9dca65974190f8f708f13f",
-          "name": "Sticker | Flipsid3 Tactics | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/5b/5bf832caacbd73ad6d69cfa0b391a30a.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/5b/5bf832caacbd73ad6d69cfa0b391a30a.png?v4",
+          "id": "sticker-flipsid3-kato15",
+          "name": "Sticker | Flipsid3 Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00015,
+              "value": 555.9
+            }
+          ],
           "totalProbability": 0.00015
         },
         {
-          "id": "679e9e9f8d0f6bbf755e5a1bd5bd3fab",
+          "id": "sticker-crown",
           "name": "Sticker | Crown",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/96/9668142bacdf72a7785a44d616c50a36.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/96/9668142bacdf72a7785a44d616c50a36.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0002,
+              "value": 534.84
+            }
+          ],
           "totalProbability": 0.0002
         },
         {
-          "id": "55a08a0758a883fd3ee5bdbf5e1516c6",
-          "name": "Sticker | iBUYPOWER | Cologne 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/13/1392715a747263fc5b242f3adb06df44.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/13/1392715a747263fc5b242f3adb06df44.png?v4",
+          "id": "sticker-ibuypower-col14",
+          "name": "Sticker | iBUYPOWER Col14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00017,
+              "value": 373.61
+            }
+          ],
           "totalProbability": 0.00017
         },
         {
-          "id": "d3e87c069e6a1fcb5bf02d1722ce0119",
-          "name": "Sticker | rox | Antwerp 2022",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/6e/6e7f48f14d5c6b47b7955f695a148318.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6e/6e7f48f14d5c6b47b7955f695a148318.png?v4",
+          "id": "sticker-rox-antwerp22",
+          "name": "Sticker | rox Antwerp22",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0005,
+              "value": 123.59
+            }
+          ],
           "totalProbability": 0.0005
         },
         {
-          "id": "d54b41bc2de3f343d8b8bedb3b73a6e9",
-          "name": "Sticker | Sprout Esports | Boston 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/58/58176c97d6b79d961806473a33331ab8.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/58/58176c97d6b79d961806473a33331ab8.png?v4",
+          "id": "sticker-sprout-boston18",
+          "name": "Sticker | Sprout Boston18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00068,
+              "value": 90.18
+            }
+          ],
           "totalProbability": 0.00068
         },
         {
-          "id": "51b9a6f442fdf59102b9eec5d089c7bd",
-          "name": "Sticker | Flipsid3 Tactics | Boston 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/0d/0d71079b9ee61a75565953fe7e7cb05f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/0d/0d71079b9ee61a75565953fe7e7cb05f.png?v4",
+          "id": "sticker-flipsid3-boston18",
+          "name": "Sticker | Flipsid3 Boston18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0008799999999999999,
+              "value": 70.09
+            }
+          ],
           "totalProbability": 0.0008799999999999999
         },
         {
-          "id": "ddd7b3525eb3d4d32496685a1d5c488f",
-          "name": "Sticker | mousesports | Cologne 2016",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/f2/f2b3de3e71d7c587f942c820da54e0b1.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f2/f2b3de3e71d7c587f942c820da54e0b1.png?v4",
+          "id": "sticker-mousesports-col16",
+          "name": "Sticker | mousesports Col16",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00121,
+              "value": 50.16
+            }
+          ],
           "totalProbability": 0.00121
         },
         {
-          "id": "30ef0a5f9327cda2b29d3f303aadd307",
+          "id": "sticker-miami-tier6",
           "name": "Sticker | Miami Tier6",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/ad/ad6ce5de9935430808e3638ca39390ed.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ad/ad6ce5de9935430808e3638ca39390ed.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00217,
+              "value": 28.03
+            }
+          ],
           "totalProbability": 0.00217
         },
         {
-          "id": "6b9710a78cdd53380a68ae2fdb052c7d",
-          "name": "Sticker | Rogue | London 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/80/8010617d2068476e5d0f7bda41fe9ff3.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/80/8010617d2068476e5d0f7bda41fe9ff3.png?v4",
+          "id": "sticker-rogue-london18",
+          "name": "Sticker | Rogue London18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.013540000000000002,
+              "value": 25.31
+            }
+          ],
           "totalProbability": 0.013540000000000002
         },
         {
-          "id": "adcc52f5cef7e49eba89d3d95326d1aa",
-          "name": "Sticker | Fnatic | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/8e/8e2496363bc71158637a800df12dc533.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/8e/8e2496363bc71158637a800df12dc533.png?v4",
+          "id": "sticker-fnatic-kato15",
+          "name": "Sticker | Fnatic Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.016579999999999998,
+              "value": 20.71
+            }
+          ],
           "totalProbability": 0.016579999999999998
         },
         {
-          "id": "99ee43b8254041e4e409ddd785aeef1e",
-          "name": "Sticker | Natus Vincere | Cologne 2016",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/2e/2ee15d346ef13895cb889a6481f4bde3.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/2e/2ee15d346ef13895cb889a6481f4bde3.png?v4",
+          "id": "sticker-navi-col16",
+          "name": "Sticker | NaVi Col16",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01807,
+              "value": 19.01
+            }
+          ],
           "totalProbability": 0.01807
         },
         {
-          "id": "d30fe861dcfbce3b60e5580be992b276",
+          "id": "sticker-miami-buttery",
           "name": "Sticker | Miami Buttery",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/48/489ef9246214180737ae6d12d4c8b7c5.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/48/489ef9246214180737ae6d12d4c8b7c5.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01355,
+              "value": 16.41
+            }
+          ],
           "totalProbability": 0.01355
         },
         {
-          "id": "53bf8bab2205325628313c25d0ffb39f",
-          "name": "Sticker | Vega Squadron | Katowice 2019",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/62/62188cabc04dbf11ded015ecad3b5fbc.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/62/62188cabc04dbf11ded015ecad3b5fbc.png?v4",
+          "id": "sticker-vega-squadron-kato19",
+          "name": "Sticker | Vega Squadron Kato19",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01625,
+              "value": 13.7
+            }
+          ],
           "totalProbability": 0.01625
         },
         {
-          "id": "91554a6e723b7c2e2ef9046491d220ac",
+          "id": "sticker-battle-scarred",
           "name": "Sticker | Battle Scarred",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/6e/6e113620ad81e203fd056572961aff0b.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6e/6e113620ad81e203fd056572961aff0b.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0175,
+              "value": 12.68
+            }
+          ],
           "totalProbability": 0.0175
         },
         {
-          "id": "183a459e8750ed674b1855d33fb95dfb",
-          "name": "Sticker | max | Antwerp 2022",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/8d/8d178387e97881f729d2c7467fae885c.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/8d/8d178387e97881f729d2c7467fae885c.png?v4",
+          "id": "sticker-max-antwerp22",
+          "name": "Sticker | max Antwerp22",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01865,
+              "value": 11.95
+            }
+          ],
           "totalProbability": 0.01865
         },
         {
-          "id": "b5f025b99742184a0338c6d244aad1c5",
+          "id": "sticker-great-wave",
           "name": "Sticker | Great Wave",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/7f/7fb6b7bc88ba81ea93c77f6729bdb2fe.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7f/7fb6b7bc88ba81ea93c77f6729bdb2fe.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01865,
+              "value": 11.9
+            }
+          ],
           "totalProbability": 0.01865
         },
         {
-          "id": "fe8568932fabb07764c6f97e387d7612",
+          "id": "sticker-dark-water-surf-ava",
           "name": "Sticker | Dark Water Surf Ava",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/6d/6d2e9c51492a5464b1153f89b78bcf48.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6d/6d2e9c51492a5464b1153f89b78bcf48.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01959,
+              "value": 11.33
+            }
+          ],
           "totalProbability": 0.01959
         },
         {
-          "id": "08512e9fe89326072a65bc40e5161bb2",
-          "name": "Sticker | NiKo | Stockholm 2021",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/4e/4e373e5b6961837896d0c5fc2297e8ad.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/4e/4e373e5b6961837896d0c5fc2297e8ad.png?v4",
+          "id": "sticker-niko-stockholm21",
+          "name": "Sticker | NiKo Stockholm21",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01833,
+              "value": 9.95
+            }
+          ],
           "totalProbability": 0.01833
         },
         {
-          "id": "eda27dfc6d68e801a6b1b7caffbcbf43",
+          "id": "sticker-liquid-fire",
           "name": "Sticker | Liquid Fire",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/62/623b65698d04fa9f5553f8a81317980f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/62/623b65698d04fa9f5553f8a81317980f.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01941,
+              "value": 9.42
+            }
+          ],
           "totalProbability": 0.01941
         },
         {
-          "id": "2b148e7a139c09c9ed04e85fc804bdb1",
+          "id": "sticker-kawaii-t",
           "name": "Sticker | Kawaii T",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/7e/7e60dd8000d3f01a549a692558959bd8.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7e/7e60dd8000d3f01a549a692558959bd8.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02188,
+              "value": 8.36
+            }
+          ],
           "totalProbability": 0.02188
         },
         {
-          "id": "f51c0c36ad0fa5f14eb9dc2118e7aaec",
-          "name": "Sticker | Sharks Esports | Stockholm 2021",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/7a/7a02f55deb7ad41df30ea849fd975253.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7a/7a02f55deb7ad41df30ea849fd975253.png?v4",
+          "id": "sticker-sharks-stockholm21",
+          "name": "Sticker | Sharks Stockholm21",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02265,
+              "value": 8.05
+            }
+          ],
           "totalProbability": 0.02265
         },
         {
-          "id": "7aa97c811541d5342b880b8fca94d4d7",
-          "name": "Sticker | Rare Atom | Budapest 2025",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/92/924a7de960ae27e03fcf2547c22f0bda.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/92/924a7de960ae27e03fcf2547c22f0bda.png?v4",
+          "id": "sticker-rare-atom-budapest25",
+          "name": "Sticker | Rare Atom Budapest25",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02311,
+              "value": 7.94
+            }
+          ],
           "totalProbability": 0.02311
         },
         {
-          "id": "9ca05b3f995d3c0083d2fbda73c815cf",
-          "name": "Sticker | FURIA | Stockholm 2021",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/54/5469d17da3d7290923bb78fdef5279aa.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/54/5469d17da3d7290923bb78fdef5279aa.png?v4",
+          "id": "sticker-furia-stockholm21",
+          "name": "Sticker | FURIA Stockholm21",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02419,
+              "value": 7.57
+            }
+          ],
           "totalProbability": 0.02419
         },
         {
-          "id": "31ad300612f39706b02f71a1a3383455",
-          "name": "Sticker | Imperial Esports | Antwerp 2022",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/03/036935820d0ece58585e59c0b4eb7b1a.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/03/036935820d0ece58585e59c0b4eb7b1a.png?v4",
+          "id": "sticker-imperial-antwerp22",
+          "name": "Sticker | Imperial Antwerp22",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.024489999999999998,
+              "value": 7.49
+            }
+          ],
           "totalProbability": 0.024489999999999998
         },
         {
-          "id": "810ab3014f3f1689cc04f1d5aa6ff72a",
+          "id": "sticker-kill-count",
           "name": "Sticker | Kill Count",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/c6/c602e7783418e6f93a905ae858f7f8b4.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c6/c602e7783418e6f93a905ae858f7f8b4.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04263,
+              "value": 6.96
+            }
+          ],
           "totalProbability": 0.04263
         },
         {
-          "id": "ddbad0278e4146313a0dd9f4ba60723c",
-          "name": "Sticker | NEO | Cologne 2016",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/5e/5ea06d32255fef2fc76a8ca719db0128.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/5e/5ea06d32255fef2fc76a8ca719db0128.png?v4",
+          "id": "sticker-neo-col16",
+          "name": "Sticker | NEO Col16",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0495,
+              "value": 5.99
+            }
+          ],
           "totalProbability": 0.0495
         },
         {
-          "id": "1881c4414c1b9ca7853ae6a85c9d2c8d",
+          "id": "sticker-necron-glyphs",
           "name": "Sticker | Necron Glyphs",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/31/317b60b26b46f8d94fd69e7789f8c7da.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/31/317b60b26b46f8d94fd69e7789f8c7da.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.051859999999999996,
+              "value": 5.7
+            }
+          ],
           "totalProbability": 0.051859999999999996
         },
         {
-          "id": "139a7474853d4ac9b36d8e3ee1710fff",
-          "name": "Sticker | TYLOO | Austin 2025",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/be/bed858d22c51f6181d18a60413ebd8b9.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/be/bed858d22c51f6181d18a60413ebd8b9.png?v4",
+          "id": "sticker-tyloo-austin25",
+          "name": "Sticker | TYLOO Austin25",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05244,
+              "value": 5.65
+            }
+          ],
           "totalProbability": 0.05244
         },
         {
-          "id": "8e1c4c17e8018fbb65cd3aa3be1cfa04",
-          "name": "Sticker | Vitality | Stockholm 2021",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/78/78559ae582fb65738677b501ff80fc91.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/78/78559ae582fb65738677b501ff80fc91.png?v4",
+          "id": "sticker-vitality-stockholm21",
+          "name": "Sticker | Vitality Stockholm21",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0167,
+              "value": 4.85
+            }
+          ],
           "totalProbability": 0.0167
         },
         {
-          "id": "bbb2e89117fc1b89a3f85c2bee982b59",
-          "name": "Sticker | ENCE | Stockholm 2021",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/84/8459504d927adf46eb5b081cf4c6209e.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/84/8459504d927adf46eb5b081cf4c6209e.png?v4",
+          "id": "sticker-ence-stockholm21",
+          "name": "Sticker | ENCE Stockholm21",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01719,
+              "value": 4.6
+            }
+          ],
           "totalProbability": 0.01719
         },
         {
-          "id": "696ad92ef656913ec3e5b4ff4191e46a",
-          "name": "Sticker | TYLOO | Budapest 2025",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/82/82ae153459d49dd8e2f3e2779b628af2.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/82/82ae153459d49dd8e2f3e2779b628af2.png?v4",
+          "id": "sticker-tyloo-budapest25",
+          "name": "Sticker | TYLOO Budapest25",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01867,
+              "value": 4.04
+            }
+          ],
           "totalProbability": 0.01867
         },
         {
-          "id": "73bed6c761d5bcc4d215afab145d64ef",
+          "id": "sticker-dead-eye",
           "name": "Sticker | Dead Eye",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/4f/4f0c54cafa849b26ee9f6826c8e43d71.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/4f/4f0c54cafa849b26ee9f6826c8e43d71.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03634,
+              "value": 1.31
+            }
+          ],
           "totalProbability": 0.03634
         },
         {
-          "id": "190fe124951b25fb5039671666b02399",
+          "id": "sticker-poorly-drawn-idf",
           "name": "Sticker | Poorly Drawn IDF",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/95/95c10330772d2249d952c3b1bce9d7e4.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/95/95c10330772d2249d952c3b1bce9d7e4.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0383,
+              "value": 1.21
+            }
+          ],
           "totalProbability": 0.0383
         },
         {
-          "id": "aba8fa78aa6c591c9c27030fe3b4f55b",
+          "id": "sticker-king-crasswater",
           "name": "Sticker | King Crasswater",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/60/602847bfcb7da678eae3a733439e951d.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/60/602847bfcb7da678eae3a733439e951d.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04027,
+              "value": 1.1
+            }
+          ],
           "totalProbability": 0.04027
         },
         {
-          "id": "e6e0e6b5191eb4e7c6526997dc758395",
+          "id": "sticker-nice-clutch",
           "name": "Sticker | Nice Clutch",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/88/884a218dbbe6b8aa4c4d1d7e856da486.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/88/884a218dbbe6b8aa4c4d1d7e856da486.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04076,
+              "value": 1.08
+            }
+          ],
           "totalProbability": 0.04076
         },
         {
-          "id": "539ae087656118421d2a268119beeb92",
+          "id": "sticker-robo",
           "name": "Sticker | Robo",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/ac/ac82fdd426259ade725096691bcf81a4.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ac/ac82fdd426259ade725096691bcf81a4.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04125,
+              "value": 1.06
+            }
+          ],
           "totalProbability": 0.04125
         },
         {
-          "id": "f8614f7b419a97d683824effdccdfc26",
+          "id": "sticker-cyber-romanov",
           "name": "Sticker | Cyber Romanov",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/99/996e0297f48aaf33c0c7dbd3825b6430.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/99/996e0297f48aaf33c0c7dbd3825b6430.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04321,
+              "value": 0.99
+            }
+          ],
           "totalProbability": 0.04321
         },
         {
-          "id": "bb415223a548bc7816db095944fe179a",
+          "id": "sticker-no-pats",
           "name": "Sticker | No Pats",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/37/37bfd07b3f1a0d6cbbb8f25e8691343f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/37/37bfd07b3f1a0d6cbbb8f25e8691343f.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04418999999999999,
+              "value": 0.95
+            }
+          ],
           "totalProbability": 0.04418999999999999
         },
         {
-          "id": "2a8cd5fae43449be0902bad2cd9d9d60",
+          "id": "sticker-blood-moon-wave-rider",
           "name": "Sticker | Blood Moon Wave Rider",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/2e/2e508bd0f765aafc95397bb97f7eb3a9.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/2e/2e508bd0f765aafc95397bb97f7eb3a9.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0496,
+              "value": 0.78
+            }
+          ],
           "totalProbability": 0.0496
         },
         {
-          "id": "84aa87a92b4b1a92e5237702add477f5",
+          "id": "sticker-hello-awp",
           "name": "Sticker | Hello AWP",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/f5/f54ef259cc0dfae1ffb654ce63a4d808.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f5/f54ef259cc0dfae1ffb654ce63a4d808.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05009,
+              "value": 0.77
+            }
+          ],
           "totalProbability": 0.05009
         },
         {
-          "id": "12ca1d984d775eb52b73f080cdf073ac",
+          "id": "sticker-bombsquad",
           "name": "Sticker | Bombsquad",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/16/168e9f838c3103fb49c73ce62fa0ea62.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/16/168e9f838c3103fb49c73ce62fa0ea62.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0545,
+              "value": 0.67
+            }
+          ],
           "totalProbability": 0.0545
         }
       ]
@@ -75578,426 +75734,678 @@
       "price": 15,
       "imageUrl": "https://key-drop.com/uploads/skins/4_ALPHA.png",
       "imageUrlRemote": "https://key-drop.com/uploads/skins/4_ALPHA.png",
-      "scrapedAt": 1784237573563,
+      "scrapedAt": 1784241440191,
       "items": [
         {
-          "id": "29ccd0c0210acf938615cb94c8f06b28",
+          "id": "sticker-howling-dawn",
           "name": "Sticker | Howling Dawn",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/1c/1c0da2695d7e686c2e318198bc256623.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/1c/1c0da2695d7e686c2e318198bc256623.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Knife",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0001,
+              "value": 1970.5
+            }
+          ],
           "totalProbability": 0.0001
         },
         {
-          "id": "63b19e75632279e9ef960095421c2f82",
-          "name": "Sticker | Natus Vincere | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/09/09740246c32780198494c796f828951b.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/09/09740246c32780198494c796f828951b.png?v4",
+          "id": "sticker-navi-kato15",
+          "name": "Sticker | NaVi Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00008999999999999999,
+              "value": 730.64
+            }
+          ],
           "totalProbability": 0.00008999999999999999
         },
         {
-          "id": "8f94dae02e9dca65974190f8f708f13f",
-          "name": "Sticker | Flipsid3 Tactics | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/5b/5bf832caacbd73ad6d69cfa0b391a30a.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/5b/5bf832caacbd73ad6d69cfa0b391a30a.png?v4",
+          "id": "sticker-flipsid3-kato15",
+          "name": "Sticker | Flipsid3 Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00012,
+              "value": 555.9
+            }
+          ],
           "totalProbability": 0.00012
         },
         {
-          "id": "8db4b3e95e44b739c001561053dbea5a",
-          "name": "Sticker | Team Dignitas | DreamHack 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/ee/eeeadd3fee72bf86703fa36ca4d66930.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/ee/eeeadd3fee72bf86703fa36ca4d66930.png?v4",
+          "id": "sticker-dignitas-dh14",
+          "name": "Sticker | Dignitas DH14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00012,
+              "value": 541.22
+            }
+          ],
           "totalProbability": 0.00012
         },
         {
-          "id": "a1518e335253bf5d7a584e5a3417d78a",
-          "name": "Sticker | Team Liquid | Atlanta 2017",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/c5/c5a5597df8e74a257f1b1d6f7ef640a5.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c5/c5a5597df8e74a257f1b1d6f7ef640a5.png?v4",
+          "id": "sticker-team-liquid-atlanta17",
+          "name": "Sticker | Team Liquid Atlanta17",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00017999999999999998,
+              "value": 344.49
+            }
+          ],
           "totalProbability": 0.00017999999999999998
         },
         {
-          "id": "5b326974f759b26f9bb190df555138b2",
-          "name": "Sticker | OpTic Gaming | Atlanta 2017",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/32/3250f531f24b8907c5d818123c8508d8.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/32/3250f531f24b8907c5d818123c8508d8.png?v4",
+          "id": "sticker-optic-atlanta17",
+          "name": "Sticker | OpTic Atlanta17",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0002,
+              "value": 315.33
+            }
+          ],
           "totalProbability": 0.0002
         },
         {
-          "id": "8e1901f5b4d76aadea6c8ae2341f98b3",
-          "name": "Sticker | Flipsid3 Tactics | Atlanta 2017",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/fb/fb2a70ffc50ee6fd576a40d0b0378e6d.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/fb/fb2a70ffc50ee6fd576a40d0b0378e6d.png?v4",
+          "id": "sticker-flipsid3-atlanta17",
+          "name": "Sticker | Flipsid3 Atlanta17",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00031,
+              "value": 199.41
+            }
+          ],
           "totalProbability": 0.00031
         },
         {
-          "id": "4af7df339cab1730669331e3cda7b61b",
-          "name": "Sticker | DreamHack Winter 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/70/70cf291a85886a845c26d51d4c61a123.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/70/70cf291a85886a845c26d51d4c61a123.png?v4",
+          "id": "sticker-dreamhack-winter14",
+          "name": "Sticker | DreamHack Winter14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00043,
+              "value": 141.12
+            }
+          ],
           "totalProbability": 0.00043
         },
         {
-          "id": "d3e87c069e6a1fcb5bf02d1722ce0119",
-          "name": "Sticker | rox | Antwerp 2022",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/6e/6e7f48f14d5c6b47b7955f695a148318.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6e/6e7f48f14d5c6b47b7955f695a148318.png?v4",
+          "id": "sticker-rox-antwerp22",
+          "name": "Sticker | rox Antwerp22",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0005,
+              "value": 123.59
+            }
+          ],
           "totalProbability": 0.0005
         },
         {
-          "id": "6958f45c4b1eef1c2526e591033cea94",
-          "name": "Sticker | FaZe Clan | London 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/0d/0dc0908319ecef2c4a5414987273b517.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/0d/0dc0908319ecef2c4a5414987273b517.png?v4",
+          "id": "sticker-faze-london18",
+          "name": "Sticker | FaZe London18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00057,
+              "value": 106.24
+            }
+          ],
           "totalProbability": 0.00057
         },
         {
-          "id": "5c572fadfe19c00b686364a3192492fd",
-          "name": "Sticker | Flash Gaming | Boston 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/fa/faff87daa2c0ed9f54a633ff96049b83.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/fa/faff87daa2c0ed9f54a633ff96049b83.png?v4",
+          "id": "sticker-flash-gaming-boston18",
+          "name": "Sticker | Flash Gaming Boston18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0006900000000000001,
+              "value": 87.57
+            }
+          ],
           "totalProbability": 0.0006900000000000001
         },
         {
-          "id": "79c272495a6a5014126fbe97f20cf559",
-          "name": "Sticker | FaZe Clan | Boston 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/6a/6a6d174cdcbd9242a9a77a0878f4fd0b.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6a/6a6d174cdcbd9242a9a77a0878f4fd0b.png?v4",
+          "id": "sticker-faze-boston18",
+          "name": "Sticker | FaZe Boston18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00074,
+              "value": 82.08
+            }
+          ],
           "totalProbability": 0.00074
         },
         {
-          "id": "bd57ce80f0941369ed4b32c71edadb97",
-          "name": "Sticker | SK Gaming | Cologne 2016",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/65/657ec585bc5d4a28606eae4160633c32.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/65/657ec585bc5d4a28606eae4160633c32.png?v4",
+          "id": "sticker-sk-gaming-col16",
+          "name": "Sticker | SK Gaming Col16",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00078,
+              "value": 77.89
+            }
+          ],
           "totalProbability": 0.00078
         },
         {
-          "id": "797164f68b51a42bfa1b44c36b93c55b",
-          "name": "Sticker | GODSENT | Atlanta 2017",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/bf/bfafe43764e6cd111953cccd634e989b.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/bf/bfafe43764e6cd111953cccd634e989b.png?v4",
+          "id": "sticker-godsent-atlanta17",
+          "name": "Sticker | GODSENT Atlanta17",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00104,
+              "value": 58.41
+            }
+          ],
           "totalProbability": 0.00104
         },
         {
-          "id": "dbbb945fc713eedf96e9e7bbfdb521fc",
-          "name": "Sticker | Astralis | London 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/2a/2a12758d2713bdf6bf0179e864a6d1e0.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/2a/2a12758d2713bdf6bf0179e864a6d1e0.png?v4",
+          "id": "sticker-astralis-london18",
+          "name": "Sticker | Astralis London18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00961,
+              "value": 52.72
+            }
+          ],
           "totalProbability": 0.00961
         },
         {
-          "id": "1d0bc18aef6faeb60a8317c98f6c0484",
+          "id": "sticker-ultraviolet-poison-frog",
           "name": "Sticker | Ultraviolet Poison Frog",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/d6/d6837fdccc4ba77d636e225df073b09d.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d6/d6837fdccc4ba77d636e225df073b09d.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.011930000000000001,
+              "value": 42.62
+            }
+          ],
           "totalProbability": 0.011930000000000001
         },
         {
-          "id": "15061878d48d02f50d557241bed0a502",
-          "name": "Sticker | Virtus.Pro | Cologne 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/b2/b29c406c93658919d67570d90c0dc9d3.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b2/b29c406c93658919d67570d90c0dc9d3.png?v4",
+          "id": "sticker-virtus-pro-col14",
+          "name": "Sticker | Virtus.Pro Col14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.012310000000000001,
+              "value": 41.34
+            }
+          ],
           "totalProbability": 0.012310000000000001
         },
         {
-          "id": "a97f4bcb4a78c0e26ec157aea30cbdee",
-          "name": "Sticker | Luminosity Gaming | Cluj-Napoca 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/18/185152f9d66cb03a0e470894df682f99.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/18/185152f9d66cb03a0e470894df682f99.png?v4",
+          "id": "sticker-luminosity-cluj15",
+          "name": "Sticker | Luminosity Cluj15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01349,
+              "value": 37.66
+            }
+          ],
           "totalProbability": 0.01349
         },
         {
-          "id": "a7b5bccdda4ba3a60c0abca8dcd44d72",
-          "name": "Sticker | Vega Squadron | Boston 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/1b/1b2b85029b6214339e7b337df9189a3d.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/1b/1b2b85029b6214339e7b337df9189a3d.png?v4",
+          "id": "sticker-vega-squadron-boston18",
+          "name": "Sticker | Vega Squadron Boston18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.023330000000000004,
+              "value": 33.78
+            }
+          ],
           "totalProbability": 0.023330000000000004
         },
         {
-          "id": "7787028c40e48ba814a525a867997c02",
+          "id": "sticker-crimson-web-poison-frog",
           "name": "Sticker | Crimson Web Poison Frog",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/f9/f91c330bb79ff7ea7f39e6b85e5e36bd.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f9/f91c330bb79ff7ea7f39e6b85e5e36bd.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02384,
+              "value": 33.13
+            }
+          ],
           "totalProbability": 0.02384
         },
         {
-          "id": "7f60d9e4f864dbf31ff725b900ea5747",
-          "name": "Sticker | DreamHack | Cluj-Napoca 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/06/066ed6f49ad471592ebf27fc09302e81.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/06/066ed6f49ad471592ebf27fc09302e81.png?v4",
+          "id": "sticker-dreamhack-cluj15",
+          "name": "Sticker | DreamHack Cluj15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.026019999999999998,
+              "value": 30.36
+            }
+          ],
           "totalProbability": 0.026019999999999998
         },
         {
-          "id": "b5239431d5c885b4977a32e634610f47",
-          "name": "Sticker | Movistar Riders | Stockholm 2021",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/da/da8c36acefa993a46d23d48699508d3f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/da/da8c36acefa993a46d23d48699508d3f.png?v4",
+          "id": "sticker-movistar-riders-stockholm21",
+          "name": "Sticker | Movistar Riders Stockholm21",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Covert",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03048,
+              "value": 25.91
+            }
+          ],
           "totalProbability": 0.03048
         },
         {
-          "id": "7bbd830ad759fe37334ae7b35c0cd80e",
-          "name": "Sticker | ESL One | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/36/36307367cf8c8a1803c1ed2a47a7870b.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/36/36307367cf8c8a1803c1ed2a47a7870b.png?v4",
+          "id": "sticker-esl-one-kato15",
+          "name": "Sticker | ESL One Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01853,
+              "value": 20.54
+            }
+          ],
           "totalProbability": 0.01853
         },
         {
-          "id": "28d65a159311a987ccca4688ca520142",
-          "name": "Sticker | dexter | Rio 2022",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/e0/e03b560916eea47c79e5aabf7a5307f2.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e0/e03b560916eea47c79e5aabf7a5307f2.png?v4",
+          "id": "sticker-dexter-rio22",
+          "name": "Sticker | dexter Rio22",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Covert",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01975,
+              "value": 19.24
+            }
+          ],
           "totalProbability": 0.01975
         },
         {
-          "id": "8102dcabeb093892677d686dc421ce7c",
-          "name": "Sticker | IEM | Katowice 2019",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/81/8146ab3775a93fec5cba664dbfde893a.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/81/8146ab3775a93fec5cba664dbfde893a.png?v4",
+          "id": "sticker-iem-kato19",
+          "name": "Sticker | IEM Kato19",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02174,
+              "value": 17.5
+            }
+          ],
           "totalProbability": 0.02174
         },
         {
-          "id": "862c9d1d6a3358daf5d7f6edac125748",
-          "name": "Sticker | G2 Esports | Katowice 2019",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/a8/a8c210ac3886a1aadfc0e67c1a80e9c1.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/a8/a8c210ac3886a1aadfc0e67c1a80e9c1.png?v4",
+          "id": "sticker-g2-kato19",
+          "name": "Sticker | G2 Kato19",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02251,
+              "value": 16.93
+            }
+          ],
           "totalProbability": 0.02251
         },
         {
-          "id": "b8134282446767b71753ce30064d1f0a",
+          "id": "sticker-neon-opal-strafe",
           "name": "Sticker | Neon Opal Strafe",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/24/247683222ce1ca970ac30c069fd6ea78.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/24/247683222ce1ca970ac30c069fd6ea78.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.02297,
+              "value": 16.54
+            }
+          ],
           "totalProbability": 0.02297
         },
         {
-          "id": "e6449d6f16844f65a67cc500e1d9a260",
+          "id": "sticker-lucky-13",
           "name": "Sticker | Lucky 13",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/bb/bbc4f30ed9c1f02f79fe6f637742fbae.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/bb/bbc4f30ed9c1f02f79fe6f637742fbae.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.023119999999999998,
+              "value": 16.39
+            }
+          ],
           "totalProbability": 0.023119999999999998
         },
         {
-          "id": "aadea73bd6a69e3a3d2a2970a9babb98",
+          "id": "sticker-toxic-flow",
           "name": "Sticker | Toxic Flow",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/3f/3fd269c84b5720248e701b098174d7ad.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/3f/3fd269c84b5720248e701b098174d7ad.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0245,
+              "value": 15.5
+            }
+          ],
           "totalProbability": 0.0245
         },
         {
-          "id": "6b9710a78cdd53380a68ae2fdb052c7d",
-          "name": "Sticker | Rogue | London 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/10/10b6b3b8ea4019a961ba9f5adc320a1f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/10/10b6b3b8ea4019a961ba9f5adc320a1f.png?v4",
+          "id": "sticker-rogue-london18",
+          "name": "Sticker | Rogue London18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.09049,
+              "value": 14.77
+            }
+          ],
           "totalProbability": 0.09049
         },
         {
-          "id": "587b09a1689ad314049b8ee0db9b527c",
-          "name": "Sticker | 9z Team | Antwerp 2022",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/1b/1b93589c4d2a3dfd7a0db3594aaa95be.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/1b/1b93589c4d2a3dfd7a0db3594aaa95be.png?v4",
+          "id": "sticker-9z-team-antwerp22",
+          "name": "Sticker | 9z Team Antwerp22",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.10665,
+              "value": 12.54
+            }
+          ],
           "totalProbability": 0.10665
         },
         {
-          "id": "183a459e8750ed674b1855d33fb95dfb",
-          "name": "Sticker | max | Antwerp 2022",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/8d/8d178387e97881f729d2c7467fae885c.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/8d/8d178387e97881f729d2c7467fae885c.png?v4",
+          "id": "sticker-max-antwerp22",
+          "name": "Sticker | max Antwerp22",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01824,
+              "value": 11.95
+            }
+          ],
           "totalProbability": 0.01824
         },
         {
-          "id": "c3999869cf9eb9c694389445679a41c6",
+          "id": "sticker-hypnotic-surf-k",
           "name": "Sticker | Hypnotic Surf K",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/4c/4cf8982272b06d4b26978d79af1c3682.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/4c/4cf8982272b06d4b26978d79af1c3682.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01873,
+              "value": 11.58
+            }
+          ],
           "totalProbability": 0.01873
         },
         {
-          "id": "2f5714cab4100bb3f181852b9a1ef636",
+          "id": "sticker-miami-flick",
           "name": "Sticker | Miami Flick",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/2b/2bdb9f276aeea888202c247edde00b82.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/2b/2bdb9f276aeea888202c247edde00b82.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01923,
+              "value": 11.39
+            }
+          ],
           "totalProbability": 0.01923
         },
         {
-          "id": "1ee35ef808a4a75fe953f698a02ba1e2",
+          "id": "sticker-ruby-wave",
           "name": "Sticker | Ruby Wave",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/c8/c887897a9aae90affc4d2dd65ad46985.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c8/c887897a9aae90affc4d2dd65ad46985.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Covert",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.023170000000000003,
+              "value": 8.21
+            }
+          ],
           "totalProbability": 0.023170000000000003
         },
         {
-          "id": "a7bb659d99f814b7572f1479a468ac57",
+          "id": "sticker-rekt",
           "name": "Sticker | Rekt",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/bb/bbca94e9865979b8bdfa52e10cc786ca.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/bb/bbca94e9865979b8bdfa52e10cc786ca.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04929,
+              "value": 2.32
+            }
+          ],
           "totalProbability": 0.04929
         },
         {
-          "id": "5bebe95af17909c644afbc5b0993825a",
+          "id": "sticker-poorly-drawn-sas",
           "name": "Sticker | Poorly Drawn SAS",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/84/849cdafe95ddaeec7a5fa715b65229ac.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/84/849cdafe95ddaeec7a5fa715b65229ac.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05421,
+              "value": 1.99
+            }
+          ],
           "totalProbability": 0.05421
         },
         {
-          "id": "6554a32490e3a36ad5b20982a946a606",
+          "id": "sticker-t-rush",
           "name": "Sticker | T Rush",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/da/dab0082d4b7e3e0d1b84e6b15a79ebd7.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/da/dab0082d4b7e3e0d1b84e6b15a79ebd7.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05668,
+              "value": 1.84
+            }
+          ],
           "totalProbability": 0.05668
         },
         {
-          "id": "1e069e90e3470541cb2c21364f869ea6",
+          "id": "sticker-freeze",
           "name": "Sticker | Freeze",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/6b/6b5eb88e616d170925e08700d7ba06f8.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6b/6b5eb88e616d170925e08700d7ba06f8.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Covert",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05717,
+              "value": 1.83
+            }
+          ],
           "totalProbability": 0.05717
         },
         {
-          "id": "7f392d07831b5141fe3bc39d36414bc6",
+          "id": "sticker-bite-me",
           "name": "Sticker | Bite Me",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/85/858602cfd814d7660ed1d74cdb4ba108.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/85/858602cfd814d7660ed1d74cdb4ba108.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05865,
+              "value": 1.75
+            }
+          ],
           "totalProbability": 0.05865
         },
         {
-          "id": "e03197231c8243c27c60cfa45c5858e0",
+          "id": "sticker-kimberly",
           "name": "Sticker | Kimberly",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/d5/d541de83dd6ee4a1afbb67a5bafb33db.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d5/d541de83dd6ee4a1afbb67a5bafb33db.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.06702,
+              "value": 1.4
+            }
+          ],
           "totalProbability": 0.06702
         },
         {
-          "id": "7633384ba98d9da1949ea4f6931c2dc4",
+          "id": "sticker-queen-ava",
           "name": "Sticker | Queen Ava",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/4d/4d7af8891115a3b711128583d4e7f067.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/4d/4d7af8891115a3b711128583d4e7f067.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.07046999999999999,
+              "value": 1.28
+            }
+          ],
           "totalProbability": 0.07046999999999999
         }
       ]
@@ -76008,370 +76416,586 @@
       "price": 40,
       "imageUrl": "https://key-drop.com/uploads/skins/5_IMMORTAL.png",
       "imageUrlRemote": "https://key-drop.com/uploads/skins/5_IMMORTAL.png",
-      "scrapedAt": 1784237580635,
+      "scrapedAt": 1784241440191,
       "items": [
         {
-          "id": "8a66367f972ac15b2d70e3c51ebdbea8",
-          "name": "Sticker | HellRaisers | Katowice 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/b0/b04691702966abd194187da3a7cf17ff.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/b0/b04691702966abd194187da3a7cf17ff.png?v4",
+          "id": "sticker-hellraisers-kato14",
+          "name": "Sticker | HellRaisers Kato14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00003,
+              "value": 12319.36
+            }
+          ],
           "totalProbability": 0.00003
         },
         {
-          "id": "1ace45cb819a8b17c0f07e9a9ef16f74",
-          "name": "Sticker | Virtus.Pro | Katowice 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/7f/7f5ffc0284661a3b3364b46c97682945.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/7f/7f5ffc0284661a3b3364b46c97682945.png?v4",
+          "id": "sticker-virtus-pro-kato14",
+          "name": "Sticker | Virtus.Pro Kato14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00007000000000000001,
+              "value": 6402.62
+            }
+          ],
           "totalProbability": 0.00007000000000000001
         },
         {
-          "id": "bf3272f41580b22e4ddeef8bc7ca18c3",
-          "name": "Sticker | Vox Eminor | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/c7/c72c216d45ac8bd9987d80d067a0c65f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c7/c72c216d45ac8bd9987d80d067a0c65f.png?v4",
+          "id": "sticker-vox-eminor-kato15",
+          "name": "Sticker | Vox Eminor Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0002,
+              "value": 2199.48
+            }
+          ],
           "totalProbability": 0.0002
         },
         {
-          "id": "5d413f3dec59ec5b3e70adc5912ab4b2",
-          "name": "Sticker | Team Dignitas | Cologne 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/8f/8f800a6ef827c0a2b51fffc27f1e01f8.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/8f/8f800a6ef827c0a2b51fffc27f1e01f8.png?v4",
+          "id": "sticker-dignitas-col14",
+          "name": "Sticker | Dignitas Col14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00023,
+              "value": 1237.46
+            }
+          ],
           "totalProbability": 0.00023
         },
         {
-          "id": "55a08a0758a883fd3ee5bdbf5e1516c6",
-          "name": "Sticker | iBUYPOWER | Cologne 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/13/1392715a747263fc5b242f3adb06df44.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/13/1392715a747263fc5b242f3adb06df44.png?v4",
+          "id": "sticker-ibuypower-col14",
+          "name": "Sticker | iBUYPOWER Col14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00074,
+              "value": 373.61
+            }
+          ],
           "totalProbability": 0.00074
         },
         {
-          "id": "103f02afbf6efa1a4ea5ffedf9044917",
-          "name": "Sticker | Cloud9 G2A | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/49/493119fa0b91f5fd3c694246f4cdac46.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/49/493119fa0b91f5fd3c694246f4cdac46.png?v4",
+          "id": "sticker-cloud9-kato15",
+          "name": "Sticker | Cloud9 Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00082,
+              "value": 331.51
+            }
+          ],
           "totalProbability": 0.00082
         },
         {
-          "id": "b632eca8728ef780d1b910e1804018a2",
-          "name": "Sticker | 3DMAX | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/a8/a8334d74c5da515615d66972b90ff2e8.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/a8/a8334d74c5da515615d66972b90ff2e8.png?v4",
+          "id": "sticker-3dmax-kato15",
+          "name": "Sticker | 3DMAX Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00092,
+              "value": 295.95
+            }
+          ],
           "totalProbability": 0.00092
         },
         {
-          "id": "8f94dae02e9dca65974190f8f708f13f",
-          "name": "Sticker | Flipsid3 Tactics | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/fe/fea88db8e83f63f04e409a234db47579.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/fe/fea88db8e83f63f04e409a234db47579.png?v4",
+          "id": "sticker-flipsid3-kato15",
+          "name": "Sticker | Flipsid3 Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0014099999999999998,
+              "value": 191.33
+            }
+          ],
           "totalProbability": 0.0014099999999999998
         },
         {
-          "id": "627b1fe8abd76d704d64484c7fc16aed",
-          "name": "Sticker | Tyloo | Boston 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/d6/d6cabfe593c36129abd3e0cf1e0fcc53.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d6/d6cabfe593c36129abd3e0cf1e0fcc53.png?v4",
+          "id": "sticker-tyloo-boston18",
+          "name": "Sticker | Tyloo Boston18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.00158,
+              "value": 171.25
+            }
+          ],
           "totalProbability": 0.00158
         },
         {
-          "id": "a1518e335253bf5d7a584e5a3417d78a",
-          "name": "Sticker | Team Liquid | Atlanta 2017",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/a3/a3279209473ace279f670a3fad8b7b0d.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/a3/a3279209473ace279f670a3fad8b7b0d.png?v4",
+          "id": "sticker-team-liquid-atlanta17",
+          "name": "Sticker | Team Liquid Atlanta17",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0017599999999999998,
+              "value": 153.75
+            }
+          ],
           "totalProbability": 0.0017599999999999998
         },
         {
-          "id": "d3e87c069e6a1fcb5bf02d1722ce0119",
-          "name": "Sticker | rox | Antwerp 2022",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/6e/6e7f48f14d5c6b47b7955f695a148318.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/6e/6e7f48f14d5c6b47b7955f695a148318.png?v4",
+          "id": "sticker-rox-antwerp22",
+          "name": "Sticker | rox Antwerp22",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01233,
+              "value": 123.59
+            }
+          ],
           "totalProbability": 0.01233
         },
         {
-          "id": "a7295c0f944dd7e7a0a028e15a567a85",
-          "name": "Sticker | Natus Vincere | Cologne 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/80/803aea7789a60a94f53da08ea865544c.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/80/803aea7789a60a94f53da08ea865544c.png?v4",
+          "id": "sticker-navi-col14",
+          "name": "Sticker | NaVi Col14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.013540000000000002,
+              "value": 112.99
+            }
+          ],
           "totalProbability": 0.013540000000000002
         },
         {
-          "id": "b5630304a0323fa272bd17dd274551b7",
-          "name": "Sticker | ESL One Cologne 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/10/10406be25d84bf1a3a0ef378be5cf67d.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/10/10406be25d84bf1a3a0ef378be5cf67d.png?v4",
+          "id": "sticker-esl-one-col14",
+          "name": "Sticker | ESL One Col14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.01425,
+              "value": 106.96
+            }
+          ],
           "totalProbability": 0.01425
         },
         {
-          "id": "9758594805c336203680fb695e7cbe2e",
-          "name": "Sticker | Team EnVyUs | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/c6/c61eba7a31a3901afb58d08c737605d8.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c6/c61eba7a31a3901afb58d08c737605d8.png?v4",
+          "id": "sticker-team-envyus-kato15",
+          "name": "Sticker | Team EnVyUs Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.014910000000000001,
+              "value": 102.29
+            }
+          ],
           "totalProbability": 0.014910000000000001
         },
         {
-          "id": "3760f6e6ff6dd8858c29597f690d501f",
-          "name": "Sticker | Copenhagen Wolves | Cologne 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/a3/a3c8f5837aadcc48ccd607c10afb1ee7.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/a3/a3c8f5837aadcc48ccd607c10afb1ee7.png?v4",
+          "id": "sticker-copenhagen-wolves-col14",
+          "name": "Sticker | Copenhagen Wolves Col14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0361,
+              "value": 71.09
+            }
+          ],
           "totalProbability": 0.0361
         },
         {
-          "id": "51b9a6f442fdf59102b9eec5d089c7bd",
-          "name": "Sticker | Flipsid3 Tactics | Boston 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/0d/0d71079b9ee61a75565953fe7e7cb05f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/0d/0d71079b9ee61a75565953fe7e7cb05f.png?v4",
+          "id": "sticker-flipsid3-boston18",
+          "name": "Sticker | Flipsid3 Boston18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03655,
+              "value": 70.09
+            }
+          ],
           "totalProbability": 0.03655
         },
         {
-          "id": "0ee420fbf9865604d20d0b285b57ef3e",
-          "name": "Sticker | Counter Logic Gaming | Cologne 2016",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/f3/f3d3fe1945990838a85c36740269f1f0.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f3/f3d3fe1945990838a85c36740269f1f0.png?v4",
+          "id": "sticker-clg-col16",
+          "name": "Sticker | CLG Col16",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.040510000000000004,
+              "value": 63.26
+            }
+          ],
           "totalProbability": 0.040510000000000004
         },
         {
-          "id": "d725928d0b39a81bb28eaaf83316b165",
-          "name": "Sticker | Astralis | Cologne 2016",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/85/853daa4ddd498d3b1df6ece53e91806b.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/85/853daa4ddd498d3b1df6ece53e91806b.png?v4",
+          "id": "sticker-astralis-col16",
+          "name": "Sticker | Astralis Col16",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.03429,
+              "value": 58.74
+            }
+          ],
           "totalProbability": 0.03429
         },
         {
-          "id": "c2c700222c618e390b1475b6bd967531",
+          "id": "sticker-headhunter",
           "name": "Sticker | Headhunter",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/43/431131567ff10525fc27128f84b3a7aa.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/43/431131567ff10525fc27128f84b3a7aa.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.040679999999999994,
+              "value": 49.66
+            }
+          ],
           "totalProbability": 0.040679999999999994
         },
         {
-          "id": "e6e5d392b2eb25031d1f560b020aeedd",
-          "name": "Sticker | Fnatic | Cologne 2014",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/e1/e1be45cda5dacdcb0959efa994b021cb.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e1/e1be45cda5dacdcb0959efa994b021cb.png?v4",
+          "id": "sticker-fnatic-col14",
+          "name": "Sticker | Fnatic Col14",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04183,
+              "value": 48.2
+            }
+          ],
           "totalProbability": 0.04183
         },
         {
-          "id": "1d0bc18aef6faeb60a8317c98f6c0484",
+          "id": "sticker-ultraviolet-poison-frog",
           "name": "Sticker | Ultraviolet Poison Frog",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/d6/d6837fdccc4ba77d636e225df073b09d.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d6/d6837fdccc4ba77d636e225df073b09d.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04724999999999999,
+              "value": 42.62
+            }
+          ],
           "totalProbability": 0.04724999999999999
         },
         {
-          "id": "e16d56e50e60f21966b777b27e6032e0",
-          "name": "Sticker | Keyd Stars | Katowice 2015",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/53/5357326f801a12c783ab5d935ccf2191.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/53/5357326f801a12c783ab5d935ccf2191.png?v4",
+          "id": "sticker-keyd-stars-kato15",
+          "name": "Sticker | Keyd Stars Kato15",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.0462,
+              "value": 38.31
+            }
+          ],
           "totalProbability": 0.0462
         },
         {
-          "id": "33c1e83d0ab30a2864ec743f9a3a3f92",
-          "name": "Sticker | mousesports | Krakow 2017",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/e6/e6b22b5cd8401c4656e9d8a06579419e.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e6/e6b22b5cd8401c4656e9d8a06579419e.png?v4",
+          "id": "sticker-mousesports-krakow17",
+          "name": "Sticker | mousesports Krakow17",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04677,
+              "value": 37.82
+            }
+          ],
           "totalProbability": 0.04677
         },
         {
-          "id": "a07544bbd91cab4289582367e84f892b",
-          "name": "Sticker | OpTic Gaming | Atlanta 2017",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/78/787d4520ac17e3f70c46aacf627f8613.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/78/787d4520ac17e3f70c46aacf627f8613.png?v4",
+          "id": "sticker-optic-atlanta17",
+          "name": "Sticker | OpTic Atlanta17",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.046950000000000006,
+              "value": 37.66
+            }
+          ],
           "totalProbability": 0.046950000000000006
         },
         {
-          "id": "12d48bd1854358587d0cc2dd50cb69eb",
-          "name": "Sticker | Gambit Gaming | Atlanta 2017",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/82/82802e30f95ddea6362583c8fce5b632.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/82/82802e30f95ddea6362583c8fce5b632.png?v4",
+          "id": "sticker-gambit-atlanta17",
+          "name": "Sticker | Gambit Atlanta17",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04865,
+              "value": 36.32
+            }
+          ],
           "totalProbability": 0.04865
         },
         {
-          "id": "77bc0995f8c0d8ebe96cfdb4f873c634",
-          "name": "Sticker | mousesports | London 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/f4/f4fd167a91c894ff52dc2a8eb11248e1.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/f4/f4fd167a91c894ff52dc2a8eb11248e1.png?v4",
+          "id": "sticker-mousesports-london18",
+          "name": "Sticker | mousesports London18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.015560000000000001,
+              "value": 29.92
+            }
+          ],
           "totalProbability": 0.015560000000000001
         },
         {
-          "id": "15ad6d13626dd12a78105c542f864a5e",
-          "name": "Sticker | North | Boston 2018",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/cb/cbf5204c880222ed850780056ef5d4a8.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/cb/cbf5204c880222ed850780056ef5d4a8.png?v4",
+          "id": "sticker-north-boston18",
+          "name": "Sticker | North Boston18",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.016040000000000002,
+              "value": 29.38
+            }
+          ],
           "totalProbability": 0.016040000000000002
         },
         {
-          "id": "851feabb253015c6b1bbec5127482770",
+          "id": "sticker-showdown",
           "name": "Sticker | Showdown",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/39/3929b366e57d8c4e38258c96ba9b94b1.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/39/3929b366e57d8c4e38258c96ba9b94b1.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.040069999999999995,
+              "value": 6.32
+            }
+          ],
           "totalProbability": 0.040069999999999995
         },
         {
-          "id": "91554a6e723b7c2e2ef9046491d220ac",
+          "id": "sticker-battle-scarred",
           "name": "Sticker | Battle Scarred",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/d8/d8c746862e15436acdb784e1c80eba83.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/d8/d8c746862e15436acdb784e1c80eba83.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Mil-Spec",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04337,
+              "value": 5.51
+            }
+          ],
           "totalProbability": 0.04337
         },
         {
-          "id": "45e62137dc151d3c33ec098f2bebffed",
+          "id": "sticker-runtime",
           "name": "Sticker | Runtime",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/c9/c9c366f650799a8335866815b8863fb1.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/c9/c9c366f650799a8335866815b8863fb1.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04431,
+              "value": 5.34
+            }
+          ],
           "totalProbability": 0.04431
         },
         {
-          "id": "1e8b301b11c7f87674dc2f475d699c76",
+          "id": "sticker-taste-buddy",
           "name": "Sticker | Taste Buddy",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/56/566fa0d15a2c8299d1e112022135dd3f.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/56/566fa0d15a2c8299d1e112022135dd3f.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04573000000000001,
+              "value": 5.04
+            }
+          ],
           "totalProbability": 0.04573000000000001
         },
         {
-          "id": "29ee15cdc9d0b0e52cff2dfebc776ef7",
+          "id": "sticker-perry",
           "name": "Sticker | Perry",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/05/055d5a6eb422e2aa94c324b7c236a974.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/05/055d5a6eb422e2aa94c324b7c236a974.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.04761,
+              "value": 4.77
+            }
+          ],
           "totalProbability": 0.04761
         },
         {
-          "id": "41a78e7ebbb75b5b782005ca58751ac7",
+          "id": "sticker-chrome-dome",
           "name": "Sticker | Chrome Dome",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/e7/e7c2b3706d868942334a5ad1cb9dd733.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/e7/e7c2b3706d868942334a5ad1cb9dd733.png?v4",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Restricted",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05138,
+              "value": 4.16
+            }
+          ],
           "totalProbability": 0.05138
         },
         {
-          "id": "bb0e09f556f0892a302e532d6abc6d65",
-          "name": "Sticker | MOUZ | Copenhagen 2024",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/01/0121617225bcde23387ce72d4b314bf1.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/01/0121617225bcde23387ce72d4b314bf1.png?v4",
+          "id": "sticker-mouz-copenhagen24",
+          "name": "Sticker | MOUZ Copenhagen24",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.052329999999999995,
+              "value": 4.07
+            }
+          ],
           "totalProbability": 0.052329999999999995
         },
         {
-          "id": "066a78354b8174153881079a8c477b64",
-          "name": "Sticker | Legacy | Austin 2025",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/33/33a231f5f5e7a58d9f1ed2b979e29988.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/33/33a231f5f5e7a58d9f1ed2b979e29988.png?v4",
+          "id": "sticker-legacy-austin25",
+          "name": "Sticker | Legacy Austin25",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05516,
+              "value": 3.73
+            }
+          ],
           "totalProbability": 0.05516
         },
         {
-          "id": "afbf0f018b555ecc29b647843507fce3",
-          "name": "Sticker | NRG | Austin 2025",
-          "imageUrl": "https://cdnkd.com/csgo_icons/images/42/42feb783405f4577e6935c7f29170a2d.png?v4",
-          "imageUrlRemote": "https://cdnkd.com/csgo_icons/images/42/42feb783405f4577e6935c7f29170a2d.png?v4",
+          "id": "sticker-nrg-austin25",
+          "name": "Sticker | NRG Austin25",
+          "imageUrl": "",
+          "imageUrlRemote": "",
           "rarity": "Classified",
           "statTrak": false,
-          "wears": [],
+          "wears": [
+            {
+              "wear": "FN",
+              "probability": 0.05987,
+              "value": 3.25
+            }
+          ],
           "totalProbability": 0.05987
         }
       ]
     }
   ],
-  "scrapedAt": 1784237580647
+  "scrapedAt": 1784240920570
 }

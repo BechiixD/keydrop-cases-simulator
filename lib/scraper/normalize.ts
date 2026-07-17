@@ -116,7 +116,7 @@ function normalizeKeydropCase(
     const rarity = rarityFromColor(it.color, fullTitle);
     const totalProbability = asNumber(it.pfPercent) / 100;
     const pfTiers = (Array.isArray(it.pf) ? it.pf : []) as Loose[];
-    const wears: WearTier[] = pfTiers
+    let wears: WearTier[] = pfTiers
       .map((w): WearTier | null => {
         const wear = mapWear(w.rarity);
         if (!wear) return null;
@@ -127,6 +127,15 @@ function normalizeKeydropCase(
         };
       })
       .filter((x): x is WearTier => x !== null);
+
+    if (wears.length === 0 && pfTiers.length > 0) {
+      const first = pfTiers[0];
+      const price = Math.max(0, asNumber(first.price ?? it.price ?? it.value ?? 0));
+      wears = [{ wear: "FN", probability: totalProbability, value: price }];
+    } else if (wears.length === 0) {
+      const itemPrice = Math.max(0, asNumber(it.price ?? it.value ?? 0));
+      wears = [{ wear: "FN", probability: totalProbability, value: itemPrice }];
+    }
 
     const wearProbSum = wears.reduce((a, w) => a + w.probability, 0);
     if (Math.abs(wearProbSum - totalProbability) > 0.0001) {
